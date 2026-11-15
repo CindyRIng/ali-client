@@ -1,0 +1,91 @@
+{
+ "welcomeNavData": {
+  "topResourcePic": "",
+  "popup": {
+   "visitText": "获取报价",
+   "tipText": "获取专属于您的客制化物流报价",
+   "type": "logistics",
+   "isShow": false
+  },
+  "list": [
+   {
+    "trackInfo": "NCChannelTheme-1931",
+    "icon": "https://img.alicdn.com/imgextra/i2/O1CN01AO8AoV25HVkDh3hit_!!6000000007501-2-tps-80-74.png",
+    "title": "Alibaba.com Business+",
+    "url": "https://ug.alibaba.com/api/prime/intro.htm?channel=index_home&wx_navbar_transparent=true"
+   },
+   {
+    "trackInfo": "NCChannelTheme-1930",
+    "icon": "https://s.alicdn.com/@img/imgextra/i2/O1CN01kCVZMS1Mfe6lCzq15_!!6000000001462-2-tps-84-84.png",
+    "title": "询价",
+    "url": "https://rfq.alibaba.com/rfq/profession.htm?tracelog=PCkeylanding"
+   },
+   {
+    "trackInfo": "NCChannelTheme-3096",
+    "icon": "https://s.alicdn.com/@img/imgextra/i2/O1CN01mHe6t5jaFnD0C5Gi_!!6000000005164-2-tps-96-96.png",
+    "title": "实力玩家",
+    "url": "https://sale.alibaba.com/p/dn3rndydd/index.html?wx_navbar_transparent=true&path=%2Fp%2Fdn3rndydd%2Findex.html"
+   },
+   {
+    "trackInfo": "NCChannelTheme-3291",
+    "icon": "https://s.alicdn.com/@img/imgextra/i2/O1CN014jOND01H2eM1pBntG_!!6000000000700-2-tps-84-84.png",
+    "title": "产业带优质商品",
+    "url": "https://sale.alibaba.com/newlandseacorridor"
+   }
+  ],
+  "user": ""
+ },
+ "i18nTextData": {
+  "mcms_rvc7si__": "热卖榜",
+  "mcms_thagw3__": "来自您的供应商的更新",
+  "mcms_iidpbw__": "欢迎使用 Alibaba.com",
+  "mcms_wglly72jp0z__": "全球供给",
+  "mcms_9muk7t__": "搜索",
+  "verifiedFeatures": [
+   "5,000+ 行业覆盖",
+   "厂家直销价格",
+   "支持定制和试样"
+  ],
+  "mcms_7k4a40__": "您在找什么？",
+  "mcms_seabed980__": "查看详细信息",
+  "mcms_0yd1c2__": "探索",
+  "mcms_6pamnimgckj__": "从设计到采购，把繁重的工作交给 Accio Work。立即提升您的投资回报率！",
+  "mcms_ob6pre__": "制造商",
+  "mcms_ckj0gb__": "最低起订量：{moq}",
+  "mcms_bd1misibzf1__": "连接 3.4 万+ 家认证工厂",
+  "cihai_Popup_benefits_exclusive": "只为你专享",
+  "mcms_7rcbgl__": "产品",
+  "aimode_tooltip_des": "您的一站式采购助手。更智能地调研，更快地设计，更高效地采购，更轻松地沟通。",
+  "benefit_center_subtitle": "您的账户包含 {num} 项权益",
+  "benefit_center": "专属福利",
+  "mcms_7lvmnh5jlou__": "免费试用",
+  "accio_work_text": "Accio Work",
+  "mcms_hscohh__": "爆款商品",
+  "insights_font_page": "洞察",
+  "im_messenger": "消息",
+  "mcms_m4n7kd__": "人气度：",
+  "RFQ_description": "发布定制采购需求以获取来自多家匹配供应商的报价",
+  "mcms_xbsint__": "最高评分：",
+  "cihai_Popup_enjoy_tools_asia": "享受专为推动业务增长打造的工具与支持",
+  "cihai_Popup_enjoy_tools": "享受工具与支持，助你更聪明地采购并节省更多",
+  "mcms_dmio21__": "好评榜",
+  "mcms_9xhmisiaeyn__": "探索制造商",
+  "verifiedTitle": "连接 3.4 万+ 家认证工厂",
+  "insights_tips": "用数据驱动的趋势和市场分析验证商业想法",
+  "mcms_posm5lv4te8__": "Accio 为您提供量身定制的采购解决方案",
+  "cihai_Popup_benefits_exclusive_asia": "福利中心",
+  "mcms_8b3hcd__": "你的浏览历史记录",
+  "mcms_wcqmifh6odx__": "探索来自中国核心产业带的优质产品",
+  "cihai_Popup_exclusive_benefits": "还有 {num} 项权益",
+  "mcms_58pm4mhowfj__": "利用实时数据寻找一鸣惊人的产品创意",
+  "mcms_wrcxve__": "热门榜单",
+  "mcms_y7shzq__": "欢迎使用 Alibaba.com，{user}",
+  "mcms_hk8tkk__": "常搜内容：",
+  "mcms_67vmhaa1hse__": "AI 模式",
+  "cihai_Popup_explore_benefits": "查看全部权益",
+  "benefit_assistant_more_details": "查看更多详情",
+  "mcms_0ozm7mst32m__": "带图搜索",
+  "mcms_isjdnh__": "热销度：",
+  "aimode_tooltip_tt": "认识一下您的 AI 采购助手"
+ }
+}

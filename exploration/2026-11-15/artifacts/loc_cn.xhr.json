@@ -1,0 +1,66 @@
+[
+  {
+    "idx": 0,
+    "method": "GET",
+    "status": 200,
+    "bytes": 762,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/punishTextFetch?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&language=en&action=captcha&v=008477504636565636"
+  },
+  {
+    "idx": 1,
+    "method": "GET",
+    "status": 200,
+    "bytes": 111,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadPageSuccess&msg=PunishPage%20load%20success%3Bsizes%3D1920*1080&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&pageVersion=0.1.130&v=06063328046418366"
+  },
+  {
+    "idx": 2,
+    "method": "GET",
+    "status": 200,
+    "bytes": 85,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadSuccessAWSC&msg=AWSC.js_load_success&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&pageVersion=0.1.130&v=08917915800744601"
+  },
+  {
+    "idx": 3,
+    "method": "GET",
+    "status": 200,
+    "bytes": 85,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadSuccessEt&msg=et.js_load_loaded&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&pageVersion=0.1.130&v=09728273614280727"
+  },
+  {
+    "idx": 4,
+    "method": "GET",
+    "status": 200,
+    "bytes": 85,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadSuccessNC&msg=nc.js_load_loaded&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&pageVersion=0.1.130&v=08336857950123692"
+  },
+  {
+    "idx": 5,
+    "method": "GET",
+    "status": 200,
+    "bytes": 85,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com:443/trade/search&pageVersion=0.1.130&type=initSuccess&msg=class%3Dnc_1_nocaptcha%3Dnc_1_nocaptcha%3Dnc_1_wrapperclass%3Dnc_wrapper%3Dnc_1_n1tclass%3Dnc_scale%3Dnc_1__bgclass%3Dnc_bgstyle%3Dwth%3A0px%3Bspan%3Dnc_1_n1zclass%3Dnc_confontbtn_sleara-label%3D%E6%BB%91%E5%9D%97tabnex%3D0role%3Dbuttonstyle%3Dleft%3A0px%3B%EE%98%81span%3Dnc_1__scale_textclass%3Dscale_textsletounlockspanclass%3Dnc-lang-cntata-nc-lang%3DSLIDEPleasesletoerfyspan%3B&uuid=0c6edee561e0a3487b4ca8ccdd6746b6"
+  },
+  {
+    "idx": 6,
+    "method": "POST",
+    "status": 200,
+    "bytes": 146,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://umdc-global.alibaba.com/repTw.json?e=2075&sv=181&pv=234&pn=www.alibaba.com&biz=3"
+  },
+  {
+    "idx": 7,
+    "method": "GET",
+    "status": 200,
+    "bytes": 85,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadSuccessRand&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&_rand=zW_lcu4dCotNACOp_tFOhn8Q_gX1T7llB9hYTa1ueN5mwZuWNLbH6MBTTceCivB9EomC7YUYbxfgvUAb960LKzjD4aSsrZcoa-Ol40FKb1GbFQ4-IIF0br_zQ9EoH0omevI0rQfFMCktlcNoYOUtbyZfljbfz45Q"
+  }
+]

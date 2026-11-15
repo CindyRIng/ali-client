@@ -1,0 +1,82 @@
+[
+  {
+    "idx": 0,
+    "method": "GET",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/punishTextFetch?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&language=en&action=captcha&v=008477504636565636",
+    "status": 200,
+    "ct": "application/json;charset=utf-8",
+    "ts": 1794750866566,
+    "bytes": 762,
+    "body": "{\"ncLanguagePack\":{\"BXMARK\":\"Please click me to try again\",\"FAIL\":\"Click to retry\"},\"ncPunishPageLanguagePack\":{\"feedback-link\":\"Feedback >\",\"close-btn-text\":\"OK\",\"captcha-h5-tips\":\"Please drag the slider to verify<p>Verify to ensure normal access</p>\",\"pure-feedback-link\":\"Feedback\",\"upgrade-text\":\"Oops! Version outdated<p>Your app has expired, check for updates<br/>or update from the app store</p>\",\"deny-h5-tips\":\"Access denied<p>Please check if you're using a proxy or VPN~</p>\",\"deny-title\":\"Access Denied\",\"deny-pure-tips\":\"Access denied, try later\",\"captcha-title\":\"CAPTCHA Verification\",\"previous-page\":\"Go Back\",\"wait-pure-tips\":\"Network busy, please wait\",\"wait-h5-tips\":\"Network congestion<p>Please try again later</p>\",\"wait-title\":\"System Busy\"}}"
+  },
+  {
+    "idx": 1,
+    "method": "GET",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadPageSuccess&msg=PunishPage%20load%20success%3Bsizes%3D1920*1080&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&pageVersion=0.1.130&v=06063328046418366",
+    "status": 200,
+    "ct": "application/json;charset=utf-8",
+    "ts": 1794750866584,
+    "bytes": 111,
+    "body": "{\"code\":0,\"dt\":\"success\",\"ec\":200,\"result\":{\"code\":0,\"message\":\"cookieEnabled\",\"sig\":\"from bx\"},\"success\":true}"
+  },
+  {
+    "idx": 2,
+    "method": "GET",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadSuccessAWSC&msg=AWSC.js_load_success&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&pageVersion=0.1.130&v=08917915800744601",
+    "status": 200,
+    "ct": "application/json;charset=utf-8",
+    "ts": 1794750866586,
+    "bytes": 85,
+    "body": "{\"code\":0,\"dt\":\"success\",\"ec\":200,\"result\":{\"code\":0,\"sig\":\"from bx\"},\"success\":true}"
+  },
+  {
+    "idx": 3,
+    "method": "GET",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadSuccessEt&msg=et.js_load_loaded&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&pageVersion=0.1.130&v=09728273614280727",
+    "status": 200,
+    "ct": "application/json;charset=utf-8",
+    "ts": 1794750866588,
+    "bytes": 85,
+    "body": "{\"code\":0,\"dt\":\"success\",\"ec\":200,\"result\":{\"code\":0,\"sig\":\"from bx\"},\"success\":true}"
+  },
+  {
+    "idx": 4,
+    "method": "GET",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadSuccessNC&msg=nc.js_load_loaded&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&pageVersion=0.1.130&v=08336857950123692",
+    "status": 200,
+    "ct": "application/json;charset=utf-8",
+    "ts": 1794750867108,
+    "bytes": 85,
+    "body": "{\"code\":0,\"dt\":\"success\",\"ec\":200,\"result\":{\"code\":0,\"sig\":\"from bx\"},\"success\":true}"
+  },
+  {
+    "idx": 5,
+    "method": "GET",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com:443/trade/search&pageVersion=0.1.130&type=initSuccess&msg=class%3Dnc_1_nocaptcha%3Dnc_1_nocaptcha%3Dnc_1_wrapperclass%3Dnc_wrapper%3Dnc_1_n1tclass%3Dnc_scale%3Dnc_1__bgclass%3Dnc_bgstyle%3Dwth%3A0px%3Bspan%3Dnc_1_n1zclass%3Dnc_confontbtn_sleara-label%3D%E6%BB%91%E5%9D%97tabnex%3D0role%3Dbuttonstyle%3Dleft%3A0px%3B%EE%98%81span%3Dnc_1__scale_textclass%3Dscale_textsletounlockspanclass%3Dnc-lang-cntata-nc-lang%3DSLIDEPleasesletoerfyspan%3B&uuid=0c6edee561e0a3487b4ca8ccdd6746b6",
+    "status": 200,
+    "ct": "application/json;charset=utf-8",
+    "ts": 1794750867159,
+    "bytes": 85,
+    "body": "{\"code\":0,\"dt\":\"success\",\"ec\":200,\"result\":{\"code\":0,\"sig\":\"from bx\"},\"success\":true}"
+  },
+  {
+    "idx": 6,
+    "method": "POST",
+    "url": "https://umdc-global.alibaba.com/repTw.json?e=2075&sv=181&pv=234&pn=www.alibaba.com&biz=3",
+    "status": 200,
+    "ct": "application/json;charset=utf-8",
+    "ts": 1794750867183,
+    "bytes": 146,
+    "body": "{\"ck\":\"b9ec3d31cbd7a71fdbc6a1fc379036dd\",\"dt\":\"cQlm93344aNjZFZz3IKaQR5ixMM9Cj9R1EoR0TLEApoAeVMD/BV+VXNBOF9Y0GqU+rLIRQpQhCzotYrM4uoNHQ==\",\"ec\":200}"
+  },
+  {
+    "idx": 7,
+    "method": "GET",
+    "url": "https://www.alibaba.com/trade/search/_____tmd_____/report?x5secdata=xg0dd7345965b8726dkn0c6edee561e0a3487b4ca8ccdd6746b61794750866a1924935198a268238522abaac2aaa33b6c7656585d9b89d85b311e155df3b10e__bx__www.alibaba.com%3A443%2Ftrade%2Fsearch&type=loadSuccessRand&uuid=0c6edee561e0a3487b4ca8ccdd6746b6&_rand=zW_lcu4dCotNACOp_tFOhn8Q_gX1T7llB9hYTa1ueN5mwZuWNLbH6MBTTceCivB9EomC7YUYbxfgvUAb960LKzjD4aSsrZcoa-Ol40FKb1GbFQ4-IIF0br_zQ9EoH0omevI0rQfFMCktlcNoYOUtbyZfljbfz45Q",
+    "status": 200,
+    "ct": "application/json;charset=utf-8",
+    "ts": 1794750867254,
+    "bytes": 85,
+    "body": "{\"code\":0,\"dt\":\"success\",\"ec\":200,\"result\":{\"code\":0,\"sig\":\"from bx\"},\"success\":true}"
+  }
+]

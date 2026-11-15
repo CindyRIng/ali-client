@@ -1,0 +1,154 @@
+[
+  {
+    "idx": 0,
+    "method": "GET",
+    "status": 200,
+    "bytes": 66,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://login.alibaba.com/getEnvironment.do?experimentKey=google_one_tap_home"
+  },
+  {
+    "idx": 1,
+    "method": "GET",
+    "status": 200,
+    "bytes": 81,
+    "ct": "text/plain;charset=utf-8",
+    "url": "https://onetalk.alibaba.com/sa/sceneVisible.htm?endpoint=pc&source=home"
+  },
+  {
+    "idx": 2,
+    "method": "GET",
+    "status": 200,
+    "bytes": 740,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://insights.alibaba.com/openservice/gatewayService?endpoint=pc&modelId=12296"
+  },
+  {
+    "idx": 3,
+    "method": "GET",
+    "status": 200,
+    "bytes": 611,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://insights.alibaba.com/openservice/gatewayService?endpoint=pc&modelId=12766"
+  },
+  {
+    "idx": 4,
+    "method": "GET",
+    "status": 200,
+    "bytes": 76,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://insights.alibaba.com/openservice/gatewayService?modelId=12717"
+  },
+  {
+    "idx": 5,
+    "method": "GET",
+    "status": 200,
+    "bytes": 103,
+    "ct": "application/json",
+    "url": "https://www.alibaba.com/dropshipping/ajax/crowd/check"
+  },
+  {
+    "idx": 6,
+    "method": "GET",
+    "status": 200,
+    "bytes": 194,
+    "ct": "text/plain;charset=utf-8",
+    "url": "https://onetalk.alibaba.com/message/manager/unread.htm?ctoken=undefined&dmtrack_pageid=3c015ba3213d4e711794750797&params=%7B%22secAccountId%22%3A%22%22%2C%22needList%22%3Atrue%7D"
+  },
+  {
+    "idx": 7,
+    "method": "GET",
+    "status": 200,
+    "bytes": 3196,
+    "ct": "application/json",
+    "url": "https://myconnections.alibaba.com/ecology/ajax/user/header"
+  },
+  {
+    "idx": 8,
+    "method": "GET",
+    "status": 200,
+    "bytes": 210,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://biz.alibaba.com/contract/ajax/ajaxTaxHeaderEntrance.json?_tb_token_="
+  },
+  {
+    "idx": 9,
+    "method": "GET",
+    "status": 200,
+    "bytes": 101,
+    "ct": "application/json",
+    "url": "https://biz.alibaba.com/lt-address/shipto/recommendShipTo?json=%7B%22scene%22%3A%22pc_header%22%2C%22exposureMethod%22%3A%22BUBBLE%22%7D"
+  },
+  {
+    "idx": 10,
+    "method": "GET",
+    "status": 200,
+    "bytes": 149,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://insights.alibaba.com/openservice/gatewayService?modelId=11069"
+  },
+  {
+    "idx": 11,
+    "method": "GET",
+    "status": 200,
+    "bytes": 82,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://insights.alibaba.com/openservice/gatewayService?endpoint=pc&modelId=12725"
+  },
+  {
+    "idx": 12,
+    "method": "GET",
+    "status": 200,
+    "bytes": 451,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://insights.alibaba.com/openservice/gatewayService?endpoint=pc&modelId=12578"
+  },
+  {
+    "idx": 13,
+    "method": "GET",
+    "status": 200,
+    "bytes": 98388,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://insights.alibaba.com/openservice/gatewayService?modelId=12613&intentionId=8263fa721f3745caacc21a2c66074bb1&pageNo=1&pageSize=36&recommendScene=pcHomeRecommend"
+  },
+  {
+    "idx": 14,
+    "method": "GET",
+    "status": 200,
+    "bytes": 70,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://i.alibaba.com/buyer/footer/geo/eligibility?allowList=KR"
+  },
+  {
+    "idx": 15,
+    "method": "GET",
+    "status": 401,
+    "bytes": 41,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://ug.alibaba.com/api/binding/getToken.json?source=pc_index&countryCode=CN"
+  },
+  {
+    "idx": 16,
+    "method": "POST",
+    "status": 200,
+    "bytes": 122,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://umdc-global.alibaba.com/repTw.json?e=2075&sv=1.0&pv=1.0&pn=www.alibaba.com&biz=3"
+  },
+  {
+    "idx": 17,
+    "method": "GET",
+    "status": 200,
+    "bytes": 2072,
+    "ct": "application/json",
+    "url": "https://cashier.alibaba.com/payment/ajaxQueryLocalizedLogo.json?types=SECURITY,PAYMENT&scene=the-new-footer&buyerCountryCode=CN&deviceType=PC"
+  },
+  {
+    "idx": 18,
+    "method": "GET",
+    "status": 200,
+    "bytes": 75,
+    "ct": "application/json",
+    "url": "https://baize.alibaba.com/ajax/availableSurveyQuery.json?request=%7B%22language%22%3A%22zh%22%2C%22targetType%22%3A%22BUYER%22%2C%22referId%22%3A%22%22%2C%22referType%22%3A%22%22%2C%22sceneCode%22%3A%22buyer_pc_home_questionnaire_location%22%2C%22deviceId%22%3A%22p555I%2BxlZgUCARu5L7nF7yHD%22%2C%22ownerAliId%22%3A%22%22%2C%22forcePushPlanId%22%3A%22%22%7D"
+  }
+]

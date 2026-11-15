@@ -1,0 +1,33 @@
+2026-11-15T14:31:13.473Z launching /home/songqian/.ali-client/profile-anon out= /home/songqian/ali-client/exploration/2026-11-15/artifacts/anon headless= false
+2026-11-15T14:31:14.139Z context launched
+2026-11-15T14:32:13.875Z captcha event {"solved":true,"attempts":[{"n":1,"solved":true,"detail":"ok","kind":"unknown"}]}
+2026-11-15T14:33:26.442Z loop 1 / 4 captcha= false pd= 231938
+2026-11-15T14:33:44.519Z loop 2 / 4 captcha= false pd= 238119
+2026-11-15T14:34:01.864Z loop 3 / 4 captcha= false pd= 188534
+2026-11-15T14:34:20.623Z loop 4 / 4 captcha= false pd= 55681
+2026-11-15T14:36:23.381Z loop 1 / 8 captcha= false pd= 224020
+2026-11-15T14:36:29.380Z loop 2 / 8 captcha= false pd= 228014
+2026-11-15T14:36:35.325Z loop 3 / 8 captcha= false pd= 228094
+2026-11-15T14:36:41.588Z loop 4 / 8 captcha= false pd= 252237
+2026-11-15T14:36:47.561Z loop 5 / 8 captcha= false pd= 237272
+2026-11-15T14:36:53.565Z loop 6 / 8 captcha= false pd= 242573
+2026-11-15T14:36:59.708Z loop 7 / 8 captcha= false pd= 227113
+2026-11-15T14:37:11.899Z captcha event {"solved":true,"attempts":[{"n":1,"solved":true,"detail":"ok","kind":"unknown"}]}
+2026-11-15T14:37:11.994Z loop 8 / 8 captcha= false pd= 239716
+2026-11-15T14:40:47.272Z captcha event {"solved":true,"attempts":[{"n":1,"solved":false,"detail":"still-captcha","kind":"slider"},{"n":2,"solved":true,"detail":"ok","kind":"unknown"}]}
+2026-11-15T14:40:47.415Z loop 1 / 8 captcha= false pd= 221925
+2026-11-15T14:40:52.117Z loop 2 / 8 captcha= false pd= 234138
+2026-11-15T14:40:57.027Z loop 3 / 8 captcha= false pd= 229380
+2026-11-15T14:41:01.957Z loop 4 / 8 captcha= false pd= 237349
+2026-11-15T14:41:06.674Z loop 5 / 8 captcha= false pd= 231700
+2026-11-15T14:41:11.338Z loop 6 / 8 captcha= false pd= 260193
+2026-11-15T14:41:17.265Z loop 7 / 8 captcha= false pd= 246795
+2026-11-15T14:41:22.435Z loop 8 / 8 captcha= false pd= 225685
+2026-11-15T14:47:17.331Z launching /home/songqian/.ali-client/profile-anon out= /home/songqian/ali-client/exploration/2026-11-15/artifacts/anon headless= false
+2026-11-15T14:47:18.159Z context launched
+2026-11-15T14:51:53.675Z launching /home/songqian/.ali-client/profile-anon out= /home/songqian/ali-client/exploration/2026-11-15/artifacts/anon headless= false
+2026-11-15T14:51:54.348Z context launched
+2026-11-15T14:53:43.721Z launching /home/songqian/.ali-client/profile-anon out= /home/songqian/ali-client/exploration/2026-11-15/artifacts/anon headless= false
+2026-11-15T14:53:44.567Z context launched
+2026-11-15T14:54:32.998Z captcha event {"solved":true,"attempts":[{"n":1,"solved":true,"detail":"ok","kind":"unknown"}]}
+2026-11-15T14:55:58.937Z closed

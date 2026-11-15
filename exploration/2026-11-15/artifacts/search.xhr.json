@@ -1,0 +1,122 @@
+[
+  {
+    "idx": 0,
+    "method": "GET",
+    "status": 200,
+    "bytes": 3196,
+    "ct": "application/json",
+    "url": "https://myconnections.alibaba.com/ecology/ajax/user/header"
+  },
+  {
+    "idx": 1,
+    "method": "GET",
+    "status": 200,
+    "bytes": 210,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://biz.alibaba.com/contract/ajax/ajaxTaxHeaderEntrance.json?_tb_token_="
+  },
+  {
+    "idx": 2,
+    "method": "GET",
+    "status": 200,
+    "bytes": 76,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://insights.alibaba.com/openservice/gatewayService?modelId=12717"
+  },
+  {
+    "idx": 3,
+    "method": "POST",
+    "status": 200,
+    "bytes": 122,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://umdc-global.alibaba.com/repTw.json?e=2075&sv=1.0&pv=1.0&pn=onetalk.alibaba.com&biz=3"
+  },
+  {
+    "idx": 4,
+    "method": "GET",
+    "status": 200,
+    "bytes": 101,
+    "ct": "application/json",
+    "url": "https://biz.alibaba.com/lt-address/shipto/recommendShipTo?json=%7B%22scene%22%3A%22pc_header%22%2C%22exposureMethod%22%3A%22BUBBLE%22%7D"
+  },
+  {
+    "idx": 5,
+    "method": "POST",
+    "status": 200,
+    "bytes": 52,
+    "ct": "text/plain;charset=utf-8",
+    "url": "https://onetalk.alibaba.com/message/opTagAuthority.htm"
+  },
+  {
+    "idx": 6,
+    "method": "GET",
+    "status": 200,
+    "bytes": 163,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://acs.h.alibaba.com/h5/mtop.alibaba.icbu.im.chat.alert.config.query/1.0/?jsv=2.7.2&appKey=24889839&t=1794750818589&sign=dd1d55a7181a9cf93385ec87538d9b7d&api=mtop.alibaba.icbu.im.chat.alert.config.query&v=1.0&dataType=json&ecode=1&type=originaljson&data=%7B%7D"
+  },
+  {
+    "idx": 7,
+    "method": "GET",
+    "status": 200,
+    "bytes": 605,
+    "ct": "application/json; charset=utf-8",
+    "url": "https://onetouch.alibaba.com/faas/micro-front?appGroup=icbu-im&appName=im-cloud-drive-cdn&name=micro-service%2Fbuyer-dialog"
+  },
+  {
+    "idx": 8,
+    "method": "GET",
+    "status": 200,
+    "bytes": 145,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://acs.h.alibaba.com/h5/mtop.alibaba.camel.ai.risk/1.0/?jsv=2.7.2&appKey=24889839&t=1794750818728&sign=28f13483faa85869fdb77c1f22cd78e2&api=mtop.alibaba.camel.ai.risk&v=1.0&dataType=json&ecode=1&type=originaljson&data=%7B%7D"
+  },
+  {
+    "idx": 9,
+    "method": "GET",
+    "status": 200,
+    "bytes": 159,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://acs.h.alibaba.com/h5/mtop.alibaba.intl.summary.feedback.check/1.0/?jsv=2.7.2&appKey=24889839&t=1794750818728&sign=28f13483faa85869fdb77c1f22cd78e2&api=mtop.alibaba.intl.summary.feedback.check&v=1.0&dataType=json&ecode=1&type=originaljson&data=%7B%7D"
+  },
+  {
+    "idx": 10,
+    "method": "GET",
+    "status": 200,
+    "bytes": 163,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://acs.h.alibaba.com/h5/mtop.alibaba.intl.ai.assistant.isingrayscale/1.0/?jsv=2.7.2&appKey=24889839&t=1794750818728&sign=08767b71e8cb12b1502767ef4283853e&api=mtop.alibaba.intl.ai.assistant.isInGrayScale&v=1.0&dataType=json&ecode=1&type=originaljson&data=%7B%22functionNames%22%3A%22ai_reception_access_small_language_gray%2Cai_reception_knowlege_optimize_gray%2Ceva_todo_remind_card_gray%2Ccopilot_opportunity_detail_gray%22%7D"
+  },
+  {
+    "idx": 11,
+    "method": "GET",
+    "status": 200,
+    "bytes": 178,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://acs.h.alibaba.com/h5/mtop.alibaba.intl.ai.reception.all.translate.language.query/1.0/?jsv=2.7.2&appKey=24889839&t=1794750818728&sign=28f13483faa85869fdb77c1f22cd78e2&api=mtop.alibaba.intl.ai.reception.all.translate.language.query&v=1.0&dataType=json&ecode=1&type=originaljson&data=%7B%7D"
+  },
+  {
+    "idx": 12,
+    "method": "POST",
+    "status": 200,
+    "bytes": 100,
+    "ct": "text/plain;charset=utf-8",
+    "url": "https://onetalk.alibaba.com/csrf/getToken.htm"
+  },
+  {
+    "idx": 13,
+    "method": "GET",
+    "status": 200,
+    "bytes": 155,
+    "ct": "application/json;charset=utf-8",
+    "url": "https://acs.h.alibaba.com/h5/mtop.alibaba.icbu.chat.account.check/1.0/?jsv=2.7.2&appKey=24889839&t=1794750818790&sign=13cb1c5c88a7d6bf20671ba3dd600a5b&api=mtop.alibaba.icbu.chat.account.check&v=1.0&dataType=json&ecode=1&type=originaljson&data=%7B%22appKey%22%3A%2224889839%22%7D"
+  },
+  {
+    "idx": 14,
+    "method": "GET",
+    "status": 200,
+    "bytes": 100,
+    "ct": "application/json",
+    "url": "https://clouddisk.alibaba.com/csrf/getToken.htm"
+  }
+]

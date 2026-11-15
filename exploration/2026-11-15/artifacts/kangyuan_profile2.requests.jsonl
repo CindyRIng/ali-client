@@ -1,0 +1,5 @@
+{"method":"POST","url":"https://kangyuanxiangsu.en.alibaba.com/event/app/alisite/render.htm","ts":1794751670125,"postData":"esiteSubDomain=https%3A%2F%2Fkangyuanxiangsu.en.alibaba.com&renderType=component&clientType=PC&componentKeys=companyCard"}
+{"method":"POST","url":"https://kangyuanxiangsu.en.alibaba.com/event/app/alisite/render.htm?ctoken=","ts":1794751670125,"postData":"bizId=-1000032&envMode=product&hostToken=undefined&renderType=component&clientType=PC&componentKeys=productGroups"}
+{"method":"POST","url":"https://kangyuanxiangsu.en.alibaba.com/event/app/alisite/render.htm","ts":1794751670125,"postData":"esiteSubDomain=https%3A%2F%2Fkangyuanxiangsu.en.alibaba.com&renderType=component&clientType=PC&componentKeys=footer"}
+{"method":"POST","url":"https://kangyuanxiangsu.en.alibaba.com/event/app/alisite/render.htm","ts":1794751670125,"postData":"esiteSubDomain=https%3A%2F%2Fkangyuanxiangsu.en.alibaba.com&renderType=component&clientType=PC&componentKeys=companyMultimediaSummary"}
+{"method":"GET","url":"https://insights.alibaba.com/openservice/gatewayService?modelId=12717","ts":1794751670171,"postData":null}

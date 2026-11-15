@@ -1,0 +1,1 @@
+{"corsRender":{"ok":true,"status":200,"bytes":16487,"head":"{\"data\":{\"companyCard\":{\"componentId\":\"79\",\"componentKey\":\"companyCard\",\"data\":\"{\\\"data\\\":{\\\"companyHasPassAssessment\\\":"},"corsProfile":{"ok":false,"error":"TypeError: Failed to fetch"},"sameOrigin":{"status":200,"bytes":272561,"hasPageData":true}}

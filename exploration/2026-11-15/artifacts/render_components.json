@@ -1,0 +1,1033 @@
+{
+ "companyCard": {
+  "data": {
+   "companyHasPassAssessment": true,
+   "companyMainMarket": {
+    "authenticated": true,
+    "descMarkets": [
+     {
+      "name": "North America",
+      "percentFormat": "50.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "Mid East",
+      "percentFormat": "20.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "Western Europe",
+      "percentFormat": "10.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "Domestic Market",
+      "percentFormat": "6.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "South America",
+      "percentFormat": "5.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "Northern Europe",
+      "percentFormat": "5.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "Eastern Europe",
+      "percentFormat": "1.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "Southeast Asia",
+      "percentFormat": "1.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "Eastern Asia",
+      "percentFormat": "1.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     },
+     {
+      "name": "South Asia",
+      "percentFormat": "1.00%",
+      "products": "Solid Tires, Forklift Tires, PU Wheels, Rubber Wheels, Nylon Wheels"
+     }
+    ]
+   },
+   "companyName": "Hengshui Kangyuan Rubber And Plastic Technology Co., Ltd.",
+   "supplierResponseRate": "98.5%",
+   "companyRegisterFullCountry": "China",
+   "aliMemberEncryptId": "IDX1xf9UPbQawi_ixDC50qbGcCLcpZFBwFAf3WJF1z8_7ESbHr_Y0Ltr1o_imbctwb75",
+   "accountIsPaidMember": true,
+   "isGold": true,
+   "companyHasAssessmentVideo": true,
+   "sesameUnsolvedComplaintNum": 0,
+   "esiteUrls": {
+    "companyVideoUrl": "/company_profile/video_introdution.html",
+    "contactsUrl": "/contactinfo.html",
+    "homeUrl": "/",
+    "companyProfileUrl": "/company_profile.html",
+    "companyFeedbackUrl": "/company_profile/feedback.html",
+    "trustPassProfileAvUrl": "/company_profile.html?subpage=onsite",
+    "trustPassProfileOnsiteUrl": "/company_profile.html?subpage=onsite",
+    "transactionLevelUrl": "/company_profile/transaction_level.html",
+    "tradeCapacityUrl": "/company_profile/trade_capacity.html",
+    "creditIndexUrl": "https://tradeassurance.alibaba.com",
+    "trustPassProfileAssessmentUrl": "/company_profile/trustpass_profile.html?certification_type=intl_assessment",
+    "tradeHistoryUrl": "/company_profile/trade_history.html"
+   },
+   "productIsMarketGoods": null,
+   "accountIsVm": false,
+   "isShowFeedbackBuyerNum": true,
+   "companyEncryptId": "IDX1SN1I0nLRKUa_ur8e5NYooN30QQge7Vdd0UhX69eMSBlrBCflQCAmxpJf907Tk2B7",
+   "productEncryptId": null,
+   "authCards": {
+    "fieldName": "authCards",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": {
+     "authGroupInfoList": [
+      {
+       "authGroup": "basicCapacity",
+       "authInfoList": [
+        {
+         "authDataShowType": "keyValue",
+         "authDataType": "authOnline",
+         "authDesc": "其他买家对店铺的综合评分",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.StorescoreHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "storeScore",
+         "authName": "店铺评分",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.Storescore",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": "https://kangyuanxiangsu.en.alibaba.com/company_profile/feedback.html",
+         "authSubInfoList": null,
+         "authValue": "4.6/5",
+         "canSelected": true,
+         "defaultSelected": true,
+         "maxNumber": 0,
+         "recommended": false,
+         "selected": true,
+         "tagIdentify": null
+        },
+        {
+         "authDataShowType": "keyValue",
+         "authDataType": "authOnline",
+         "authDesc": "商家在国际站上的平均准时发货率",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.On-timedeliveryrateHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "onTimeDeliveryRate",
+         "authName": "准时发货率",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.On-timedeliveryrate",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "100.0%",
+         "canSelected": true,
+         "defaultSelected": true,
+         "maxNumber": 0,
+         "recommended": false,
+         "selected": true,
+         "tagIdentify": null
+        },
+        {
+         "authDataShowType": "keyValue",
+         "authDataType": "authOnline",
+         "authDesc": "商家在国际站上的平均响应时长",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.ResponsetimeHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "responseTime",
+         "authName": "阿里国际站响应时间",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.Responsetime",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "≤2h",
+         "canSelected": true,
+         "defaultSelected": true,
+         "maxNumber": 0,
+         "recommended": false,
+         "selected": true,
+         "tagIdentify": null
+        },
+        {
+         "authDataShowType": "keyValue",
+         "authDataType": "authReport",
+         "authDesc": "total是指当前商家近一年的全部出口额，并且经过三方认证确认",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.TransactionstotalnameHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "totalExportRevenuePreYear",
+         "authName": "过去一年总出口额",
+         "authNameForBuyer": "过去一年总出口额",
+         "authNameMdsKey": "verifiedCard.Transactionstotalname",
+         "authNameMdsKeyForBuyer": "verifiedCard.Transactionstotalname",
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "$2231223",
+         "canSelected": true,
+         "defaultSelected": false,
+         "maxNumber": 0,
+         "recommended": true,
+         "selected": true,
+         "tagIdentify": null
+        },
+        {
+         "authDataShowType": "keyValue",
+         "authDataType": "authReport",
+         "authDesc": "数据来源于金品认证报告的建筑物面积信息。",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.FloorspaceHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "companyBuildingTotalLandSize",
+         "authName": "房屋面积",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.Floorspace",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "5000m²",
+         "canSelected": true,
+         "defaultSelected": false,
+         "maxNumber": 0,
+         "recommended": true,
+         "selected": true,
+         "tagIdentify": null
+        },
+        {
+         "authDataShowType": "keyValue",
+         "authDataType": "authReport",
+         "authDesc": "商家的产线数量",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.ProductionlinesHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "productionCapacityProductionLineNumber",
+         "authName": "产线数量",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.Productionlines",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "10",
+         "canSelected": true,
+         "defaultSelected": false,
+         "maxNumber": 0,
+         "recommended": true,
+         "selected": true,
+         "tagIdentify": null
+        }
+       ],
+       "authRedirectUrl": null,
+       "maxNumber": 6
+      },
+      {
+       "authGroup": "productionServiceCapacity",
+       "authInfoList": [
+        {
+         "authDataShowType": "string",
+         "authDataType": "authTag",
+         "authDesc": "商家支持根据设计图进行定制",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.CustomizationfromDesignsHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "customizeSrvcTypeDesignCustom",
+         "authName": "来图定制",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.CustomizationfromDesigns",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "来图定制",
+         "canSelected": true,
+         "defaultSelected": false,
+         "maxNumber": 0,
+         "recommended": true,
+         "selected": true,
+         "tagIdentify": "customize_srvc_type_design_custom"
+        },
+        {
+         "authDataShowType": "string",
+         "authDataType": "authTag",
+         "authDesc": "商家支持按照指定的需求描述，进行设计及定制",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.FullCustomizationHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "customizeSrvcTypeFullCustom",
+         "authName": "按需定制",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.FullCustomization",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "按需定制",
+         "canSelected": true,
+         "defaultSelected": false,
+         "maxNumber": 0,
+         "recommended": true,
+         "selected": true,
+         "tagIdentify": "customize_srvc_type_full_custom"
+        }
+       ],
+       "authRedirectUrl": null,
+       "maxNumber": 2
+      },
+      {
+       "authGroup": "qualityAssuranceCapability",
+       "authInfoList": [
+        {
+         "authDataShowType": "string",
+         "authDataType": "authReport",
+         "authDesc": "支持客户进行质量追溯",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.qualityTraceabilityHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "qualityAfterSalesCanTraced",
+         "authName": "有原材料追溯标识",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.Raw-materialtraceabilityidentification",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "有原材料追溯标识",
+         "canSelected": true,
+         "defaultSelected": false,
+         "maxNumber": 0,
+         "recommended": false,
+         "selected": true,
+         "tagIdentify": null
+        },
+        {
+         "authDataShowType": "string",
+         "authDataType": "authTag",
+         "authDesc": "商家有成品检验流程，其生产的商品100%经过了成品检验",
+         "authDescForMerchant": null,
+         "authDescMdsKey": "verifiedCard.FinishedProductInspectionHover",
+         "authDescMdsKeyForMerchant": "",
+         "authExtra": null,
+         "authKey": "productInspection",
+         "authName": "经过成品检验",
+         "authNameForBuyer": null,
+         "authNameMdsKey": "verifiedCard.FinishedProductInspection",
+         "authNameMdsKeyForBuyer": null,
+         "authPhoto": null,
+         "authRedirectUrl": null,
+         "authSubInfoList": null,
+         "authValue": "经过成品检验",
+         "canSelected": true,
+         "defaultSelected": false,
+         "maxNumber": 0,
+         "recommended": false,
+         "selected": true,
+         "tagIdentify": "product_inspection"
+        }
+       ],
+       "authRedirectUrl": null,
+       "maxNumber": 2
+      }
+     ],
+     "identityInfo": {
+      "identityDesc": "企业类型认证结果为工厂或工贸一体",
+      "identityDescMdsKey": "Ma-cardManagement.Custommanufacturer",
+      "identityFrontDesc": "适合需要高度定制和专业化产品的买家，定制制造商拥有专门的生产线与定制设计能力，强调满足质量、交付和售后服务等要求。",
+      "identityFrontDescMdsKey": "Front.card.desc.Custommanufacturer",
+      "identityFrontTitle": "什么是实力工厂",
+      "identityFrontTitleMdsKey": "Front.card.title.Custommanufacturer",
+      "identityFrontVideoCover": "https://gw.alicdn.com/imgextra/i2/O1CN01lR2MXB1M5ux9T7Rwj_!!6000000001384-2-tps-1272-716.png",
+      "identityFrontVideoUrl": "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/387079046751.mp4?SBizCode=xiaoer",
+      "identityKey": "strengthFactory",
+      "identityName": "实力工厂",
+      "identityNameMdsKey": "verifiedCard.Custommanufacturer"
+     }
+    },
+    "verified": null
+   },
+   "productIsExhibition": false,
+   "sesameSolvedComplaintNum": 0,
+   "companyRegisterCountry": "CN",
+   "tradeHalfYear": {
+    "channel": null,
+    "ordAmt": null,
+    "ordAmt6m": null,
+    "ordCnt6m": null
+   },
+   "sesameReplyAvgTimeRange": "≤2h",
+   "deepCertLogos": null,
+   "companyHasPassAV": false,
+   "sesameFirstReplyRate": "98.5%",
+   "supplierRating": 6,
+   "companyHasPassOnsite": true,
+   "supplierStars": 2,
+   "baoAccountAmount": "96,000",
+   "baoAccountIsDisplayAssurance": true,
+   "companyBusinessType": {
+    "authenticated": true,
+    "value": "Manufacturer, Trading Company"
+   },
+   "tradeIsView": false,
+   "esiteSubDomain": "kangyuanxiangsu.en.alibaba.com",
+   "supplierResponseTime": "≤2h",
+   "companyJoinYears": "6",
+   "companyHasPassBaseVerify": false,
+   "supplierMarketSuccessfulProductCount": 0,
+   "baoAccountCreditLevel": 4,
+   "productOwnMemberAlitalkEncryptId": null,
+   "supplierRatingReviews": {
+    "averageStar": "4.6",
+    "latitudeScoreDTOList": [
+     {
+      "latitudeAverageScore": "4.6",
+      "latitudeType": "supplierServices",
+      "scoreScatterDTOList": [
+       {
+        "scatterCount": 1,
+        "scatterPercentage": 10,
+        "scatterValue": 1
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 2
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 3
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 4
+       },
+       {
+        "scatterCount": 9,
+        "scatterPercentage": 90,
+        "scatterValue": 5
+       }
+      ]
+     },
+     {
+      "latitudeAverageScore": "4.6",
+      "latitudeType": "shippingTime",
+      "scoreScatterDTOList": [
+       {
+        "scatterCount": 1,
+        "scatterPercentage": 10,
+        "scatterValue": 1
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 2
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 3
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 4
+       },
+       {
+        "scatterCount": 9,
+        "scatterPercentage": 90,
+        "scatterValue": 5
+       }
+      ]
+     },
+     {
+      "latitudeAverageScore": "4.7",
+      "latitudeType": "productQuality",
+      "scoreScatterDTOList": [
+       {
+        "scatterCount": 1,
+        "scatterPercentage": 6,
+        "scatterValue": 1
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 2
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 3
+       },
+       {
+        "scatterCount": 0,
+        "scatterPercentage": 0,
+        "scatterValue": 4
+       },
+       {
+        "scatterCount": 15,
+        "scatterPercentage": 94,
+        "scatterValue": 5
+       }
+      ]
+     }
+    ],
+    "maxStar": 5,
+    "totalReviewOrderCount": 10
+   },
+   "isShowComplaintsInfo": true,
+   "hasTAOrderYear": true
+  },
+  "definition": {
+   "title": "Company Card",
+   "gridWidth": null
+  },
+  "isForceSync": false,
+  "i18n": {
+   "RatingStarTip": "商家星等级（星等级）把商家分为 6 个等级（0-5，其中第 5 级为最高等级）。点击「更多详情」按钮了解星等级计算方式。",
+   "substantiatedComplaints": "过去90天对该供应商的投诉",
+   "clickToView": "点击查看公司视频",
+   "transactionLevel": "交易等级",
+   "showSuppliers": "显示通过阿里巴巴或第三方检查公司认证的供应商",
+   "certificationDesc": "以上证书由受信任的第三方进行身份验证。",
+   "responseRate": "回复率",
+   "unResolved": "未解决",
+   "qualityControl": "品控",
+   "trustPass": "供应商认证",
+   "theSupplierCompany": "供应商的公司所在地已由阿里巴巴员工检查，以确保现场作业存在。第三方认证公司已确认该供应商的法律地位。点击查看详情。",
+   "outOf": "总分5.0",
+   "_ns_": "shopModule.companyCard",
+   "topMarkets": "前3大市场",
+   "vrFactory": "VR 展厅",
+   "shippingTime": "装运时间",
+   "productsSold": "售出产品",
+   "viewDetails": "View details",
+   "goldSupplier": "黄金供应商",
+   "communication": "联系",
+   "RatingStar": "商家星等级",
+   "viewMore": "更多详情",
+   "resolved": "已解决",
+   "productAsDescribed": "产品描述",
+   "servicesProvided": "服务",
+   "responseTime": "回复时间",
+   "transactions": "交易",
+   "assessedByOne": "由三方检验公司认证。点击图标下载详细认证报告。",
+   "supplierAssessments": "供应商认证：",
+   "viewAll": "View all",
+   "certification": "认证",
+   "tradeAssurance": "信用保障",
+   "theSupplier": "过去6个月通过Alibaba.com进行的交易",
+   "contactDetail": "联系方式",
+   "certificates": "证书",
+   "companyLogoDesc": "与卖方相关的评估、认证和/或检查项目由 SGS 集团进行",
+   "verifiedSupplier": "供应商",
+   "cardSupplier": "100%产品质量保证和按时装运"
+  }
+ },
+ "shopSign": {
+  "data": {
+   "companyRegisterCountryIcon": {
+    "fieldName": "companyRegisterCountryIcon",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": "https://s.alicdn.com/@icon/flag/assets/cn.png",
+    "verified": null
+   },
+   "companyName": "Hengshui Kangyuan Rubber And Plastic Technology Co., Ltd.",
+   "accountIsPaidMember": true,
+   "companyHasAssessmentVideo": true,
+   "accountJoinYears": {
+    "fieldName": null,
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": "6",
+    "verified": null
+   },
+   "authIdentityInfo": {
+    "fieldName": "authIdentityInfo",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": null,
+    "verified": null
+   },
+   "esiteUrls": {
+    "companyVideoUrl": "https://kangyuanxiangsu.en.alibaba.com/company_profile/video_introdution.html",
+    "contactsUrl": "https://kangyuanxiangsu.en.alibaba.com/contactinfo.html",
+    "homeUrl": "https://kangyuanxiangsu.en.alibaba.com/",
+    "companyProfileUrl": "https://kangyuanxiangsu.en.alibaba.com/company_profile.html",
+    "companyFeedbackUrl": "https://kangyuanxiangsu.en.alibaba.com/company_profile/feedback.html",
+    "trustPassProfileAvUrl": "/company_profile.html?subpage=onsite",
+    "trustPassProfileOnsiteUrl": "/company_profile.html?subpage=onsite",
+    "transactionLevelUrl": "https://kangyuanxiangsu.en.alibaba.com/company_profile/transaction_level.html",
+    "tradeCapacityUrl": "https://kangyuanxiangsu.en.alibaba.com/company_profile/trade_capacity.html",
+    "creditIndexUrl": "https://kangyuanxiangsu.en.alibaba.com/credit.html",
+    "trustPassProfileAssessmentUrl": "https://kangyuanxiangsu.en.alibaba.com/company_profile/trustpass_profile.html?certification_type=intl_assessment",
+    "tradeHistoryUrl": "https://kangyuanxiangsu.en.alibaba.com/company_profile/trade_history.html"
+   },
+   "liveInStore": {
+    "fieldName": "liveInStore",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": null,
+    "verified": null
+   },
+   "supplierMainProducts": [
+    "实心轮胎",
+    "叉车轮胎",
+    "PU轮",
+    "橡胶轮",
+    "尼龙轮"
+   ],
+   "companyIdentityInfo": {
+    "fieldName": "companyIdentityInfo",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": null,
+    "verified": null
+   },
+   "assessmentCertCompany": {
+    "halfSampleImgUrl": "http://is.alicdn.com/simg/single/icon/cap_report_single.gif",
+    "introductionUrl": "https://activities.alibaba.com/alibaba/sgs_goup.php?tracelog=sgs_group",
+    "logoTips": "SGS Group",
+    "logoUrl": "https://img.alicdn.com/imgextra/i1/O1CN01vOHczL1rPqaObT7fV_!!6000000005624-2-tps-512-248.png",
+    "name": "sgs",
+    "sampleImgUrl": "http://is.alicdn.com/simg/single/icon/cap_report_preview.gif",
+    "title": "SGS Group"
+   },
+   "maxStar": {
+    "fieldName": "maxStar",
+    "hover": null,
+    "icon": null,
+    "title": "maxStar",
+    "type": null,
+    "value": 5,
+    "verified": null
+   },
+   "queryProductFromCart": false,
+   "companyRegisterCountry": "CN",
+   "siteType": "",
+   "currentMenu": null,
+   "assessmentCertCompanyTitle": {
+    "fieldName": "assessmentCertCompanyTitle",
+    "hover": null,
+    "icon": null,
+    "title": "assessmentCertCompanyTitle",
+    "type": null,
+    "value": null,
+    "verified": null
+   },
+   "isLocalSupplier": {
+    "fieldName": "isLocalSupplier",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": false,
+    "verified": null
+   },
+   "baoAccountIsDisplayAssurance": true,
+   "esiteSubDomain": "kangyuanxiangsu.en.alibaba.com",
+   "companyId": 258180302,
+   "companyHasPassBaseVerify": false,
+   "selfSupportShopTag": false,
+   "hasTAOrderYear": true,
+   "companyHasPassAssessment": true,
+   "atomTagExists": false,
+   "isNewGolden": false,
+   "companyLogoFileUrl": "//sc04.alicdn.com/kf/Hd849a67e0c634a6a9741488365909888F.jpg",
+   "factoryRank": {
+    "fieldName": "factoryRank",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": {
+     "rankInfo": "物料搬运设备部件 热销第 2",
+     "venueUrl": "https://sale.alibaba.com/p/factories/v2/rank_list.html?wx_screen_direc=portrait&wx_navbar_transparent=true&path=/p/factories/v2/rank_list.html&ncms_spm=a27aq.24735993&prefetchKey=marchexpo&cardId=1435&cardType=101003268&companyIds=258180302&topOfferIds=&rankCapabilityId=&templateBusinessCode=&trafficsource=shop",
+     "rankType": "factory",
+     "rankList": [
+      {
+       "rankInfo": "物料搬运设备部件 热销第 2",
+       "venueUrl": "https://sale.alibaba.com/p/factories/v2/rank_list.html?wx_screen_direc=portrait&wx_navbar_transparent=true&path=/p/factories/v2/rank_list.html&ncms_spm=a27aq.24735993&prefetchKey=marchexpo&cardId=1435&cardType=101003268&companyIds=258180302&topOfferIds=&rankCapabilityId=&templateBusinessCode=&trafficsource=shop",
+       "rankType": "factory",
+       "rankList": null,
+       "traceInfo": {
+        "name": "minisite_ranking_tag",
+        "param": {
+         "rankType": "factory",
+         "cateName": "物料搬运设备部件",
+         "companyId": "258180302",
+         "rankOrder": 2,
+         "tagPosition": 1,
+         "isFloatLayer": false
+        }
+       },
+       "rankName": "热门爆款",
+       "wordId": "1435",
+       "icon": null,
+       "index": 2,
+       "rankDescription": null,
+       "id": "101001551",
+       "wordName": "物料搬运设备部件"
+      }
+     ],
+     "traceInfo": {
+      "name": "minisite_ranking_tag",
+      "param": {
+       "rankType": "factory",
+       "cateName": "物料搬运设备部件",
+       "companyId": "258180302",
+       "rankOrder": 2,
+       "tagPosition": 1,
+       "isFloatLayer": false
+      }
+     },
+     "rankName": "热门爆款",
+     "wordId": "1435",
+     "icon": null,
+     "index": 2,
+     "rankDescription": null,
+     "id": "101001551",
+     "wordName": "物料搬运设备部件"
+    },
+    "verified": null
+   },
+   "hasGlobalView": false,
+   "companyAbilityTags": {
+    "resultMapList": [
+     {
+      "tagNameValue": "ODM services available",
+      "tagIdentity": "odm_services_available",
+      "icon": "TB1jikuF7P2gK0jSZPxXXacQpXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告，基于研发板块ODM服务的综合评估。"
+     },
+     {
+      "tagNameValue": "On-site technical support",
+      "tagIdentity": "expatriate_engineer_service",
+      "icon": "TB1BsRiFRr0gK0jSZFnXXbRRXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告，经独立第三方评估，提供外籍工程师服务的供应商。"
+     },
+     {
+      "tagNameValue": "Total staff (32)",
+      "tagIdentity": "staff_count",
+      "icon": "TB1rIMyF.Y1gK0jSZFCXXcwqXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告的员工人数信息。"
+     },
+     {
+      "tagNameValue": "Competitive OEM factory",
+      "tagIdentity": "competitive_oem_factory",
+      "icon": "TB1BsRiFRr0gK0jSZFnXXbRRXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告的企业类型，针对有工厂的供应商，拥有2星级或以上的评级，并在阿里巴巴国际站经营"
+     },
+     {
+      "tagNameValue": "Years in industry(8)",
+      "tagIdentity": "company_industry_experience",
+      "icon": "TB1QAuBF2b2gK0jSZK9XXaEgFXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告，对行业经验的综合评估。"
+     },
+     {
+      "tagNameValue": "Annual sales US $6,216,823",
+      "tagIdentity": "annual_sales",
+      "icon": "TB1KnAxF4v1gK0jSZFFXXb0sXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告的年销售额信息。"
+     },
+     {
+      "tagNameValue": "Annual export US $2,231,223",
+      "tagIdentity": "annual_export",
+      "icon": "TB1pW3yF1L2gK0jSZFmXXc7iXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告的年出口额信息。"
+     },
+     {
+      "tagNameValue": "Sample-based customization",
+      "tagIdentity": "customize_srvc_type_sample_custom",
+      "icon": "TB18hAvF7L0gK0jSZFAXXcA9pXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告，基于设计能力的综合评估。"
+     },
+     {
+      "tagNameValue": "Full customization",
+      "tagIdentity": "customize_srvc_type_full_custom",
+      "icon": "TB10QwuF.T1gK0jSZFrXXcNCXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告，基于设计能力的综合评估。"
+     },
+     {
+      "tagNameValue": "Design-based customization",
+      "tagIdentity": "customize_srvc_type_design_custom",
+      "icon": "TB1C_AxF4v1gK0jSZFFXXb0sXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告，基于设计能力的综合评估。"
+     },
+     {
+      "tagNameValue": "Cooperated suppliers (5)",
+      "tagIdentity": "cooperated_suppliers",
+      "icon": "TB1BsRiFRr0gK0jSZFnXXbRRXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告，根据独立第三方评估，供应商在过去三年中与之合作的工厂数量。"
+     },
+     {
+      "tagNameValue": "Total floorspace (5,000㎡)",
+      "tagIdentity": "company_covers",
+      "icon": "TB1iVZyFYH1gK0jSZFwXXc7aXXa-204-204.png",
+      "tagDescValue": "数据来源于金品认证报告的建筑物面积信息。"
+     }
+    ],
+    "isSuccess": "true"
+   },
+   "companyRegisterProvince": {
+    "fieldName": "companyRegisterProvince",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": "Hebei",
+    "verified": null
+   },
+   "accountIsVm": false,
+   "searchUri": "/search/product",
+   "goldCPUrls": {
+    "panoramicPicture": "https://kangyuanxiangsu.en.alibaba.com/company_profile.html#panoramicPicture",
+    "assessedReport": "https://kangyuanxiangsu.en.alibaba.com/company_profile.html#assessedReport",
+    "assessedVedio": "https://kangyuanxiangsu.en.alibaba.com/company_profile.html#assessedVedio",
+    "mainProduct": "https://kangyuanxiangsu.en.alibaba.com/company_profile.html#mainProduct"
+   },
+   "menus": [],
+   "deepCertLogos": null,
+   "companyHasPassAV": false,
+   "companyHasPassOnsite": true,
+   "supplierStars": 2,
+   "supplierOperationalAddress": {
+    "fieldName": "supplierOperationalAddress",
+    "hover": null,
+    "icon": null,
+    "title": "{\"address\":\"INTL_ONSITE\",\"city\":\"INTL_ONSITE\",\"country\":\"INTL_ONSITE\",\"province\":\"INTL_ONSITE\"}",
+    "type": null,
+    "value": "Zhang Qi Village, Jianghe Town, Hengshui, Hebei, China",
+    "verified": null
+   },
+   "companyLocation": {
+    "fieldName": "companyLocation",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": "Hebei, China",
+    "verified": null
+   },
+   "isVip": false,
+   "companyBusinessType": {
+    "authenticated": true,
+    "value": "Manufacturer, Trading Company"
+   },
+   "averageStar": {
+    "fieldName": "averageStar",
+    "hover": null,
+    "icon": null,
+    "title": "averageStar",
+    "type": null,
+    "value": "4.6",
+    "verified": null
+   },
+   "companyJoinYears": "6",
+   "mapAddress": {
+    "fieldName": "mapAddress",
+    "hover": null,
+    "icon": null,
+    "title": null,
+    "type": null,
+    "value": null,
+    "verified": null
+   }
+  },
+  "definition": {
+   "title": "Shop Sign",
+   "gridWidth": null
+  },
+  "isForceSync": false,
+  "config": {
+   "fontFamily": "Roboto",
+   "color": "#FFFFFF",
+   "isUseDefaultBg": true,
+   "isShowDescription": true,
+   "isShowBgImage": true,
+   "fontSize": "28",
+   "fontWeight": "blod"
+  },
+  "i18n": {
+   "app.year": "{years} yr",
+   "clickToView": "点击查看公司视频",
+   "app.FastestDeliveryIn5Days": "最快 5 天内发货",
+   "menu_products": "产品",
+   "transactionLevel": "交易等级",
+   "search_company": "在此公司中搜索",
+   "navBuyerInteraction": "买家互动",
+   "cancel_favor": "取消收藏成功",
+   "responseRate": "回复率",
+   "pageVideo": "视频专区",
+   "strengthBrand": "适合希望从成熟品牌进口与备货并在其市场上零售的买家，品牌持有者具备为独立工厂生产的产品在海外分销的能力。",
+   "rankInquery": "热门爆款",
+   "years": "Alibaba.com  {years} 年经营经验",
+   "learnMore": "了解更多",
+   "pagePromtionArea": "营销专区",
+   "productRankDesc": "供应商排名基于销量每周更新。",
+   "topMarkets": "前3大市场",
+   "navCompanyOverview": "公司概况",
+   "menu_profile": "简介",
+   "yr": "年",
+   "rank": "{rankListWord} 类 {rankName} ",
+   "searchIn": "店内搜索",
+   "app.lowerShippingFee": "运费更低",
+   "navTransactionHistory": "交易历史",
+   "verifyTitle": "Supplier verified on-site by {0}",
+   "app.fasterDelivery": "更快送达",
+   "followFailed": "关注失败，请重试",
+   "liveContentPage": "频道",
+   "assessmentReport": "工厂检验报告",
+   "navTrademarksPatents": "商标专利",
+   "transactions": "交易",
+   "assessedByOne": "由第三方检查公司认证。点击图标下载详细认证报告。",
+   "gmvChallengeTip": "EU Picks is Alibaba.com’s curated selection of premium products from experienced exporters to Europe that support EU compliance, backed by money-back commitment.",
+   "verified_trading_capabilities": "Verified trading capabilities",
+   "cancle": "取消",
+   "following": "已关注",
+   "rankGoldFactory": "金牌工厂",
+   "pageHome": "首页",
+   "mainProduct": "主营产品: ",
+   "navCompanyCapability": "公司能力",
+   "navProductionCapacity": "生产能力",
+   "substantiatedComplaints": "过去90天对该供应商的投诉",
+   "RatingStarTip": "商家星等级（星等级）把商家分为 6 个等级（0-5，其中第 5 级为最高等级）。点击「更多详情」按钮了解星等级计算方式。",
+   "menu_home": "主页",
+   "app.years": "{0} 年",
+   "supplierTrade": "供应商信保额度：",
+   "search": "Search",
+   "chatNow": "马上聊天",
+   "theSupplierSupports": "该供应商支持信保交易-该服务将从支付到交付全程保护你的订单。",
+   "_ns_": "shopModule.shopSign",
+   "member": "会员",
+   "feeds": "动态",
+   "menu_promotion": "促销活动",
+   "navTransactionLevel": "交易等级",
+   "goldSupplier": "出口通会员",
+   "resolved": "已解决",
+   "navTradeShows": "贸易展会",
+   "sendATMMsgFailed": "发送失败。请稍后再试。",
+   "responseTime": "回复时间",
+   "gmvChallengeBadgeNA": "经验丰富的北美出口商",
+   "seeAllCategories": "查看所有",
+   "staff": "{0} 名员工",
+   "verifieBy": "该供应商由{name}进行评估、认证和/或检查。",
+   "theSupplier": "过去6个月通过阿里巴巴网站进行的交易",
+   "navBusinessPerformance": "经营业绩",
+   "menu_categories": "类别",
+   "navAwardsCertification": "获奖证书",
+   "app.localSeller": "本地供应商:",
+   "strengthFactory": "适合需要高度定制和专业化产品的买家，定制制造商拥有专门的生产线与定制设计能力，强调满足质量、交付和售后服务等要求。",
+   "yrs": "年",
+   "cardSupplier": "100%产品质量保证和按时装运",
+   "strengthService": "对于寻求专业高质量服务的买家，服务提供商可以根据客户的个性化需求进行定制服务，包括物流、检验、测试和认证、采购代理和设计服务。",
+   "unfollowFailed": "取消关注失败，请重试",
+   "gsSignVerify": "由 {0}",
+   "gmvChallengeBadgeCountry": "拥有向 {0}出口的丰富经验",
+   "what_is_Verified_Supplier": "什么是经过验证的供应商",
+   "verifyTip": "该卖方由 {0} 评估、认证和/或检查",
+   "euPicksTip": "“EU top-seller”供应商是表现卓越的欧盟优选合作伙伴，其销售业绩突出或增长迅猛，这意味着您将与那些已掌握本地市场制胜之道的成功者携手共赢。",
+   "pageProductNew": "新品",
+   "menu_video": "视频专区",
+   "app.prompt": "请输入关键词",
+   "unfollowSuccess": "Unfollow successfully",
+   "theSupplierCompany": "供应商的公司所在地已由阿里巴巴员工检查，以确保现场作业的存在。第三方认证公司已经确认了供应商的法律地位。点击查看详情。",
+   "outOf": "总分5.0",
+   "navTradeCapacity": "贸易能力",
+   "add_favor": "成功添加收藏",
+   "contactSupplier": "联系商家",
+   "rankDelivery": "准时交货",
+   "no_result": "没有结果",
+   "communication": "联系",
+   "menu_feeds": "发现",
+   "gmvChallengeBadgeLA": "经验丰富的拉丁美洲出口商",
+   "productAsDescribed": "产品如描述",
+   "menu_member": "会员",
+   "pageCustomProducts": "定制产品",
+   "app.searchInThisStore": "请输入关键词",
+   "supplierAssessments": "供应商认证：",
+   "sendATMMsgSuccess": "我对您的店铺感兴趣，这是我的公司名片",
+   "tradeAssurance": "信用保障",
+   "followers": "{0} 粉丝",
+   "pageCompanyProfile": "公司档案",
+   "searchInThisStore": "请输入关键词",
+   "app.allStore": "所有店铺",
+   "send": "发送",
+   "verified_production_capabilities": "Verified production capabilities",
+   "navRatingsAndReviews": "评分评价",
+   "showSuppliers": "显示由阿里巴巴和第三方检查公司认证的供应商。",
+   "app.noImportCharges": "无进口费",
+   "shopModule.shopSign": "店招-test",
+   "strengthTrading": "适合追求低 MOQ 与产品丰富性的买家，跨行业供应商以其丰富的行业和服务经验以及对新兴产品趋势的深刻理解为后盾，提供小单定制、端到端物流解决方案与跨品类采购服务。",
+   "rankGmv": "优质供应商",
+   "unResolved": "未解决",
+   "showSuppliersThat": "显示已被阿里巴巴或第三方检查公司认证的供应商",
+   "rankLeaderBoard": "行业排行榜",
+   "viewLocation": "查看准确位置",
+   "app.inThisStore": "本店",
+   "shippingTime": "装运时间",
+   "productsSold": "售出产品",
+   "navQualityControl": "质量控制",
+   "viewMore": "查看更多",
+   "No": "排名第",
+   "assessmentSupplier": "金品诚企会员",
+   "navAdditionalInfo": "其它信息",
+   "assessmentProduct": "验证生产线",
+   "follower": "{0} 粉丝",
+   "pageProductCategories": "产品",
+   "sendATMContent": "您可以向企业发送名片以获取更多信息",
+   "navRDCapacity": "研发能力",
+   "productRankName": "精选供应商",
+   "followSuccess": "Follow successfully",
+   "verified_QA_QC_capabilities": "Verified QA/QC capabilities",
+   "factoryRankDesc": "工厂排名基于销量每周更新。",
+   "follow": "关注",
+   "assessmentVideo": "认证视频",
+   "gmvChallengeBadgeAPAC": "亚洲龙头供应商",
+   "rankResponse": "快速响应时间",
+   "factoryRankName": "精选制造商",
+   "contactDetail": "联系方式",
+   "goldSupplierTip": "出口通会员是阿里巴巴供应商的高级会员。我们为会员提供了多种方式来提升产品销量，最大限度地提高产品曝光率和增加投资回报。",
+   "assessmentPanoramic": "全景图",
+   "pageContacts": "联系信息",
+   "euPicksLabel": "EU top-seller",
+   "joinYears": "{0} 年"
+  }
+ }
+}

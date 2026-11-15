@@ -1,0 +1,25 @@
+2026-11-15T13:56:07.896Z launching /home/songqian/.ali-recon-profile headful= true
+2026-11-15T13:56:08.575Z context launched
+2026-11-15T14:00:12.133Z closed
+2026-11-15T14:00:24.395Z launching /home/songqian/.ali-recon-profile headful= true
+2026-11-15T14:00:25.209Z context launched
+2026-11-15T14:00:38.677Z solveSlider geo {"hx":832.9375,"hy":719.9375,"hw":42,"tx":809.9375,"tw":300}
+2026-11-15T14:00:46.696Z autoSolve after https://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&has4Tab=true&keywords=hebei&tab=supplier&country=CN captcha= true
+2026-11-15T14:01:17.750Z closed
+2026-11-15T14:01:27.935Z launching /home/songqian/.ali-recon-profile headful= true
+2026-11-15T14:01:28.776Z context launched
+2026-11-15T14:01:41.543Z solveSlider geo {"hx":832.9375,"hy":719.9375,"hw":42,"tx":809.9375,"tw":300,"ty":702.9375,"th":34}
+2026-11-15T14:01:52.431Z autoSolve after https://www.alibaba.com/trade/search?fsb=y&IndexArea=product_en&has4Tab=true&keywords=hebei&tab=supplier&country=CN captcha= false
+2026-11-15T14:02:52.118Z closed
+2026-11-15T14:02:56.023Z launching /home/songqian/.ali-recon-profile headful= true
+2026-11-15T14:02:56.700Z context launched
+2026-11-15T14:07:43.258Z closed
+2026-11-15T14:07:47.069Z launching /home/songqian/.ali-recon-profile headful= true
+2026-11-15T14:07:47.832Z context launched
+2026-11-15T14:11:18.749Z solveSlider: no slider found
+2026-11-15T14:11:22.253Z autoSolve after https://login.alibaba.com/newlogin/icbuLogin.htm?return_url=https%3A%2F%2Fwww.alibaba.com captcha= true
+2026-11-15T14:14:48.722Z solveSlider geo {"hx":832.9375,"hy":719.9375,"hw":42,"tx":809.9375,"tw":300,"ty":702.9375,"th":34}
+2026-11-15T14:14:59.270Z autoSolve after https://kangyuanxiangsu.en.alibaba.com/company_profile.html captcha= true
+2026-11-15T14:16:09.039Z solveSlider geo {"hx":832.9375,"hy":719.9375,"hw":42,"tx":809.9375,"tw":300,"ty":702.9375,"th":34}
+2026-11-15T14:16:19.975Z autoSolve after https://kangyuanxiangsu.en.alibaba.com/company_profile.html captcha= true
+2026-11-15T14:30:26.935Z closed

@@ -1,0 +1,1045 @@
+{
+ "globalData": {
+  "gmvChallengeBadge": {
+   "fieldName": "gmvChallengeBadge",
+   "title": "gmvChallengeBadge",
+   "value": {
+    "hasCountryExport": false,
+    "hasBadge": false
+   }
+  },
+  "bizCode": "icbu-esite-gold",
+  "backgroundImage": {
+   "backImage": "//sc02.alicdn.com/kf/Hc03f04cb1cb04a6484ed4c5a3ed261b3J.jpg",
+   "display": "block",
+   "position": "top center",
+   "repeat": "no-repeat"
+  },
+  "aliMemberEncryptId": "IDX1JSvL9Mq8DhH2GS0yg47iiwcouHncYqpKYTscm_r5_O7paQJCJrXroHr2kJVX-d8v",
+  "encryptAccountId": "IDX1N7_Bc_yZdsS98xjDy8NlalmBR0dI9ZK8ACCJ4c9eiwSUChhgRG-pUraaeDTHQFTw",
+  "isGold": true,
+  "aliMemberId": 250732801,
+  "language": "zh_CN",
+  "isGray": true,
+  "liveInStore": {
+   "fieldName": "liveInStore"
+  },
+  "aliId": {
+   "fieldName": "aliId",
+   "value": 2210855057943
+  },
+  "isEUPicks": {
+   "fieldName": "isEUPicks",
+   "value": false
+  },
+  "abTestInfos": "{\"pc_performance_optimization_cls_module_render\":\"new_render_module\",\"minisite_search_bar_test\":\"test\",\"certification_pc_ab_test\":\"test\",\"pc_performance_test_copy\":\"speed_concurrent\",\"pc_first_screen_card\":\"exp1\",\"capacity_tag_video\":\"show_tag_video\",\"pc_shopsign_add_map\":\"show_map\",\"pc_cp_uv_aa_validation\":\"test\",\"pc_product_test_key\":\"control\",\"pc_new_sort\":\"pc_new_sort\",\"app_company_reorder_rate\":\"control\",\"pc_new_viewo_player\":\"use_new_video_player\"}",
+  "isVisableSupplier": {
+   "fieldName": "isVisableSupplier",
+   "value": false
+  },
+  "cna": "p555I+xlZgUCARu5L7nF7yHD",
+  "companyEncryptId": "IDX1hAeb_gehEXeCtcrEY0XRii6jtMwri83SRKBLWrYp5bmoa4FTgcuTPDXFKgVhXNTB",
+  "isHideContactEntrance": {
+   "fieldName": "isHideContactEntrance",
+   "value": false
+  },
+  "shopSignLcpExperimentBucket": "priority_preload",
+  "backgroundColor": "#ffffff",
+  "backgroundThemeColor": "#222222",
+  "leaderSupplier": {
+   "fieldName": "leaderSupplier",
+   "value": false
+  },
+  "encodeAlitalkId": "8pctgRBMALPjGFHomBCRykNNvuP+P+Fb",
+  "buckets": [
+   "speed_concurrent",
+   "show_map",
+   "new_render_module",
+   "use_new_video_player",
+   "pc_new_sort",
+   "test",
+   "control",
+   "control",
+   "exp1",
+   "test",
+   "show_tag_video",
+   "test"
+  ],
+  "terminalType": "pc",
+  "esiteSubDomain": {
+   "fieldName": "esiteSubDomain",
+   "value": "kangyuanxiangsu.en.alibaba.com"
+  },
+  "chatToken": {
+   "fieldName": "chatToken",
+   "value": "cERMNzl1WlVEVzFHcjE1K3NzRWZPaTJndHRRU0pNRWtuOE5jbWtOUTVHQWtnY0VWdHN3MHFSUlptQXNFejJ4YUFVMXhFdWlxc3BRa1ZETlJLMHpwY3dJUVBWamUycmcvVDNmeG1lbURkZDJHbTlyWW9FTldHR3kvUkIwaHR2VVQmdmVyc2lvbj0xLjAuMA=="
+  },
+  "companyId": 258180302,
+  "cpExperimentBucket": "test_action",
+  "merchantPerformanceExperimentBucket": "exp1",
+  "selfSupportShopTag": false,
+  "phantBucketName": "speed_concurrent,show_map,new_render_module,use_new_video_player,pc_new_sort,test,control,control,exp1,test,show_tag_video,test",
+  "isLiteSupplier": {
+   "fieldName": "isLiteSupplier",
+   "value": false
+  }
+ },
+ "csrf_token": "4fe3854a-1e49-4ecd-b6b9-29c7792d9464",
+ "pageName": "shop_cp",
+ "pageModuleMap": [
+  {
+   "moduleName": "globalData",
+   "moduleData": {
+    "data": {
+     "gmvChallengeBadge": {
+      "fieldName": "gmvChallengeBadge",
+      "title": "gmvChallengeBadge",
+      "value": {
+       "hasCountryExport": false,
+       "hasBadge": false
+      }
+     },
+     "bizCode": "icbu-esite-gold",
+     "backgroundImage": {
+      "backImage": "//sc02.alicdn.com/kf/Hc03f04cb1cb04a6484ed4c5a3ed261b3J.jpg",
+      "display": "block",
+      "position": "top center",
+      "repeat": "no-repeat"
+     },
+     "aliMemberEncryptId": "IDX1JSvL9Mq8DhH2GS0yg47iiwcouHncYqpKYTscm_r5_O7paQJCJrXroHr2kJVX-d8v",
+     "encryptAccountId": "IDX1N7_Bc_yZdsS98xjDy8NlalmBR0dI9ZK8ACCJ4c9eiwSUChhgRG-pUraaeDTHQFTw",
+     "isGold": true,
+     "aliMemberId": 250732801,
+     "language": "zh_CN",
+     "isGray": true,
+     "liveInStore": {
+      "fieldName": "liveInStore"
+     },
+     "aliId": {
+      "fieldName": "aliId",
+      "value": 2210855057943
+     },
+     "isEUPicks": {
+      "fieldName": "isEUPicks",
+      "value": false
+     },
+     "abTestInfos": "{\"pc_performance_optimization_cls_module_render\":\"new_render_module\",\"minisite_search_bar_test\":\"test\",\"certification_pc_ab_test\":\"test\",\"pc_performance_test_copy\":\"speed_concurrent\",\"pc_first_screen_card\":\"exp1\",\"capacity_tag_video\":\"show_tag_video\",\"pc_shopsign_add_map\":\"show_map\",\"pc_cp_uv_aa_validation\":\"test\",\"pc_product_test_key\":\"control\",\"pc_new_sort\":\"pc_new_sort\",\"app_company_reorder_rate\":\"control\",\"pc_new_viewo_player\":\"use_new_video_player\"}",
+     "isVisableSupplier": {
+      "fieldName": "isVisableSupplier",
+      "value": false
+     },
+     "cna": "p555I+xlZgUCARu5L7nF7yHD",
+     "companyEncryptId": "IDX1hAeb_gehEXeCtcrEY0XRii6jtMwri83SRKBLWrYp5bmoa4FTgcuTPDXFKgVhXNTB",
+     "isHideContactEntrance": {
+      "fieldName": "isHideContactEntrance",
+      "value": false
+     },
+     "shopSignLcpExperimentBucket": "priority_preload",
+     "backgroundColor": "#ffffff",
+     "backgroundThemeColor": "#222222",
+     "leaderSupplier": {
+      "fieldName": "leaderSupplier",
+      "value": false
+     },
+     "encodeAlitalkId": "8pctgRBMALPjGFHomBCRykNNvuP+P+Fb",
+     "buckets": [
+      "speed_concurrent",
+      "show_map",
+      "new_render_module",
+      "use_new_video_player",
+      "pc_new_sort",
+      "test",
+      "control",
+      "control",
+      "exp1",
+      "test",
+      "show_tag_video",
+      "test"
+     ],
+     "terminalType": "pc",
+     "esiteSubDomain": {
+      "fieldName": "esiteSubDomain",
+      "value": "kangyuanxiangsu.en.alibaba.com"
+     },
+     "chatToken": {
+      "fieldName": "chatToken",
+      "value": "cERMNzl1WlVEVzFHcjE1K3NzRWZPaTJndHRRU0pNRWtuOE5jbWtOUTVHQWtnY0VWdHN3MHFSUlptQXNFejJ4YUFVMXhFdWlxc3BRa1ZETlJLMHpwY3dJUVBWamUycmcvVDNmeG1lbURkZDJHbTlyWW9FTldHR3kvUkIwaHR2VVQmdmVyc2lvbj0xLjAuMA=="
+     },
+     "companyId": 258180302,
+     "cpExperimentBucket": "test_action",
+     "merchantPerformanceExperimentBucket": "exp1",
+     "selfSupportShopTag": false,
+     "phantBucketName": "speed_concurrent,show_map,new_render_module,use_new_video_player,pc_new_sort,test,control,control,exp1,test,show_tag_video,test",
+     "isLiteSupplier": {
+      "fieldName": "isLiteSupplier",
+      "value": false
+     }
+    }
+   }
+  },
+  {
+   "moduleData": {
+    "chatNowText": "立即聊天",
+    "contactSupplierText": "联系供应商",
+    "contactSupplierUrl": "",
+    "groups": [
+     {
+      "category": "概览",
+      "count": 10,
+      "icon": "",
+      "id": "all",
+      "images": [
+       {
+        "detailUrl": "https://www.alibaba.com/video/play/151105540",
+        "feedsId": "151105540",
+        "mediaType": "video",
+        "url": "//sc04.alicdn.com/kf/H79c92dd7496b4908a29ee15e28161c87J.jpg",
+        "videoId": "6000335302566"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H69a0c98074c6400788dfd653b4ce308bM.jpg"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H4c20d214f12f4f2f9994c35cfec060c5G.jpg"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H63a583225e1347848748019d459ac243O.jpg"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H1e7e55d16b4e477b9f674306120ad078P.jpg"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H8ae7fa3017b64e058cfe27c70b33440eD.jpg"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H8d236065288a49b79f2a9689229cb0d7y.jpg"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/Hb9b0ba828a0f4515b2f38f0f4d0f4272T.jpg"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H38b2d50722d94823977956934a59d9a95.jpg"
+       },
+       {
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H7082540cff7748379ee84b436ee1a00f7.jpg"
+       }
+      ]
+     },
+     {
+      "category": "生产制造",
+      "count": 11,
+      "icon": "",
+      "id": "g1",
+      "images": [
+       {
+        "description": "Raw Materials",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H8193edd5fc0947bba1ded2590d0cda9eI.jpg"
+       },
+       {
+        "description": "Cutting ",
+        "mediaType": "image",
+        "url": "https://sc01.alicdn.com/kf/S20e52f6c196440218c9d7a752bb499e2G.jpg"
+       },
+       {
+        "description": "Taking Shape",
+        "mediaType": "image",
+        "url": "https://sc01.alicdn.com/kf/Sdced785c1e9649529a062c79e2a6c3c1m.jpg"
+       },
+       {
+        "description": "High Temperature Vulcanization ",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/Ha2fb00e2f74a4497ac3e16e0a70077b20.jpg"
+       },
+       {
+        "description": "Trimming",
+        "mediaType": "image",
+        "url": "https://sc01.alicdn.com/kf/S2fac05991b3843979c67f4dbad49df3fx.jpg"
+       },
+       {
+        "description": "Packing",
+        "mediaType": "image",
+        "url": "https://sc01.alicdn.com/kf/Se5080742463047fbb216e35e096fc84eE.jpg"
+       },
+       {
+        "description": "Finished Products",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/Hcf900ff6cd07458980c941cf95216bbfa.jpg"
+       },
+       {
+        "description": "Forming Machine",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H8bc4933ab0354a8cb51a0345d1649aabY.jpg"
+       },
+       {
+        "description": "Vulcanizer ",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H150b7de6ff2247bd94372c5ca7e44103c.jpg"
+       },
+       {
+        "description": "Slicing Machine",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H94603a3b021248a5a38334d6deafb29dh.jpg"
+       },
+       {
+        "description": "Machine of Pressing on Tyre ",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/Ha16836ed3def4664b6042cf20e52d853a.jpg"
+       }
+      ]
+     },
+     {
+      "category": "品控",
+      "count": 2,
+      "icon": "",
+      "id": "g2",
+      "images": [
+       {
+        "description": "Electronic Universal Testing Machine",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H75fd8ae5c6e247a8b0eb776b50bed0ccJ.jpg"
+       },
+       {
+        "description": "Akron Abrasion Testing Machine",
+        "mediaType": "image",
+        "url": "https://sc02.alicdn.com/kf/H8cd34fd274b94df59c46d774cbbf5068b.jpg"
+       }
+      ]
+     }
+    ],
+    "sendInquiryText": "发送询盘"
+   },
+   "moduleName": "imageGallery"
+  },
+  {
+   "moduleData": {
+    "bigBuyerCount": {
+     "advantage": "better",
+     "avgValue": "10.3",
+     "deltaPercent": 45.21,
+     "label": "已服务的顶级买家",
+     "tier": 50,
+     "value": "15"
+    },
+    "companyName": "Hengshui Kangyuan Rubber And Plastic Technology Co., Ltd.",
+    "compareTexts": {
+     "industryAverage": "行业平均值",
+     "thisSupplier": "该供应商",
+     "title": "性能对比行业平均值"
+    },
+    "disputeRate": {
+     "advantage": "better",
+     "avgValue": "4.1%",
+     "deltaPercent": -100.0,
+     "label": "纠纷率",
+     "tier": -100,
+     "value": "0.0%"
+    },
+    "header": {
+     "infoIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01N7i3h3251TzKTEmhE_!!6000000007466-2-tps-48-48.png",
+     "title": "供应商表现",
+     "tooltip": "展示该制造商在 Alibaba.com 上过去 12 个月的表现，并与类目平均水平进行对比"
+    },
+    "i18n": {
+     "merchantPerformanceAboveAverage": "表现高于行业平均水平",
+     "merchantPerformanceBelowAverage": "表现低于行业平均水平",
+     "merchantPerformanceInfo": "关于供应商表现",
+     "merchantPerformanceRatingInfo": "关于评分和评论",
+     "merchantPerformanceClose": "关闭",
+     "introduction": "简介",
+     "previousImage": "上一件商品",
+     "nextImage": "下一项",
+     "categoryAverage": "行业平均值",
+     "thisSupplier": "该供应商",
+     "merchantPerformanceBenchmarkTitle": "性能对比行业平均水平",
+     "lowerIsBetter": "越低越快",
+     "ratingInfoDescription": "基于过去 365 天内已验证购买的评价，计算得出的供应商平均评分。",
+     "revenueInfoDescription": "过去 180 天内，该供应商在 Alibaba.com 上完成的线上交易总额。",
+     "buyersInfoDescription": "过去 180 天内，下单购买该供应商产品的 Enterprise 及 Enterprise Pro 买家数量。",
+     "disputeInfoDescription": "过去180天内该供应商已付款订单中引发交易纠纷的百分比。仅在计算周期内订单数量达到5笔或以上时显示。",
+     "dispatchInfoDescription": "根据该供应商过去 180 天的全部订单计算的从下单到发货的平均天数。仅当计算周期内有 5 笔或更多订单时显示。",
+     "responseInfoDescription": "过去 30 天内，该供应商回复买家消息的平均时长。\n\n",
+     "reorderInfoDescription": "过去 90 天内，在该供应商处下单 2 次及以上的买家占比。\n\n",
+     "onTimeDeliveryInfoDescription": "过去90天内在约定发货日期前或当天发出的订单百分比。仅在计算期内有5个或以上订单时显示。",
+     "yearsInfoDescription": "该供应商入驻 Alibaba.com 的年数。",
+     "ratingInfoTitle": "评价",
+     "revenueInfoTitle": "线上营收",
+     "buyersInfoTitle": "已服务的顶级买家",
+     "disputeInfoTitle": "纠纷率",
+     "dispatchInfoTitle": "平均发货时间",
+     "responseInfoTitle": "回复时间",
+     "reorderInfoTitle": "复购率",
+     "yearsInfoTitle": "年",
+     "onTimeDeliveryInfoTitle": "准时发货率"
+    },
+    "industryAvgAvailable": true,
+    "metricOrder": [
+     "reviews",
+     "years",
+     "bigBuyerCount",
+     "onlineTransactions",
+     "responseTime",
+     "onTimeDelivery",
+     "shippingDays",
+     "disputeRate",
+     "reorderRate"
+    ],
+    "onTimeDelivery": {
+     "advantage": "better",
+     "avgValue": "93.2%",
+     "deltaPercent": 7.31,
+     "label": "准时发货率",
+     "tier": 100,
+     "value": "100.0%"
+    },
+    "onlineTransactions": {
+     "amount": "US $50K − $100K",
+     "label": "线上营收"
+    },
+    "rankingTag": "物料搬运设备部件 热销第 2",
+    "rankingTagList": [
+     {
+      "id": "101001551",
+      "index": 2,
+      "rankInfo": "物料搬运设备部件 热销第 2",
+      "rankName": "热门爆款",
+      "rankType": "factory",
+      "traceInfo": {
+       "name": "minisite_ranking_tag",
+       "param": {
+        "rankType": "factory",
+        "cateName": "物料搬运设备部件",
+        "companyId": "258180302",
+        "rankOrder": 2,
+        "tagPosition": 1,
+        "isFloatLayer": false
+       }
+      },
+      "venueUrl": "https://sale.alibaba.com/p/factories/v2/rank_list.html?wx_screen_direc=portrait&wx_navbar_transparent=true&path=/p/factories/v2/rank_list.html&ncms_spm=a27aq.24735993&prefetchKey=marchexpo&cardId=1435&cardType=101003268&companyIds=258180302&topOfferIds=&rankCapabilityId=&templateBusinessCode=&trafficsource=shop",
+      "wordId": "1435",
+      "wordName": "物料搬运设备部件"
+     }
+    ],
+    "reorderRate": {
+     "advantage": "worse",
+     "avgValue": "19.8%",
+     "deltaPercent": -63.89,
+     "label": "复购率",
+     "tier": -75,
+     "value": "7.1%"
+    },
+    "responseTime": {
+     "advantage": "better",
+     "avgValue": "3h",
+     "deltaPercent": -33.33,
+     "hint": "越低越快",
+     "label": "回复时间",
+     "tier": -50,
+     "value": "≤2h"
+    },
+    "reviews": {
+     "advantage": "worse",
+     "avgValue": "4.7",
+     "comparisonText": "评分比行业平均水平低 3.1%",
+     "count": 10,
+     "deltaPercent": -3.1,
+     "label": "评价",
+     "starLevel": 5,
+     "tier": -25,
+     "value": "4.6"
+    },
+    "shippingDays": {
+     "advantage": "better",
+     "avgValue": "20.9天",
+     "deltaPercent": -45.44,
+     "hint": "越低越快",
+     "label": "平均发货时间",
+     "tier": -50,
+     "value": "11.4天"
+    },
+    "years": {
+     "advantage": "same",
+     "avgValue": "6 年",
+     "deltaPercent": 0.0,
+     "label": "年",
+     "sameText": "与行业平均水平一致: 6 年",
+     "tier": 0,
+     "value": "6 年"
+    }
+   },
+   "moduleName": "supplierPerformance"
+  },
+  {
+   "moduleData": {
+    "cards": [
+     {
+      "iconUrl": "https://sc02.alicdn.com/kf/Sf782f66f1fda4df89c0995fafe3893cdk/84x84.png",
+      "id": "定制能力",
+      "items": [
+       {
+        "fieldName": "has_flexible_customization",
+        "label": "柔性定制",
+        "type": "verified"
+       },
+       {
+        "fieldName": "min_moq",
+        "label": "最低MOQ",
+        "type": "kv",
+        "value": "10"
+       }
+      ],
+      "title": "个性化定制",
+      "verifiedItemIconUrl": "https://sc02.alicdn.com/kf/S59699e17656b4addac12c99e9ad5a9ccH/54x54.png",
+      "viewMore": {
+       "anchor": "rdCapability",
+       "text": "了解更多"
+      }
+     },
+     {
+      "i18n": {
+       "shopModule.shopSign.gmvChallengeBadgeCountry": "拥有向 {0}出口的丰富经验",
+       "shopModule.shopSign.gmvChallengeBadgeNA": "经验丰富的北美出口商",
+       "shopModule.shopSign.gmvChallengeBadgeLA": "经验丰富的拉丁美洲出口商",
+       "shopModule.shopSign.gmvChallengeBadgeAPAC": "亚洲龙头供应商"
+      },
+      "iconUrl": "https://sc02.alicdn.com/kf/S69e8711b4ec04d82ab9b2de12252005e8/84x84.png",
+      "id": "贸易能力",
+      "items": [
+       {
+        "fieldName": "export_experience_years",
+        "label": "出口经验年限",
+        "type": "kv",
+        "value": "8"
+       },
+       {
+        "fieldName": "payment_methods",
+        "label": "T/T",
+        "type": "verified"
+       }
+      ],
+      "title": "贸易与市场",
+      "verifiedItemIconUrl": "https://sc02.alicdn.com/kf/S59699e17656b4addac12c99e9ad5a9ccH/54x54.png",
+      "viewMore": {
+       "anchor": "tradeCapacityMarkets",
+       "text": "了解更多"
+      }
+     },
+     {
+      "iconUrl": "https://sc02.alicdn.com/kf/Sf6b067ee83ba4c6e945fe856e2548ce9p/84x84.png",
+      "id": "研发设计",
+      "items": [
+       {
+        "fieldName": "rd_team_count",
+        "label": "研发人员数",
+        "type": "kv",
+        "value": "3"
+       },
+       {
+        "fieldName": "has_material_package",
+        "label": "有素材包",
+        "type": "verified"
+       }
+      ],
+      "title": "研发",
+      "verifiedItemIconUrl": "https://sc02.alicdn.com/kf/S59699e17656b4addac12c99e9ad5a9ccH/54x54.png",
+      "viewMore": {
+       "anchor": "rdCapability",
+       "text": "了解更多"
+      }
+     },
+     {
+      "iconUrl": "https://sc02.alicdn.com/kf/S2e389d06e6024e3fa69a12a84bbdea74D/84x84.png",
+      "id": "生产能力",
+      "items": [
+       {
+        "fieldName": "factory_area_sqm",
+        "label": "建筑面积 (㎡)",
+        "type": "kv",
+        "value": "5000"
+       },
+       {
+        "fieldName": "total_line_operators",
+        "label": "产线操作工总数",
+        "type": "kv",
+        "value": "15"
+       }
+      ],
+      "title": "生产",
+      "verifiedItemIconUrl": "https://sc02.alicdn.com/kf/S59699e17656b4addac12c99e9ad5a9ccH/54x54.png",
+      "viewMore": {
+       "anchor": "productionCapacities",
+       "text": "了解更多"
+      }
+     },
+     {
+      "iconUrl": "https://sc02.alicdn.com/kf/S02902f4caf1e40f79f81e8b4baa5c459G/84x84.png",
+      "id": "质量管理",
+      "items": [
+       {
+        "fieldName": "product_inspection_types",
+        "label": "成品检验方法",
+        "type": "verified"
+       },
+       {
+        "fieldName": "qc_staff_count",
+        "label": "质检人数",
+        "type": "kv",
+        "value": "2"
+       }
+      ],
+      "title": "质量控制",
+      "verifiedItemIconUrl": "https://sc02.alicdn.com/kf/S59699e17656b4addac12c99e9ad5a9ccH/54x54.png",
+      "viewMore": {
+       "anchor": "qualityManagement",
+       "text": "了解更多"
+      }
+     },
+     {
+      "iconUrl": "https://sc02.alicdn.com/kf/S17ef8cc4f1f244f7af975db6910a58b58/84x84.png",
+      "id": "服务售后",
+      "items": [
+       {
+        "fieldName": "has_trade_show_experience",
+        "label": "拥有线下展会经验",
+        "type": "verified"
+       },
+       {
+        "fieldName": "has_ecommerce_capability",
+        "label": "电商能力",
+        "type": "verified"
+       }
+      ],
+      "title": "精选服务",
+      "verifiedItemIconUrl": "https://sc02.alicdn.com/kf/S59699e17656b4addac12c99e9ad5a9ccH/54x54.png",
+      "viewMore": {
+       "anchor": "serviceCapabilities",
+       "text": "了解更多"
+      }
+     }
+    ],
+    "header": {
+     "certificationBodyIconUrl": "https://img.alicdn.com/imgextra/i1/O1CN01vOHczL1rPqaObT7fV_!!6000000005624-2-tps-512-248.png",
+     "infoIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01N7i3h3251TzKTEmhE_!!6000000007466-2-tps-48-48.png",
+     "title": "制造商能力",
+     "tooltip": "该卖家的评估、认证、核验和/或检查均由 SGS Group",
+     "verifiedText": "经{certificationBodyIcon}验证",
+     "verifyIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+    },
+    "viewReport": {
+     "iconUrl": "https://sc02.alicdn.com/kf/Sdfe0eb25bcb84998a7a4d009373b1aa1K/48x48.png",
+     "text": "查看报告以获取详细信息",
+     "url": "https://verified.alibaba.com/supplier/report?aliId=2210855057943&wx_navbar_transparent=true"
+    }
+   },
+   "moduleName": "factoryCapability"
+  },
+  {
+   "moduleName": "productCategories",
+   "moduleData": {
+    "asyncUrl": "/event/app/alisite/companyProfile/productCategories",
+    "categories": [],
+    "title": "产品",
+    "customizationTitle": "可定制"
+   }
+  },
+  {
+   "moduleData": {
+    "alitalkBizId": "8pctgRBMALPjGFHomBCRykNNvuP+P+Fb",
+    "atmSecurityToken": "TURGM2EydFFabEZTTlhSdFNFWkllRXR6WmtWR0sweG5VbGRvU21wV2NYSXZVRE5ZWVVsRVRYWnNOa2huVDJZMlVXeE5abUZJYjNGdVpYUkhOMDk0WjIweVFYQm5ZbWd6ZWsxRE5qVm9SbVpQUm5CMlNFNTNVa3g0Um1KblIwaHZhRVJGUjNrMWJtNVVWMU14YVRVeFRWTkxZaXRMVjFJeGFWRktTSEl3VDBjMFFubzNhVXRTTlc1SFZrZzFUMHBuV1ZKclVEaEtiRmQzYlRFeU9VUm9WM0kzVnlzcldEZHpNU3RMYTBONmIzcHZaVWhMU25wTVlYaGFhVkZ0VXl0TiZ2ZXJzaW9uPTIuMC4w",
+    "buttonIconUrl": "https://sc02.alicdn.com/kf/Se08a98c4a16c461992a80a5ae9c71ed7y.svg",
+    "buttonText": "索取目录",
+    "description": "索取制造商产品目录，获取详细产品规格参数、价格等更多信息",
+    "iconUrl": "https://sc02.alicdn.com/kf/S99321e7f262c489793d41cb78b060224B/144x144.png",
+    "productOwnMemberAlitalkEncryptId": "IDX1N7_Bc_yZdsS98xjDy8NlalmBR0dI9ZK8ACCJ4c9eiwSUChhgRG-pUraaeDTHQFTw",
+    "title": "在找特定的商品吗？"
+   },
+   "moduleName": "unlockCatalog"
+  },
+  {
+   "moduleData": {
+    "downloadReportIconUrl": "https://sc02.alicdn.com/kf/S6ff5182b36934228b665c178811cd229C.svg",
+    "downloadReportText": "下载报告",
+    "euroHoverText": "“EU top-seller”供应商是表现卓越的欧盟优选合作伙伴，其销售业绩突出或增长迅猛，这意味着您将与那些已掌握本地市场制胜之道的成功者携手共赢。",
+    "euroText": "EU top-seller",
+    "reports": [
+     {
+      "companyId": 258180302,
+      "downloadUrl": "/company_profile/trustpass_profile/report_download.html?report_show_id=225364753",
+      "id": 225364753,
+      "isNew": true
+     }
+    ],
+    "title": "制造商能力",
+    "verifyIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+   },
+   "moduleName": "factoryCapabilityHeader"
+  },
+  {
+   "moduleData": {
+    "header": {
+     "certificationBodyIconUrl": "https://img.alicdn.com/imgextra/i1/O1CN01vOHczL1rPqaObT7fV_!!6000000005624-2-tps-512-248.png",
+     "title": "贸易与市场",
+     "verifiedText": "经{certificationBodyIcon}验证",
+     "verifyIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+    },
+    "markets": [
+     {
+      "name": "North America",
+      "percentage": "0.50"
+     },
+     {
+      "name": "Mid East",
+      "percentage": "0.20"
+     },
+     {
+      "name": "Western Europe",
+      "percentage": "0.10"
+     },
+     {
+      "name": "Domestic Market",
+      "percentage": "0.06"
+     },
+     {
+      "name": "South America",
+      "percentage": "0.05"
+     },
+     {
+      "name": "Others",
+      "percentage": "0.09"
+     }
+    ],
+    "marketsIconUrl": "https://sc02.alicdn.com/kf/S3d73a21ef12947bba98bbbffc2f155f3r/84x84.png",
+    "marketsTitle": "市场分布",
+    "tradeInfoItems": [
+     {
+      "hidden": false,
+      "label": "出口经验年限",
+      "value": "8 年"
+     },
+     {
+      "hidden": false,
+      "label": "过去一年总出口额",
+      "value": "US $2231223.0"
+     },
+     {
+      "fieldName": "nearest_port",
+      "hidden": false,
+      "label": "最近港口",
+      "value": "Tianjin port"
+     },
+     {
+      "hidden": true,
+      "label": "海外仓",
+      "value": "不适用"
+     }
+    ]
+   },
+   "moduleName": "tradeCapacityMarkets"
+  },
+  {
+   "moduleData": {
+    "header": {
+     "certificationBodyIconUrl": "https://img.alicdn.com/imgextra/i1/O1CN01vOHczL1rPqaObT7fV_!!6000000005624-2-tps-512-248.png",
+     "title": "研发",
+     "verifiedText": "经{certificationBodyIcon}验证",
+     "verifyIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+    },
+    "images": [],
+    "sections": [
+     {
+      "chips": [
+       {
+        "label": "轻定制",
+        "prefixIconUrl": "https://sc02.alicdn.com/kf/S6afbfa9b8f9b4a7b9c4ac8fd11ab94c03.svg"
+       },
+       {
+        "label": "来图定制",
+        "prefixIconUrl": "https://sc02.alicdn.com/kf/S6afbfa9b8f9b4a7b9c4ac8fd11ab94c03.svg"
+       },
+       {
+        "label": "来样定制",
+        "prefixIconUrl": "https://sc02.alicdn.com/kf/S6afbfa9b8f9b4a7b9c4ac8fd11ab94c03.svg"
+       },
+       {
+        "label": "按需定制",
+        "prefixIconUrl": "https://sc02.alicdn.com/kf/S6afbfa9b8f9b4a7b9c4ac8fd11ab94c03.svg"
+       }
+      ],
+      "iconUrl": "https://sc02.alicdn.com/kf/Sbd0d768f41b8456baa2d23276e603707K.svg",
+      "title": "定制服务"
+     },
+     {
+      "chips": [
+       {
+        "label": "材质",
+        "prefixIconUrl": "https://sc02.alicdn.com/kf/S6afbfa9b8f9b4a7b9c4ac8fd11ab94c03.svg"
+       }
+      ],
+      "iconUrl": "https://sc02.alicdn.com/kf/Sda446c5f15e6446684d20ddd21f5e1aaU.svg",
+      "title": "提供哪些定制服务"
+     }
+    ],
+    "stats": [
+     {
+      "label": "新产品/年",
+      "value": "-"
+     },
+     {
+      "label": "自有商标数",
+      "value": "1"
+     },
+     {
+      "label": "研发人员数",
+      "value": "3"
+     }
+    ]
+   },
+   "moduleName": "rdCapability"
+  },
+  {
+   "moduleData": {
+    "certificationBodyIconUrl": "https://img.alicdn.com/imgextra/i1/O1CN01vOHczL1rPqaObT7fV_!!6000000005624-2-tps-512-248.png",
+    "departmentDistribution": [],
+    "machineryGroups": [
+     {
+      "images": [
+       "https://sc02.alicdn.com/kf/H8bc4933ab0354a8cb51a0345d1649aabY.jpg"
+      ],
+      "label": "Forming Machine"
+     },
+     {
+      "images": [
+       "https://sc02.alicdn.com/kf/H150b7de6ff2247bd94372c5ca7e44103c.jpg"
+      ],
+      "label": "Vulcanizer"
+     },
+     {
+      "images": [
+       "https://sc02.alicdn.com/kf/H94603a3b021248a5a38334d6deafb29dh.jpg"
+      ],
+      "label": "Slicing Machine"
+     },
+     {
+      "images": [
+       "https://sc02.alicdn.com/kf/Ha16836ed3def4664b6042cf20e52d853a.jpg"
+      ],
+      "label": "Machine of Pressing on Tyre"
+     }
+    ],
+    "staffDistributionTitle": "员工构成",
+    "stats": [
+     {
+      "hidden": false,
+      "label": "公司面积",
+      "value": "5,000 m²"
+     },
+     {
+      "hidden": false,
+      "label": "自有产线",
+      "value": "10"
+     },
+     {
+      "hidden": true,
+      "label": "生产设备",
+      "value": "不适用"
+     },
+     {
+      "hidden": false,
+      "label": "单日最大产能",
+      "value": "1,500,000"
+     }
+    ],
+    "title": "生产",
+    "totalHeadcount": 0,
+    "totalStaffLabel": "员工总数",
+    "verifiedText": "经{certificationBodyIcon}验证",
+    "verifyIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+   },
+   "moduleName": "productionCapacities"
+  },
+  {
+   "moduleData": {
+    "certificationBodyIconUrl": "https://img.alicdn.com/imgextra/i1/O1CN01vOHczL1rPqaObT7fV_!!6000000005624-2-tps-512-248.png",
+    "checkIconUrl": "https://sc02.alicdn.com/kf/Se4b7025723144200ac67ed377acdd845B.svg",
+    "items": [
+     {
+      "hidden": false,
+      "iconUrl": "https://sc02.alicdn.com/kf/S7a0e73b4561f425da943ed40a01b1fb65/84x84.png",
+      "label": "有供应商评估",
+      "type": "icon",
+      "value": "https://sc02.alicdn.com/kf/Se4b7025723144200ac67ed377acdd845B.svg"
+     },
+     {
+      "hidden": false,
+      "iconUrl": "https://sc02.alicdn.com/kf/S047fbd72a61f4275b31775991d90e305d/84x84.png",
+      "label": "质检人数",
+      "type": "kv",
+      "value": "2"
+     },
+     {
+      "hidden": false,
+      "iconUrl": "https://sc02.alicdn.com/kf/S4530e566e31f40e985e4122ba80da698E/84x84.png",
+      "label": "有质量管理流程",
+      "type": "icon",
+      "value": "https://sc02.alicdn.com/kf/Se4b7025723144200ac67ed377acdd845B.svg"
+     },
+     {
+      "hidden": false,
+      "iconUrl": "https://sc02.alicdn.com/kf/S226f0d51a7054842b8ddab4a195621bdc/84x84.png",
+      "label": "测试设备",
+      "type": "kv",
+      "value": "2"
+     },
+     {
+      "hidden": false,
+      "iconUrl": "https://sc02.alicdn.com/kf/Sc2c745f8d6a64c55a0467cba5a1942db4/84x84.png",
+      "label": "成品检验方法",
+      "type": "icon",
+      "value": "https://sc02.alicdn.com/kf/Se4b7025723144200ac67ed377acdd845B.svg"
+     }
+    ],
+    "title": "质量控制",
+    "verifiedText": "经{certificationBodyIcon}验证",
+    "verifyIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+   },
+   "moduleName": "qualityManagement"
+  },
+  {
+   "moduleData": {
+    "certificationBodyIconUrl": "https://img.alicdn.com/imgextra/i1/O1CN01vOHczL1rPqaObT7fV_!!6000000005624-2-tps-512-248.png",
+    "checkIconUrl": "https://sc02.alicdn.com/kf/Se4b7025723144200ac67ed377acdd845B.svg",
+    "items": [
+     {
+      "hidden": false,
+      "iconUrl": "https://sc02.alicdn.com/kf/S87b7c0d47b624014991fcd781881295bz/84x84.png",
+      "label": "电商能力",
+      "type": "icon",
+      "value": "https://sc02.alicdn.com/kf/Se4b7025723144200ac67ed377acdd845B.svg"
+     },
+     {
+      "hidden": false,
+      "iconUrl": "https://sc02.alicdn.com/kf/S5c85ad1a762443ff9a069aa9945d47f26/84x84.png",
+      "label": "拥有线下展会经验",
+      "type": "icon",
+      "value": "https://sc02.alicdn.com/kf/Se4b7025723144200ac67ed377acdd845B.svg"
+     }
+    ],
+    "title": "精选服务",
+    "verifiedText": "经{certificationBodyIcon}验证",
+    "verifyIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+   },
+   "moduleName": "serviceCapabilities"
+  },
+  {
+   "moduleData": {
+    "aiOverviewIconUrl": "https://s.alicdn.com/@sc02/kf/S5a08ed188c344b99a4653112f98ac004U.svg?hasNWGrade=1",
+    "aiOverviewTitle": "证书概览（由 AI 整理生成）",
+    "certificationBodyIconUrl": "https://img.alicdn.com/imgextra/i1/O1CN01vOHczL1rPqaObT7fV_!!6000000005624-2-tps-512-248.png",
+    "dialogLabels": {
+     "certId": "证书编号",
+     "certificateIssuedBy": "证书颁发机构",
+     "certificateValidityPeriod": "有效期"
+    },
+    "dialogTitle": "经认证证书",
+    "items": [
+     {
+      "badgeUrl": "https://sc04.alicdn.com/kf/Hdbbb6a106e8d4515be692063768d8fd4J.png",
+      "category": "PRODUCT",
+      "certId": "ICR/VC/HM260699",
+      "certIntroduction": "CE（欧洲合格认证）是欧盟认证标识，验证产品符合欧洲经济区销售所必需达到的卫生、安全和环保核心标准。CE作为电子产品、机械设备及医疗器械等类目进入欧盟市场的强制性凭证，该证书表明产品在31个欧洲国家具备合法市场准入资格。对需履行欧盟法规义务的进口商至关重要。持有此认证的供应商展现了其对产品质量的承诺，以及符合欧洲可持续发展目标的负责任生产实践。",
+      "certLogo": "https://sc04.alicdn.com/kf/Hdbbb6a106e8d4515be692063768d8fd4J.png",
+      "certificatePhotos": [
+       "//sc04.alicdn.com/kf/H2b1c74cc9ace4037ba2369ecc75ce845W.png"
+      ],
+      "certificateValidityPeriod": "2026/06/09 - 2031/06/08",
+      "complianceLabel": "CE",
+      "copyIconUrl": "https://sc02.alicdn.com/kf/S3590cce6c56a4639ace21f9aaf469d2eU.svg",
+      "description": "Solid Tyre",
+      "name": "CE",
+      "verifiedIconUrl": "https://sc02.alicdn.com/kf/Sc660378ba9a84286a6ea329b9c2c8a67N.svg"
+     },
+     {
+      "badgeUrl": "https://sc04.alicdn.com/kf/Hba6f1e3163fb436d844e993ed9b84bfeT.png",
+      "category": "INSPECTION_REPORT",
+      "certId": "CTG2508071168J-SR07AQ",
+      "certIntroduction": "",
+      "certLogo": "https://sc04.alicdn.com/kf/Hba6f1e3163fb436d844e993ed9b84bfeT.png",
+      "certificatePhotos": [
+       "//sc04.alicdn.com/kf/H3a4df14371964edfbe6458b5c1de9496w.png"
+      ],
+      "certificateValidityPeriod": "2025/08/07 - 2027/07/30",
+      "complianceLabel": "DIN 10743",
+      "copyIconUrl": "https://sc02.alicdn.com/kf/S3590cce6c56a4639ace21f9aaf469d2eU.svg",
+      "description": "solid tire",
+      "name": "DIN 10743",
+      "verifiedIconUrl": "https://sc02.alicdn.com/kf/Sc660378ba9a84286a6ea329b9c2c8a67N.svg"
+     }
+    ],
+    "tabs": [
+     {
+      "id": "all",
+      "label": "全部"
+     },
+     {
+      "id": "PRODUCT",
+      "label": "产品证书"
+     },
+     {
+      "id": "INSPECTION_REPORT",
+      "label": "产品检测报告"
+     }
+    ],
+    "title": "认证",
+    "verifiedText": "经{certificationBodyIcon}验证",
+    "verifyIconUrl": "https://s.alicdn.com/@img/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+   },
+   "moduleName": "certifications"
+  },
+  {
+   "moduleData": {
+    "asyncUrl": "/event/app/alisite/companyProfile/reviews",
+    "title": "评分评价"
+   },
+   "moduleName": "reviews"
+  },
+  {
+   "moduleData": {
+    "avatarUrl": "https://sc01.alicdn.com/kf/Hd849a67e0c634a6a9741488365909888F.jpg",
+    "avgResponseTimeText": "平均响应时间:≤2h",
+    "chatNowText": "立即聊天",
+    "companyName": "Hengshui Kangyuan Rubber And Plastic Technology Co., Ltd.",
+    "followText": "关注",
+    "followedText": "Followed",
+    "hasTradeAssurance": true,
+    "rating": 4.6,
+    "ratingStarIconUrl": "https://s.alicdn.com/@sc02/kf/S48207c3fe6b7404ca49348e7f0936ad01.svg",
+    "reviewCount": 10,
+    "tradeAssuranceLogoUrl": "https://s.alicdn.com/@sc02/kf/Sbaf0df87d1fc4ada947baae7da329fa1s/397x60.png",
+    "verified": true,
+    "verifiedBadgeUrl": "https://img.alicdn.com/imgextra/i1/O1CN01kpueUS231orwYDJAV_!!6000000007196-2-tps-132-34.png"
+   },
+   "moduleName": "supplierActionBar"
+  },
+  {
+   "moduleData": {
+    "i18n": {
+     "shopModuleNewCp.nav.overview": "概述",
+     "shopModuleNewCp.nav.productCatalog": "产品",
+     "shopModuleNewCp.nav.factoryCapability": "厂家实力",
+     "shopModuleNewCp.nav.certification": "认证",
+     "shopModuleNewCp.nav.reviews": "评价"
+    }
+   },
+   "moduleName": "pageNavigation"
+  }
+ ]
+}
