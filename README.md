@@ -340,7 +340,8 @@ npm run gen          # 生成 spec/openapi.json 等
 npm run gen:check    # CI 校验生成物与实现同源（实现后启用）
 npm run gen:regions  # 重新生成 src/data/regions.ts（pca-code + pinyin-pro）
 node scripts/mcp-smoke.mjs   # MCP 冒烟（需常驻服务）
-npm run self-test            # 35 项端到端自测（需常驻服务）
+npm run self-test            # 35 项冒烟自测（需常驻服务）
+npm run e2e                  # 125 项全场景矩阵（CLI/REST/MCP/缓存/错误/并发/systemd 自愈）
 ```
 
 自测实际输出（2026-11-16）：
@@ -371,6 +372,7 @@ npm run self-test            # 35 项端到端自测（需常驻服务）
 - **纯关键词搜索默认 `locationMode=off`**（不回填详情，速度快）；只有给出 `province`/`city` 才走 strict 回填。strict 回填 60 家约 60–90s，CLI→REST 超时默认 180s（`ALI_CLIENT_TIMEOUT_MS`）。
 - **公司详情按 companyId 查询需要先有一次 search 建立映射**（或用 `--store <subdomain>` 直达）。
 - `ali` 通过 `~/.local/bin/ali` 软链提供；移动仓库后需重建软链。
+- **单 owner 限制**：同一 profile 仅允许一个 owner（`~/.ali-client/run/ali.lock`）；改端口再 `serve` 或 `ali --local` 会被拒绝。常驻服务被外部 SIGTERM 后由 systemd 自动拉起（`Restart=always`）。
 - 常驻进程启动时加载 `dist/`；改代码后需 `npm run build && systemctl --user restart ali-client`。
 - **滑块/风控会变化**：自动过验证非 100%（实测最终 3/3），失败需人工/坐标中继或二维码扫码；`x5sec` 过期后需重新通过。无滑块时 `ali verify solve` 会返回 `CAPTCHA_FAILED`（预期行为）。
 - **登录窗口是独立页面**：不影响查询 worker 页；登录可选，且登录态为会话级（浏览器进程关闭即掉）。

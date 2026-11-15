@@ -53,11 +53,12 @@ export class AliError extends Error {
   readonly details?: Record<string, unknown>;
   readonly retryAfterMs?: number;
   override readonly cause?: unknown;
+  private readonly retryableOverride?: boolean;
 
   constructor(
     code: ErrorCode,
     message?: string,
-    opts: { details?: Record<string, unknown>; retryAfterMs?: number; cause?: unknown } = {},
+    opts: { details?: Record<string, unknown>; retryAfterMs?: number; retryable?: boolean; cause?: unknown } = {},
   ) {
     super(message ?? ERROR_CATALOG[code].title);
     this.name = 'AliError';
@@ -65,10 +66,11 @@ export class AliError extends Error {
     this.details = opts.details;
     this.retryAfterMs = opts.retryAfterMs;
     this.cause = opts.cause;
+    this.retryableOverride = opts.retryable;
   }
 
   get retryable(): boolean {
-    return ERROR_CATALOG[this.code].retryable;
+    return this.retryableOverride ?? ERROR_CATALOG[this.code].retryable;
   }
 
   get httpStatus(): number {

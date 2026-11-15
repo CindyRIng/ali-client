@@ -75,6 +75,14 @@ CREATE TABLE IF NOT EXISTS query_items (
   PRIMARY KEY (query_id, page, position)
 );
 CREATE INDEX IF NOT EXISTS idx_query_items_company ON query_items(company_id);
+CREATE TABLE IF NOT EXISTS query_pages (
+  query_id TEXT NOT NULL,
+  page INTEGER NOT NULL,
+  total_count INTEGER,
+  fetched_at TEXT NOT NULL,
+  expires_at TEXT NOT NULL,
+  PRIMARY KEY (query_id, page)
+);
 CREATE TABLE IF NOT EXISTS suppliers (
   company_id TEXT PRIMARY KEY,
   company_name TEXT NOT NULL,
@@ -219,17 +227,21 @@ export class SqliteCacheStore implements CacheStore {
   }
 
   getPage(queryId: string, page: number, ttlSec: number): CachedValue<PageRecord> | null {
+    const pageRow = this.conn
+      .prepare('SELECT total_count, fetched_at, expires_at FROM query_pages WHERE query_id = ? AND page = ?')
+      .get(queryId, page) as { total_count?: number | null; fetched_at?: string; expires_at?: string } | undefined;
     const rows = this.conn
       .prepare('SELECT summary_json, is_ad, fetched_at, expires_at FROM query_items WHERE query_id = ? AND page = ? ORDER BY position ASC')
       .all(queryId, page) as Array<Record<string, unknown>>;
-    if (rows.length === 0) return null;
-    const fetchedAt = Date.parse(String(rows[0].fetched_at));
-    const expiresAt = Date.parse(String(rows[0].expires_at));
+    if (!pageRow && rows.length === 0) return null;
+    const first = rows[0] as Record<string, unknown> | undefined;
+    const fetchedAt = Date.parse(String(pageRow?.fetched_at ?? first?.fetched_at ?? ''));
+    const expiresAt = Date.parse(String(pageRow?.expires_at ?? first?.expires_at ?? ''));
     const items = rows.map((r) => JSON.parse(String(r.summary_json)) as SupplierSummary);
     const rec: PageRecord = {
       queryId,
       page,
-      totalCount: null,
+      totalCount: pageRow?.total_count ?? null,
       items,
       fetchedAt: Number.isFinite(fetchedAt) ? fetchedAt : Date.now(),
     };
@@ -242,6 +254,9 @@ export class SqliteCacheStore implements CacheStore {
 
   putPage(record: PageRecord): void {
     const expiresAt = iso(Date.now() + this.ttl.queryTtlSec * 1000);
+    this.conn
+      .prepare('INSERT OR REPLACE INTO query_pages(query_id, page, total_count, fetched_at, expires_at) VALUES (?, ?, ?, ?, ?)')
+      .run(record.queryId, record.page, record.totalCount, iso(record.fetchedAt), expiresAt);
     this.conn.prepare('DELETE FROM query_items WHERE query_id = ? AND page = ?').run(record.queryId, record.page);
     const stmt = this.conn.prepare(
       `INSERT INTO query_items(query_id, page, position, company_id, summary_json, is_ad, fetched_at, expires_at)
@@ -262,7 +277,9 @@ export class SqliteCacheStore implements CacheStore {
   }
 
   getPages(queryId: string): number[] {
-    const rows = this.conn.prepare('SELECT DISTINCT page FROM query_items WHERE query_id = ? ORDER BY page ASC').all(queryId) as Array<{ page: number }>;
+    const rows = this.conn
+      .prepare('SELECT page FROM query_pages WHERE query_id = ? UNION SELECT DISTINCT page FROM query_items WHERE query_id = ? ORDER BY page ASC')
+      .all(queryId, queryId) as Array<{ page: number }>;
     return rows.map((r) => Number(r.page));
   }
 
@@ -417,7 +434,7 @@ export class SqliteCacheStore implements CacheStore {
       factories: opts.kind === 'all' || opts.kind === 'factories' ? this.count('factories') : 0,
     };
     if (opts.kind === 'all' || opts.kind === 'queries') {
-      this.conn.exec('DELETE FROM query_items; DELETE FROM queries;');
+      this.conn.exec('DELETE FROM query_items; DELETE FROM query_pages; DELETE FROM queries;');
     }
     if (opts.kind === 'all' || opts.kind === 'suppliers') this.conn.exec('DELETE FROM suppliers;');
     if (opts.kind === 'all' || opts.kind === 'details') this.conn.exec('DELETE FROM supplier_details;');

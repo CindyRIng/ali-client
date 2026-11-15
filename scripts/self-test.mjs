@@ -203,7 +203,7 @@ async function main() {
   const verifySolve = cli(['verify', 'solve']);
   record('错误语义：无验证时 solve 报错', verifySolve.status === 3 && /CAPTCHA_FAILED/.test(verifySolve.err), `exit=${verifySolve.status}`);
   const serve = spawnSync('timeout', ['20', 'ali', 'serve'], { encoding: 'utf8', cwd: ROOT, env: { ...process.env, ALI_LOG_STDOUT: 'false' } });
-  record('serve 冲突检测', serve.status === 0 && /已在运行/.test(serve.stdout ?? ''), (serve.stdout ?? '').split('\n')[0]);
+  record('serve 冲突检测', serve.status === 0 && /已在运行|already running/.test(serve.stdout ?? ''), (serve.stdout ?? '').split('\n')[0]);
 
   // 9. REST 业务端点
   const restSearch = await http('POST', '/v1/search/suppliers', { body: { keyword: 'solid tire', province: 'Hebei', pages: 1, maxEnrich: 3 } });

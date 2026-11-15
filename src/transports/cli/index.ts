@@ -9,6 +9,7 @@ import { runMcpServer } from '../mcp/server.js';
 import { invoke } from '../../api/dispatch.js';
 import { asAliError } from '../../errors/catalog.js';
 import { loadConfig, VERSION } from '../../config/schema.js';
+import { readOwnerLock } from '../../utils/lock.js';
 import type { AliServiceLike } from '../../service-types.js';
 
 type Format = 'table' | 'json' | 'plain';
@@ -478,6 +479,13 @@ program
     const config = loadConfig();
     const host = opts.host ?? config.host;
     const port = opts.port ? Number(opts.port) : config.port;
+    // 全局 owner 锁：即使换端口也不能再起第二个 owner（会抢同一 profile）
+    const owner = readOwnerLock(config.lockFile);
+    if (owner) {
+      console.log(`ali-client 已在运行（pid=${owner.pid}，since ${owner.startedAt}）`);
+      console.log('查看状态：ali status；重启：systemctl --user restart ali-client');
+      return;
+    }
     // 已有 owner 在运行：不要抢 profile，直接提示
     try {
       const probe = await fetch(`http://${host}:${port}/v1/health`, { signal: AbortSignal.timeout(2000) });

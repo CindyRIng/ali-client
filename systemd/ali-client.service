@@ -3,6 +3,9 @@ Description=ali-client —— 阿里巴巴国际站 alibaba.com 本地只读客�
 Documentation=https://github.com/CindyRIng/ali-client
 After=network-online.target
 Wants=network-online.target
+# 被外部 SIGTERM/clean exit 后也自动拉起（如其他进程误杀）
+# 关掉启动频率限制：外部误杀/多次重启属常态，避免进入 failed
+StartLimitIntervalSec=0
 
 [Service]
 Type=simple
@@ -13,10 +16,12 @@ Environment=XAUTHORITY=/home/songqian/.Xauthority
 EnvironmentFile=-/home/songqian/ali-client/.env
 # 入口：在 ~/cloak-env 的 FHS + Chromium 环境中运行 dist/main.js
 ExecStart=/home/songqian/ali-client/bin/ali-run serve
-Restart=on-failure
-RestartSec=5
+Restart=always
+RestartSec=3
 TimeoutStopSec=30
 KillMode=mixed
+# bwrap/Chromium 退出时可能来不及执行 app.close，清掉残留 owner 锁
+ExecStopPost=-/bin/sh -c 'rm -f %h/.ali-client/run/ali.lock'
 
 [Install]
 WantedBy=default.target

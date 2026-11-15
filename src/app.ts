@@ -8,6 +8,9 @@ import { SqliteCacheStore } from './cache/sqlite.js';
 import type { CacheStore } from './cache/types.js';
 import { AlibabaSession } from './session/manager.js';
 import { AliService } from './service.js';
+import fs from 'node:fs';
+import path from 'node:path';
+import { acquireOwnerLock, releaseOwnerLock } from './utils/lock.js';
 
 export interface App {
   config: Config;
@@ -22,6 +25,29 @@ export interface App {
 export interface CreateAppOptions {
   env?: NodeJS.ProcessEnv;
   logToStdout?: boolean;
+}
+
+/** 清理 run 目录中过期的截图（登录 30min / 验证码 2h），避免长期堆积敏感图片 */
+function pruneRunDir(config: Config): void {
+  const runDir = path.join(config.dataDir, 'run');
+  let entries: string[];
+  try {
+    entries = fs.readdirSync(runDir);
+  } catch {
+    return;
+  }
+  const now = Date.now();
+  for (const name of entries) {
+    const match = /^(login|captcha)-.+\.png$/.exec(name);
+    if (!match) continue;
+    const maxAge = match[1] === 'login' ? 15 * 60 * 1000 : 2 * 3600 * 1000;
+    const file = path.join(runDir, name);
+    try {
+      if (now - fs.statSync(file).mtimeMs > maxAge) fs.rmSync(file, { force: true });
+    } catch {
+      /* ignore */
+    }
+  }
 }
 
 async function createCache(config: Config): Promise<CacheStore> {
@@ -69,13 +95,21 @@ export async function createApp(opts: CreateAppOptions = {}): Promise<App> {
     logger,
     async start() {
       if (started) return;
-      await session.start();
+      acquireOwnerLock(config.lockFile);
+      pruneRunDir(config);
+      try {
+        await session.start();
+      } catch (err) {
+        releaseOwnerLock(config.lockFile);
+        throw err;
+      }
       started = true;
-      logger.info('app.started', { profileDir: config.profileDir, port: config.port });
+      logger.info('app.started', { profileDir: config.profileDir, port: config.port, pid: process.pid });
     },
     async close() {
       await session.stop();
       await cache.close();
+      releaseOwnerLock(config.lockFile);
       logger.info('app.closed');
     },
   };

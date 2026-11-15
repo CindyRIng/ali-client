@@ -529,3 +529,30 @@ https://www.alibaba.com/trade/search
 | 11 | **从其它目录运行 `ali` 报 `UNAUTHENTICATED: invalid token`**（launcher 未加载仓库 `.env`） | `bin/ali-run` 自动 `export ALI_ENV_FILE=<repo>/.env`；`dist/main.js` 增加 cwd 缺失时回退仓库根 `.env`；REST 401 文案给出 token/ALI_ENV_FILE 提示；自测新增 cwd=~ 用例 |
 
 自测结果：**34 passed / 0 warn / 0 failed**（命令注册、CLI 16 项、REST 8 项、MCP、systemd、核心数据断言）。脚本：`scripts/self-test.mjs`（`npm run self-test`）。
+
+### 13.6 全场景矩阵测试（2026-11-16）
+
+新增 `scripts/e2e-matrix.mjs`（`npm run e2e`），覆盖 **A 命令注册 / B 地区字典 / C 搜索（关键词·省市·模式·筛选·翻页·刷新）/ D 翻页与详情 / E 工厂目录 / F 会员·缓存·验证·登录 / G REST（鉴权·路由·校验·截图）/ H MCP 全工具 / I 并发 / J 默认 strict 慢用例 / K systemd 自愈**，共 **125 项**，最终 **125 passed / 0 failed**。
+
+本轮发现并修复：
+
+| # | 问题 | 修复 |
+|---|---|---|
+| 1 | **截图端点可让服务崩溃**：请求 `run/` 目录（或读失败）时先 `writeHead` 后抛错，catch 里二次 `sendJson` → `ERR_HTTP_HEADERS_SENT` → 进程退出 | 先 `statSync().isFile()` 校验再写响应；`sendJson` 增加 `headersSent` 守卫；顶层 catch 再包一层，异常只 destroy 连接；`uncaughtException/unhandledRejection` 记录后 exit(1) 交由 systemd 拉起 |
+| 2 | 错误方法返回 404（如 `POST /v1/health`） | 路由匹配区分「路径命中但方法不符」→ 405 `METHOD_NOT_ALLOWED` |
+| 3 | `login cancel` 后 `login status` 仍返回 pending；未知 loginId 不报错 | 登录态记录 completed/cancelled；取消后返回 `cancelled`，未知 id 返回 NOT_FOUND，成功登录后返回 `logged_in` |
+| 4 | **缓存键漏了 `maxEnrich` / `includeUnknownCity`**：先小回填查询后，更大回填请求命中旧缓存，结果少于预期 | canonical 与 `specJson` 加入 `maxEnrich`、`includeUnknownCity` |
+| 5 | 缓存命中时 `enrichedCompanies/detailRequests` 恒为 0（误导） | 按缓存供应商的 `enriched` 数回填统计 |
+| 6 | 无效店铺 store 报 `INTERNAL_ERROR`（page.evaluate 原始错误） | `rawFetch` 统一映射：Failed to fetch/网络 → `UPSTREAM_ERROR`（retryable） |
+| 7 | 每次启动都触发语言/货币切换与页面导航（currency 永远 CNY，条件永远不满足） | `ensureEnglish` 只校验 locale（数据无价格字段，货币不影响） |
+| 8 | 崩溃/重启后浏览器残留 profile 锁导致二次启动失败 | cloak 启动识别 `existing browser session/SingletonLock` → 清理同 profile 旧进程与锁文件后**重试一次** |
+| 9 | 可同时起第二个 owner（`ali serve --port 8899`）或 `--local`，抢同一 profile | 新增 **owner 单实例锁**（`~/.ali-client/run/ali.lock`）：serve/CLI local 检测到存活 owner 即拒绝；`ExecStopPost` 清理残留锁 |
+| 10 | 外部 SIGTERM（实测被其它项目的进程误杀）后服务不自动恢复 | unit `Restart=always`、`RestartSec=3`、关闭 StartLimit；e2e 增加「外部 SIGTERM 后自动拉起」用例 |
+| 11 | `run/` 下登录/验证码截图长期堆积 | 启动时清理：login ≥15min、captcha ≥2h |
+| 12 | 慢查询（strict 默认 60 回填）CLI 30s 超时误报（上一轮已修） | `ALI_CLIENT_TIMEOUT_MS=180s`；e2e 增加默认 strict 慢用例 |
+| 13 | 校验失败返回 422（非 400），测试/文档口径不一致 | 文档明确：参数校验 422 `VALIDATION_FAILED`；业务参数非法 400 `INVALID_ARGUMENT` |
+| 14 | systemd 频繁重启触发 start limit 进入 failed | `StartLimitIntervalSec=0`（外部误杀/多次重启场景） |
+| 15 | **strict 过滤后 0 结果的页无法缓存**：SQLite 只以 `query_items` 行表示页，空页被当成「未抓取」→ 每次 list 都重新抓取/回填 | 新增 `query_pages` 表记录页元数据（含空页），`getPages/getPage` 兼容旧数据 |
+| 16 | `serve` 冲突提示中英混用、self-test 匹配失败 | 统一中文提示，测试兼容双语文案 |
+
+额外验证：`ali serve` 独立启动（停 systemd）→ 健康、锁文件、SIGTERM 退出、残留锁可被下次启动识别；`ali --local` 在 owner 运行时返回 `BAD_STATE`（exit 3）。

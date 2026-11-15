@@ -6,7 +6,7 @@ import path from 'node:path';
 
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 const LEVEL_ORDER: Record<LogLevel, number> = { debug: 10, info: 20, warn: 30, error: 40 };
-const SECRET_KEYS = /password|passwd|token|cookie|authorization|secret|qr|base64|captcha|code/i;
+const SECRET_KEYS = /password|passwd|token|cookie|authorization|secret|qr|base64|captcha|x5sec|session ?id|credential/i;
 
 export interface LoggerOptions {
   file?: string;

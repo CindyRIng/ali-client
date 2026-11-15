@@ -30,9 +30,14 @@ function requestId(): string {
 }
 
 function sendJson(res: http.ServerResponse, status: number, payload: unknown): void {
+  if (res.headersSent || res.writableEnded) return;
   const body = JSON.stringify(payload, null, 2);
-  res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' });
-  res.end(body);
+  try {
+    res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' });
+    res.end(body);
+  } catch {
+    res.destroy();
+  }
 }
 
 function readBody(req: http.IncomingMessage, limit = 2_000_000): Promise<string> {
@@ -106,12 +111,22 @@ export function createRestServer(opts: {
         if (!authorized(req, url, config)) throw new AliError('UNAUTHENTICATED', 'invalid token');
         const p = url.searchParams.get('path') ?? '';
         const runDir = path.resolve(config.dataDir, 'run');
-        const target = path.resolve(p);
-        if (!p || !target.startsWith(runDir) || !fs.existsSync(target)) {
+        const target = p ? path.resolve(p) : '';
+        let buf: Buffer;
+        try {
+          const stat = target ? fs.statSync(target) : null;
+          if (!stat || !stat.isFile() || !target.startsWith(runDir + path.sep)) {
+            throw new AliError('NOT_FOUND', 'screenshot not found');
+          }
+          buf = fs.readFileSync(target);
+        } catch (err) {
+          if (err instanceof AliError) throw err;
           throw new AliError('NOT_FOUND', 'screenshot not found');
         }
-        res.writeHead(200, { 'content-type': 'image/png', 'cache-control': 'no-store' });
-        res.end(fs.readFileSync(target));
+        if (!res.headersSent) {
+          res.writeHead(200, { 'content-type': 'image/png', 'cache-control': 'no-store' });
+          res.end(buf);
+        }
         return;
       }
       // 特殊路由：GET /v1/suppliers/by-store/{store}（供应商店铺子域入口）
@@ -133,11 +148,13 @@ export function createRestServer(opts: {
         sendJson(res, 200, payload);
         return;
       }
-      // 路由匹配
+      // 路由匹配（区分 404 / 405）
       let matched: { op: OperationDef; params: Record<string, string> } | null = null;
+      let pathMatched = false;
       for (const route of ROUTES) {
         const m = route.regex.exec(url.pathname);
         if (!m) continue;
+        pathMatched = true;
         if (route.op.rest.method !== method) continue;
         const params: Record<string, string> = {};
         route.keys.forEach((k, i) => {
@@ -147,7 +164,9 @@ export function createRestServer(opts: {
         break;
       }
       if (!matched) {
-        if (SPECIAL_GET.has(url.pathname)) throw new AliError('METHOD_NOT_ALLOWED', `method ${method} not allowed`);
+        if (pathMatched || SPECIAL_GET.has(url.pathname)) {
+          throw new AliError('METHOD_NOT_ALLOWED', `method ${method} not allowed for ${url.pathname}`);
+        }
         throw new AliError('NOT_FOUND', `no route for ${method} ${url.pathname}`);
       }
       if (!authorized(req, url, config, matched.op)) throw new AliError('UNAUTHENTICATED', 'invalid token');
@@ -188,15 +207,25 @@ export function createRestServer(opts: {
       sendJson(res, 200, payload);
       logger.info('rest.ok', { op: matched.op.id, ms: Date.now() - started, cached: payload.meta.cached });
     } catch (err) {
-      const e = asAliError(err);
-      const payload = failureEnvelope(
-        { code: e.code, message: e.message, retryable: e.retryable, ...(e.retryAfterMs ? { retryAfterMs: e.retryAfterMs } : {}), ...(e.details ? { details: e.details } : {}) },
-        { requestId: reqId, tookMs: Date.now() - started, mode: service.mode() },
-      );
-      res.setHeader('x-request-id', reqId);
-      if (e.retryAfterMs) res.setHeader('retry-after', String(Math.ceil(e.retryAfterMs / 1000)));
-      logger.warn('rest.error', { op: url.pathname, code: e.code, ms: Date.now() - started });
-      sendJson(res, e.httpStatus, payload);
+      try {
+        const e = asAliError(err);
+        const payload = failureEnvelope(
+          { code: e.code, message: e.message, retryable: e.retryable, ...(e.retryAfterMs ? { retryAfterMs: e.retryAfterMs } : {}), ...(e.details ? { details: e.details } : {}) },
+          { requestId: reqId, tookMs: Date.now() - started, mode: service.mode() },
+        );
+        if (!res.headersSent) res.setHeader('x-request-id', reqId);
+        if (e.retryAfterMs && !res.headersSent) res.setHeader('retry-after', String(Math.ceil(e.retryAfterMs / 1000)));
+        logger.warn('rest.error', { op: url.pathname, code: e.code, message: e.message.slice(0, 200), ms: Date.now() - started });
+        sendJson(res, e.httpStatus, payload);
+      } catch (sendErr) {
+        logger.error('rest.error_unhandled', { op: url.pathname, message: (sendErr as Error).message.slice(0, 300) });
+        try {
+          if (!res.headersSent) res.writeHead(500, { 'content-type': 'text/plain' });
+        } catch {
+          /* ignore */
+        }
+        res.destroy();
+      }
     }
   });
   return server;

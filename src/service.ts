@@ -274,6 +274,7 @@ export class AliService {
       req.locationMode ?? (hasLocation ? 'strict' : 'off');
     const placeName = resolved.city?.nameEn ?? resolved.province?.nameEn ?? '';
     const effectiveKeyword = keyword || placeName;
+    const maxEnrich = Math.min(req.maxEnrich ?? this.config.session.maxEnrich, this.config.session.maxEnrich);
     const canonical = {
       keyword: effectiveKeyword,
       province: resolved.province?.code ?? null,
@@ -282,6 +283,8 @@ export class AliService {
       country: req.country,
       filters: req.filters,
       pages: req.pages ?? this.config.session.maxPages,
+      maxEnrich,
+      includeUnknownCity: req.includeUnknownCity,
       sort: req.sort ?? 'default',
     };
     return {
@@ -347,7 +350,7 @@ export class AliService {
             keyword: req.keyword ?? null,
             effectiveKeyword,
             location: this.locationResult(req, queryId, {
-              enriched: 0,
+              enriched: suppliers.filter((s) => s.enriched).length,
               matched: suppliers.length,
               unknownLocation: suppliers.filter((s) => s.location.confidence === 'unknown').length,
               limitReached: false,
@@ -361,8 +364,8 @@ export class AliService {
               deduped: suppliers.length,
               ads: suppliers.filter((s) => s.isAd).length,
               returned: suppliers.length,
-              detailRequests: 0,
-              detailCacheHits: 0,
+              detailRequests: suppliers.filter((s) => s.enriched).length,
+              detailCacheHits: suppliers.filter((s) => s.enriched).length,
               enrichLimitReached: false,
             },
           },
@@ -524,6 +527,8 @@ export class AliService {
         country: req.country,
         filters: req.filters,
         pages: args.pagesRequested,
+        maxEnrich: Math.min(req.maxEnrich ?? this.config.session.maxEnrich, this.config.session.maxEnrich),
+        includeUnknownCity: req.includeUnknownCity,
         sort: req.sort ?? 'default',
       }),
       keyword: req.keyword ?? null,

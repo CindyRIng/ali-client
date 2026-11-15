@@ -101,6 +101,7 @@ export class AlibabaSession {
   private loginPage: Page | null = null;
   private workerUrl: string | null = null;
   private currentLoginId: string | null = null;
+  private loginStates = new Map<string, 'completed' | 'cancelled'>();
   private x5secExpiresAt = 0;
   private lastError: string | null = null;
   private opChain: Promise<unknown> = Promise.resolve();
@@ -224,8 +225,8 @@ export class AlibabaSession {
     try {
       const cookies = await this.host.context().cookies(this.config.baseUrl);
       const cfgCookie = cookies.find((c) => c.name === 'sc_g_cfg_f');
-      if (cfgCookie && /sc_b_locale=en_US/i.test(cfgCookie.value) && /sc_b_currency=USD/i.test(cfgCookie.value)) return;
-      this.logger.warn('session.locale.switch', { current: cfgCookie?.value?.slice(0, 120) ?? null });
+      if (cfgCookie && /sc_b_locale=en_US/i.test(cfgCookie.value)) return;
+      this.logger.info('session.locale.switch', { current: cfgCookie?.value?.slice(0, 120) ?? null, note: 'locale only; currency left as-is' });
       // 通过首页语言/货币 React Select 切换（实测可行）
       await this.page().evaluate(() => {
         const trigger = document.querySelector('.switch-to-popover-trigger') as HTMLElement | null;
@@ -512,34 +513,47 @@ export class AlibabaSession {
       body: init.body ?? null,
       headers: init.headers ?? {},
     };
-    const result = await this.watchdog(
-      page.evaluate(
-        async (p) => {
-          const resp = await fetch(p.url, {
-            method: p.method,
-            body: p.body ?? undefined,
-            headers: p.headers,
-            credentials: 'include',
-          });
-          const text = await resp.text();
-          return {
-            status: resp.status,
-            text: text.slice(0, 6_000_000),
-            contentType: resp.headers.get('content-type') ?? '',
-            bytes: text.length,
-          };
-        },
-        payload,
-      ),
-      this.config.session.watchdogMs,
-      lane,
-    );
+    let fetched: Omit<FetchResult, 'latencyMs'>;
+    try {
+      fetched = await this.watchdog(
+        page.evaluate(
+          async (p) => {
+            const resp = await fetch(p.url, {
+              method: p.method,
+              body: p.body ?? undefined,
+              headers: p.headers,
+              credentials: 'include',
+            });
+            const text = await resp.text();
+            return {
+              status: resp.status,
+              text: text.slice(0, 6_000_000),
+              contentType: resp.headers.get('content-type') ?? '',
+              bytes: text.length,
+            };
+          },
+          payload,
+        ),
+        this.config.session.watchdogMs,
+        lane,
+      );
+    } catch (err) {
+      if (err instanceof AliError) throw err;
+      const msg = err instanceof Error ? err.message : String(err);
+      throw new AliError(
+        'UPSTREAM_ERROR',
+        /Failed to fetch|NetworkError|net::ERR|load failed/i.test(msg)
+          ? `upstream fetch failed（CORS/网络/风控）：${msg.slice(0, 200)}`
+          : `upstream evaluate failed：${msg.slice(0, 200)}`,
+        { retryable: true, details: { url } },
+      );
+    }
     const latencyMs = Date.now() - started;
     this.lastFetchAt = Date.now();
     if (lane === 'detail') this.lastDetailAt = this.lastFetchAt;
     this.requestTimes.push(this.lastFetchAt);
     this.fetchCount++;
-    return { ...result, latencyMs };
+    return { ...fetched, latencyMs };
   }
 
   private async laneWait(lane: 'search' | 'detail' | 'factory'): Promise<void> {
@@ -684,6 +698,9 @@ export class AlibabaSession {
   async loginStart(): Promise<LoginStatus> {
     this.assertReady();
     const loginId = `login_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
+    if (this.currentLoginId && this.loginPage && !this.loginPage.isClosed()) {
+      this.rememberLogin(this.currentLoginId, 'cancelled');
+    }
     this.currentLoginId = loginId;
     const ctx = this.host.context();
     if (this.loginPage && !this.loginPage.isClosed()) {
@@ -728,15 +745,45 @@ export class AlibabaSession {
     }
   }
 
-  async cancelLogin(): Promise<void> {
+  private rememberLogin(loginId: string, state: 'completed' | 'cancelled'): void {
+    this.loginStates.set(loginId, state);
+    while (this.loginStates.size > 20) {
+      const first = this.loginStates.keys().next().value;
+      if (first === undefined) break;
+      this.loginStates.delete(first);
+    }
+  }
+
+  private async closeLoginPage(): Promise<void> {
     if (this.loginPage && !this.loginPage.isClosed()) await this.loginPage.close().catch(() => {});
     this.loginPage = null;
+  }
+
+  async cancelLogin(): Promise<void> {
+    if (this.currentLoginId) this.rememberLogin(this.currentLoginId, 'cancelled');
+    await this.closeLoginPage();
     this.currentLoginId = null;
   }
 
   async loginStatus(loginId: string): Promise<LoginStatus> {
     this.assertReady();
-    if (this.currentLoginId && loginId !== this.currentLoginId) {
+    const remembered = this.loginStates.get(loginId);
+    const status = (state: LoginStatus['state'], message: string): LoginStatus => ({
+      state,
+      action: state === 'logged_in' ? 'none' : 'enter_credentials',
+      loginId,
+      loginUrl: this.config.loginUrl,
+      screenshotPath: null,
+      expiresAt: new Date(Date.now() + this.config.session.loginTimeoutSec * 1000).toISOString(),
+      message,
+    });
+    if (remembered === 'cancelled') return status('cancelled', 'login cancelled');
+    if (remembered === 'completed') {
+      await this.detectLogin();
+      return status(this.loggedIn ? 'logged_in' : 'failed', this.loggedIn ? 'logged in' : 'login page closed before completion');
+    }
+    if (!this.currentLoginId || loginId !== this.currentLoginId) {
+      if (this.loggedIn) return status('logged_in', 'already logged in');
       throw new AliError('NOT_FOUND', `unknown loginId: ${loginId}（先用 ali login 开始一次登录）`);
     }
     const pageState = await this.loginPageState();
@@ -744,28 +791,22 @@ export class AlibabaSession {
       this.loggedIn = true;
       this.modeValue = 'logged_in';
       await this.detectLogin();
-      await this.cancelLogin();
+      if (this.currentLoginId) this.rememberLogin(this.currentLoginId, 'completed');
+      this.currentLoginId = null;
+      await this.closeLoginPage();
       this.logger.info('login.completed', { mode: this.modeValue });
-      return {
-        state: 'logged_in',
-        action: 'none',
-        loginId,
-        loginUrl: this.config.loginUrl,
-        screenshotPath: null,
-        expiresAt: new Date(Date.now() + this.config.session.loginTimeoutSec * 1000).toISOString(),
-        message: 'logged in',
-      };
+      return status('logged_in', 'logged in');
     }
     await this.detectLogin();
-    const state: LoginStatus['state'] = this.loggedIn ? 'logged_in' : 'pending';
+    if (this.loggedIn) {
+      if (this.currentLoginId) this.rememberLogin(this.currentLoginId, 'completed');
+      this.currentLoginId = null;
+      await this.closeLoginPage();
+      return status('logged_in', 'logged in');
+    }
     return {
-      state,
-      action: this.loggedIn ? 'none' : 'enter_credentials',
-      loginId,
+      ...status('pending', 'waiting for manual login'),
       loginUrl: pageState?.url ?? this.config.loginUrl,
-      screenshotPath: null,
-      expiresAt: new Date(Date.now() + this.config.session.loginTimeoutSec * 1000).toISOString(),
-      message: this.loggedIn ? 'logged in' : 'waiting for manual login',
     };
   }
 
