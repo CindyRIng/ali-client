@@ -7,6 +7,7 @@
  */
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -36,7 +37,7 @@ function record(name, ok, detail = '', level = 'fail') {
 function cli(args, opts = {}) {
   const started = Date.now();
   const r = spawnSync(process.execPath, [path.join(ROOT, 'dist/main.js'), ...args], {
-    cwd: ROOT,
+    cwd: opts.cwd ?? ROOT,
     encoding: 'utf8',
     timeout: opts.timeout ?? 180000,
     env: { ...process.env, ALI_LOG_STDOUT: 'false' },
@@ -95,6 +96,13 @@ async function main() {
   if (!TOKEN) {
     record('.env 中存在 ALI_API_TOKEN', false, '缺少 .env 或 token');
   }
+  // 任意目录可用（自动加载仓库 .env）
+  const homeStatus = cli(['status', '-f', 'json'], { cwd: os.homedir() });
+  let homeMode = null;
+  try {
+    homeMode = JSON.parse(homeStatus.out)?.data?.mode;
+  } catch {}
+  record('任意目录可用（cwd=~，自动加载仓库 .env）', homeStatus.status === 0 && !!homeMode, `mode=${homeMode ?? 'n/a'}`);
 
   // 1. 服务健康
   const health = await http('GET', '/v1/health', { auth: false });

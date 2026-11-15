@@ -511,7 +511,7 @@ https://www.alibaba.com/trade/search
 
 ### 13.5 自测与修复（2026-11-16）
 
-实现后做了一轮端到端自测（`npm run self-test`，33 项，需常驻服务），发现并修复以下问题：
+实现后做了一轮端到端自测（`npm run self-test`，34 项，需常驻服务），发现并修复以下问题：
 
 | # | 问题 | 修复 |
 |---|---|---|
@@ -525,5 +525,6 @@ https://www.alibaba.com/trade/search
 | 8 | `--format plain` 未真正实现 | 支持 suppliers/regions/factories/detail 的 TSV 输出 |
 | 9 | 少数错误码退出码不准确（`CAPTCHA_FAILED` 等） | 统一映射到 exit 3（风控/上游） |
 | 10 | 登录 `loginId` 未校验 | 未知 loginId 返回 `NOT_FOUND` |
+| 11 | **从其它目录运行 `ali` 报 `UNAUTHENTICATED: invalid token`**（launcher 未加载仓库 `.env`） | `bin/ali-run` 自动 `export ALI_ENV_FILE=<repo>/.env`；`dist/main.js` 增加 cwd 缺失时回退仓库根 `.env`；REST 401 文案给出 token/ALI_ENV_FILE 提示；自测新增 cwd=~ 用例 |
 
-自测结果：**33 passed / 0 warn / 0 failed**（命令注册、CLI 16 项、REST 8 项、MCP、systemd、核心数据断言）。脚本：`scripts/self-test.mjs`（`npm run self-test`）。
+自测结果：**34 passed / 0 warn / 0 failed**（命令注册、CLI 16 项、REST 8 项、MCP、systemd、核心数据断言）。脚本：`scripts/self-test.mjs`（`npm run self-test`）。

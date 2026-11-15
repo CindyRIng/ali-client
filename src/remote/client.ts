@@ -57,7 +57,11 @@ export class RemoteAliClient implements AliServiceLike {
     if (payload.ok !== true || payload.error) {
       const e = payload.error;
       if (!e) throw new AliError('INTERNAL_ERROR', 'unexpected REST envelope');
-      throw new AliError(e.code, e.message, { details: e.details, retryAfterMs: e.retryAfterMs });
+      const message =
+        e.code === 'UNAUTHENTICATED'
+          ? `REST 鉴权失败：ALI_API_TOKEN 与常驻服务不一致（检查 ${this.baseUrl} 的 .env / ALI_ENV_FILE）`
+          : e.message;
+      throw new AliError(e.code, message, { details: e.details, retryAfterMs: e.retryAfterMs });
     }
     if (payload.meta.mode) this.modeValue = payload.meta.mode;
     return { data: payload.data, cached: payload.meta.cached, mode: payload.meta.mode };

@@ -340,13 +340,13 @@ npm run gen          # 生成 spec/openapi.json 等
 npm run gen:check    # CI 校验生成物与实现同源（实现后启用）
 npm run gen:regions  # 重新生成 src/data/regions.ts（pca-code + pinyin-pro）
 node scripts/mcp-smoke.mjs   # MCP 冒烟（需常驻服务）
-npm run self-test            # 33 项端到端自测（需常驻服务）
+npm run self-test            # 34 项端到端自测（需常驻服务）
 ```
 
 自测实际输出（2026-11-16）：
 
 ```text
-=== 结果：33 passed, 0 warn, 0 failed（共 33）===
+=== 结果：34 passed, 0 warn, 0 failed（共 33）===
 ```
 
 **验收基线**：`npm run build && npm test` 全绿；`ali health/status` 正常；真实上游搜索/详情/工厂目录/地区字典可用；CLI/REST/MCP 同源。
