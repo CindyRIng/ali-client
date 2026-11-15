@@ -116,9 +116,13 @@ bin/ali-run serve
 # → ali-client REST listening on http://127.0.0.1:8792
 # → docs: http://127.0.0.1:8792/docs
 
-# 4) 查询
-bin/ali-run health
-bin/ali-run status
+# 4) 注册 `ali` 命令（软链到 ~/.local/bin，确保在 PATH 中）
+ln -sfn "$PWD/bin/ali-run" ~/.local/bin/ali
+which ali && ali --version
+
+# 5) 查询
+ali health
+ali status
 bin/ali-run regions list --level city --province Hebei
 bin/ali-run search suppliers --keyword "solid tire" --province Hebei --pages 1
 bin/ali-run suppliers detail --company-id 258180302
@@ -336,6 +340,13 @@ npm run gen          # 生成 spec/openapi.json 等
 npm run gen:check    # CI 校验生成物与实现同源（实现后启用）
 npm run gen:regions  # 重新生成 src/data/regions.ts（pca-code + pinyin-pro）
 node scripts/mcp-smoke.mjs   # MCP 冒烟（需常驻服务）
+npm run self-test            # 33 项端到端自测（需常驻服务）
+```
+
+自测实际输出（2026-11-16）：
+
+```text
+=== 结果：33 passed, 0 warn, 0 failed（共 33）===
 ```
 
 **验收基线**：`npm run build && npm test` 全绿；`ali health/status` 正常；真实上游搜索/详情/工厂目录/地区字典可用；CLI/REST/MCP 同源。
@@ -358,7 +369,10 @@ node scripts/mcp-smoke.mjs   # MCP 冒烟（需常驻服务）
 - **省市精确过滤依赖详情回填**：单查询最多 `maxEnrich`（默认 60）家，超出会 `enrichLimitReached`；结果可能少于该页原条数。
 - **`totalCount` 不可靠**：同一查询实测 712–784 波动，不要用于精确翻页；以「返回 0 条」终止。
 - **公司详情按 companyId 查询需要先有一次 search 建立映射**（或用 `--store <subdomain>` 直达）。
-- **滑块/风控会变化**：自动过验证非 100%（实测最终 3/3），失败需人工/坐标中继或二维码扫码；`x5sec` 过期后需重新通过。
+- `ali` 通过 `~/.local/bin/ali` 软链提供；移动仓库后需重建软链。
+- 常驻进程启动时加载 `dist/`；改代码后需 `npm run build && systemctl --user restart ali-client`。
+- **滑块/风控会变化**：自动过验证非 100%（实测最终 3/3），失败需人工/坐标中继或二维码扫码；`x5sec` 过期后需重新通过。无滑块时 `ali verify solve` 会返回 `CAPTCHA_FAILED`（预期行为）。
+- **登录窗口是独立页面**：不影响查询 worker 页；登录可选，且登录态为会话级（浏览器进程关闭即掉）。
 - **登录态会话级**：浏览器进程关闭即掉登录；anonymous-first 下 v1 查询不受影响。
 - 工厂目录仅省、≈500 上限、无城市（上游限制）。
 

@@ -116,11 +116,27 @@ CREATE TABLE IF NOT EXISTS factories (
 const iso = (ms: number): string => new Date(ms).toISOString();
 const nowIso = (): string => new Date().toISOString();
 
+export interface SqliteTtlOptions {
+  queryTtlSec?: number;
+  detailTtlSec?: number;
+  factoryTtlSec?: number;
+}
+
 export class SqliteCacheStore implements CacheStore {
   readonly driver = 'sqlite' as const;
   private db: Db | null = null;
+  private readonly ttl: Required<SqliteTtlOptions>;
 
-  constructor(private readonly dbPath: string) {}
+  constructor(
+    private readonly dbPath: string,
+    ttl: SqliteTtlOptions = {},
+  ) {
+    this.ttl = {
+      queryTtlSec: ttl.queryTtlSec ?? 7200,
+      detailTtlSec: ttl.detailTtlSec ?? 604800,
+      factoryTtlSec: ttl.factoryTtlSec ?? 86400,
+    };
+  }
 
   private get conn(): Db {
     if (!this.db) throw new AliError('CACHE_ERROR', 'sqlite cache not initialized');
@@ -225,7 +241,7 @@ export class SqliteCacheStore implements CacheStore {
   }
 
   putPage(record: PageRecord): void {
-    const expiresAt = iso(Date.now() + 7200 * 1000);
+    const expiresAt = iso(Date.now() + this.ttl.queryTtlSec * 1000);
     this.conn.prepare('DELETE FROM query_items WHERE query_id = ? AND page = ?').run(record.queryId, record.page);
     const stmt = this.conn.prepare(
       `INSERT INTO query_items(query_id, page, position, company_id, summary_json, is_ad, fetched_at, expires_at)
@@ -307,7 +323,7 @@ export class SqliteCacheStore implements CacheStore {
     const now = Date.now();
     this.conn
       .prepare('INSERT OR REPLACE INTO supplier_details(company_id, detail_json, source, fetched_at, expires_at) VALUES (?, ?, ?, ?, ?)')
-      .run(detail.companyId, JSON.stringify(detail), 'render.htm', iso(now), iso(now + 7 * 86400 * 1000));
+      .run(detail.companyId, JSON.stringify(detail), 'render.htm', iso(now), iso(now + this.ttl.detailTtlSec * 1000));
   }
 
   listDetailIds(): string[] {
@@ -339,7 +355,7 @@ export class SqliteCacheStore implements CacheStore {
   }
 
   putFactoryPage(record: FactoryPageRecord): void {
-    const expiresAt = iso(Date.now() + 86400 * 1000);
+    const expiresAt = iso(Date.now() + this.ttl.factoryTtlSec * 1000);
     this.conn.prepare('DELETE FROM factories WHERE category_id = ? AND page = ?').run(record.categoryId, record.page);
     const stmt = this.conn.prepare(
       'INSERT INTO factories(category_id, page, position, company_id, factory_json, fetched_at, expires_at) VALUES (?, ?, ?, ?, ?, ?, ?)',

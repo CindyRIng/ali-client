@@ -29,7 +29,8 @@
     "test:watch": "vitest",
     "gen": "tsx src/generators/generate.ts",
     "gen:check": "tsx src/generators/generate.ts --check",
-    "gen:regions": "tsx scripts/gen-regions.ts"
+    "gen:regions": "tsx scripts/gen-regions.ts",
+    "self-test": "node scripts/self-test.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",

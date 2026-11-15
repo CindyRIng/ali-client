@@ -98,6 +98,9 @@ export class AlibabaSession {
   private requestTimes: number[] = [];
   private events: Array<{ at: string; kind: string; detail: string | null }> = [];
   private challenge: VerificationChallenge | null = null;
+  private loginPage: Page | null = null;
+  private workerUrl: string | null = null;
+  private currentLoginId: string | null = null;
   private x5secExpiresAt = 0;
   private lastError: string | null = null;
   private opChain: Promise<unknown> = Promise.resolve();
@@ -137,6 +140,7 @@ export class AlibabaSession {
   }
 
   async stop(): Promise<void> {
+    await this.cancelLogin().catch(() => {});
     await this.host.close().catch(() => {});
     this.started = false;
     this.workerReady = false;
@@ -195,6 +199,7 @@ export class AlibabaSession {
       this.record('nav_error', msg.slice(0, 200));
       throw new AliError('UPSTREAM_TIMEOUT', `navigation failed: ${msg.slice(0, 160)}`, { cause: err });
     }
+    this.workerUrl = this.page().url();
     await sleep(2500 + jitter(1200));
     await this.refreshCookies();
     const captcha = await this.pageHasCaptcha();
@@ -211,6 +216,7 @@ export class AlibabaSession {
       }
     }
     this.workerReady = true;
+    this.workerUrl = this.page().url();
     return { status, captcha };
   }
 
@@ -218,8 +224,8 @@ export class AlibabaSession {
     try {
       const cookies = await this.host.context().cookies(this.config.baseUrl);
       const cfgCookie = cookies.find((c) => c.name === 'sc_g_cfg_f');
-      if (!cfgCookie || /sc_b_locale=en_US/i.test(cfgCookie.value)) return;
-      this.logger.warn('session.locale.switch', { current: cfgCookie.value.slice(0, 120) });
+      if (cfgCookie && /sc_b_locale=en_US/i.test(cfgCookie.value) && /sc_b_currency=USD/i.test(cfgCookie.value)) return;
+      this.logger.warn('session.locale.switch', { current: cfgCookie?.value?.slice(0, 120) ?? null });
       // 通过首页语言/货币 React Select 切换（实测可行）
       await this.page().evaluate(() => {
         const trigger = document.querySelector('.switch-to-popover-trigger') as HTMLElement | null;
@@ -433,7 +439,20 @@ export class AlibabaSession {
     this.assertReady();
     const started = Date.now();
     this.riskState = 'solving';
-    if (!this.challenge) this.challenge = await this.captureChallenge();
+    if (!this.challenge?.required) {
+      const captcha = await this.pageHasCaptcha();
+      if (!captcha) {
+        this.riskState = 'normal';
+        throw new AliError('CAPTCHA_FAILED', 'no active captcha challenge; nothing to solve');
+      }
+      this.challenge = await this.captureChallenge();
+    }
+    if (this.challenge.type === 'qr') {
+      this.riskState = 'captcha';
+      throw new AliError('CAPTCHA_FAILED', 'QR code verification requires manual scan (Alibaba App)', {
+        details: { verification: this.challengePayload() },
+      });
+    }
     const attempts: VerificationSolveResponse['attempts'] = [];
     const max = this.config.session.verificationAttempts;
     for (let i = 1; i <= max; i++) {
@@ -665,15 +684,22 @@ export class AlibabaSession {
   async loginStart(): Promise<LoginStatus> {
     this.assertReady();
     const loginId = `login_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
-    const page = this.page();
-    await page.goto(this.config.loginUrl, { waitUntil: 'domcontentloaded', timeout: this.config.session.requestTimeoutMs }).catch(() => undefined);
+    this.currentLoginId = loginId;
+    const ctx = this.host.context();
+    if (this.loginPage && !this.loginPage.isClosed()) {
+      await this.loginPage.close().catch(() => {});
+    }
+    this.loginPage = await ctx.newPage();
+    await this.loginPage
+      .goto(this.config.loginUrl, { waitUntil: 'domcontentloaded', timeout: this.config.session.requestTimeoutMs })
+      .catch(() => undefined);
     await sleep(3000);
     let screenshotPath: string | null = null;
     try {
       const dir = path.join(this.config.dataDir, 'run');
       fs.mkdirSync(dir, { recursive: true, mode: 0o700 });
       screenshotPath = path.join(dir, `login-${loginId}.png`);
-      await page.screenshot({ path: screenshotPath });
+      await this.loginPage.screenshot({ path: screenshotPath });
     } catch {
       /* ignore */
     }
@@ -685,19 +711,58 @@ export class AlibabaSession {
       loginUrl: this.config.loginUrl,
       screenshotPath,
       expiresAt: new Date(Date.now() + this.config.session.loginTimeoutSec * 1000).toISOString(),
-      message: '请在已打开的浏览器窗口完成登录（可选；v1 匿名即可完成全部查询）',
+      message: '请在已打开的登录页完成登录（可选；v1 匿名即可完成全部查询）',
     };
+  }
+
+  private async loginPageState(): Promise<{ url: string; loggedIn: boolean } | null> {
+    const page = this.loginPage;
+    if (!page || page.isClosed()) return null;
+    try {
+      const info = await page.evaluate(() => ({ url: location.href, text: (document.body ? document.body.innerText : '').slice(0, 4000) }));
+      const hasSignIn = /(^|\n)\s*Sign in\s*($|\n)/i.test(info.text);
+      const onLoginHost = /login\.alibaba\.com/i.test(info.url);
+      return { url: info.url, loggedIn: !hasSignIn && !onLoginHost };
+    } catch {
+      return null;
+    }
+  }
+
+  async cancelLogin(): Promise<void> {
+    if (this.loginPage && !this.loginPage.isClosed()) await this.loginPage.close().catch(() => {});
+    this.loginPage = null;
+    this.currentLoginId = null;
   }
 
   async loginStatus(loginId: string): Promise<LoginStatus> {
     this.assertReady();
+    if (this.currentLoginId && loginId !== this.currentLoginId) {
+      throw new AliError('NOT_FOUND', `unknown loginId: ${loginId}（先用 ali login 开始一次登录）`);
+    }
+    const pageState = await this.loginPageState();
+    if (pageState?.loggedIn) {
+      this.loggedIn = true;
+      this.modeValue = 'logged_in';
+      await this.detectLogin();
+      await this.cancelLogin();
+      this.logger.info('login.completed', { mode: this.modeValue });
+      return {
+        state: 'logged_in',
+        action: 'none',
+        loginId,
+        loginUrl: this.config.loginUrl,
+        screenshotPath: null,
+        expiresAt: new Date(Date.now() + this.config.session.loginTimeoutSec * 1000).toISOString(),
+        message: 'logged in',
+      };
+    }
     await this.detectLogin();
     const state: LoginStatus['state'] = this.loggedIn ? 'logged_in' : 'pending';
     return {
       state,
       action: this.loggedIn ? 'none' : 'enter_credentials',
       loginId,
-      loginUrl: this.config.loginUrl,
+      loginUrl: pageState?.url ?? this.config.loginUrl,
       screenshotPath: null,
       expiresAt: new Date(Date.now() + this.config.session.loginTimeoutSec * 1000).toISOString(),
       message: this.loggedIn ? 'logged in' : 'waiting for manual login',
@@ -732,7 +797,7 @@ export class AlibabaSession {
         uptimeMs: this.host.startedAtMs() ? Date.now() - this.host.startedAtMs() : 0,
       },
       worker: {
-        url: this.started ? this.config.baseUrl : null,
+        url: this.started ? (this.workerUrl ?? this.config.baseUrl) : null,
         ready: this.workerReady,
         fetchHealthy: this.lastFetchHungAt === 0 || Date.now() - this.lastFetchHungAt > 60_000,
         lastFetchHungAt: iso(this.lastFetchHungAt),

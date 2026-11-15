@@ -165,6 +165,7 @@ export class AliService {
     return this.session.loginStatus(loginId);
   }
   async loginCancel(loginId: string): Promise<{ cancelled: true; loginId: string }> {
+    await this.session.cancelLogin();
     return { cancelled: true, loginId };
   }
   async verificationGet(): Promise<VerificationStatus> {
@@ -642,11 +643,33 @@ export class AliService {
     });
     const res = await this.session.fetchText(url, { lane: 'search' });
     const parsed = parseSearchPage(res.text);
+    let items = parsed.items;
+    if (query.locationMode === 'strict' && (query.province || query.city)) {
+      const prov = query.province ? provinceByCode(query.province) : null;
+      const city = query.city ? cityByCode(query.city) : null;
+      const maxEnrich = this.config.session.maxEnrich;
+      const subset = items.slice(0, maxEnrich);
+      const enriched = await mapLimit(subset, this.config.session.detailConcurrency, async (item) => {
+        try {
+          const detail = await this.ensureDetail(item.companyId, item.storeSubdomain ?? '', item, false);
+          return detailSummary(detail, item);
+        } catch (err) {
+          if (err instanceof AliError && (err.code === 'CAPTCHA_REQUIRED' || err.code === 'RISK_COOLDOWN')) throw err;
+          return item;
+        }
+      });
+      const byId = new Map(enriched.map((s) => [s.companyId, s]));
+      items = items.map((item) => byId.get(item.companyId) ?? item);
+      for (const s of items) this.cache.putSupplier(s);
+      items = items.filter((s) =>
+        locationMatches(s.location, { province: prov?.nameEn ?? null, city: city?.nameEn ?? null }, true),
+      );
+    }
     const rec: PageRecord = {
       queryId: query.queryId,
       page,
       totalCount: parsed.totalCount,
-      items: parsed.items,
+      items,
       fetchedAt: Date.now(),
     };
     this.cache.putPage(rec);

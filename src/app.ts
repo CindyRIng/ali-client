@@ -30,7 +30,11 @@ async function createCache(config: Config): Promise<CacheStore> {
     await memory.init();
     return memory;
   }
-  const sqlite = new SqliteCacheStore(config.cache.dbPath);
+  const sqlite = new SqliteCacheStore(config.cache.dbPath, {
+    queryTtlSec: config.cache.queryTtlSec,
+    detailTtlSec: config.cache.detailTtlSec,
+    factoryTtlSec: config.cache.factoryTtlSec,
+  });
   try {
     await sqlite.init();
     return sqlite;

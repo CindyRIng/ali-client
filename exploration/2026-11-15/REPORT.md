@@ -508,3 +508,22 @@ https://www.alibaba.com/trade/search
 - Agent 技能：`skills/ali/SKILL.md`
 - README（含 AI 图例 + 真实截图）：仓库根 `README.md`、`docs/assets/`
 - GitHub：<https://github.com/CindyRIng/ali-client>
+
+### 13.5 自测与修复（2026-11-16）
+
+实现后做了一轮端到端自测（`npm run self-test`，33 项，需常驻服务），发现并修复以下问题：
+
+| # | 问题 | 修复 |
+|---|---|---|
+| 1 | `ali` 命令未注册到 PATH | `ln -sfn bin/ali-run ~/.local/bin/ali`（文档已写） |
+| 2 | 常驻进程加载旧 `dist/`（改代码后行为不更新） | 流程约定：`npm run build && systemctl --user restart ali-client`；文档 FAQ 补充 |
+| 3 | `ali verify solve` 在无滑块时错误返回 `solved:true` | 改为抛 `CAPTCHA_FAILED`（no active captcha）；QR 类型提示人工扫码 |
+| 4 | `ali serve` 与 systemd owner 冲突时报浏览器 profile 占用（难懂） | `serve` 先探测既有 REST：已运行则提示并退出 0 |
+| 5 | 登录复用 worker 页，登录期间/取消后可能影响采集 | 登录改为**独立页面**；worker 不受影响；`loginCancel` 关闭登录页；`status.worker.url` 报告真实页面 |
+| 6 | 缓存 TTL 在 SQLite 层硬编码（忽略 `ALI_TTL_*` 配置） | TTL 改为从 config 传入 SQLite 缓存 |
+| 7 | strict 查询翻到未抓取页时返回**未过滤**原始列表 | 翻页抓取同样执行详情回填 + 省市过滤（与 search 一致） |
+| 8 | `--format plain` 未真正实现 | 支持 suppliers/regions/factories/detail 的 TSV 输出 |
+| 9 | 少数错误码退出码不准确（`CAPTCHA_FAILED` 等） | 统一映射到 exit 3（风控/上游） |
+| 10 | 登录 `loginId` 未校验 | 未知 loginId 返回 `NOT_FOUND` |
+
+自测结果：**33 passed / 0 warn / 0 failed**（命令注册、CLI 16 项、REST 8 项、MCP、systemd、核心数据断言）。脚本：`scripts/self-test.mjs`（`npm run self-test`）。

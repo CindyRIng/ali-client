@@ -79,4 +79,5 @@
 - 本机常驻：`systemctl --user status ali-client` → running；`GET http://127.0.0.1:8792/v1/health` ✅
 - 真实上游联调（匿名）：搜索（`solid tire` + 河北 strict，20 家回填 1 家命中）、按城市（衡水 10 家命中）、详情（Kangyuan：6 yrs / ♥♥ / 主营产品 / 金品 / SGS）、工厂目录（河北）、地区字典（31 省 342 市）
 - MCP：16 个 `ali_*` 工具，stdio 冒烟通过（`scripts/mcp-smoke.mjs`）
+- 端到端自测：`npm run self-test` → **33 passed / 0 warn / 0 failed**（2026-11-16）
 - 详见 [实测报告 §13](../exploration/2026-11-15/REPORT.md)

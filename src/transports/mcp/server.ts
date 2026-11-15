@@ -5,6 +5,7 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { createBackend } from '../../backend.js';
+import { createApp } from '../../app.js';
 import { mcpTools, getOperation } from '../../api/operations.js';
 import { invoke } from '../../api/dispatch.js';
 import { asAliError } from '../../errors/catalog.js';
@@ -21,6 +22,13 @@ export async function runMcpServer(): Promise<void> {
   let closeBackend: (() => Promise<void>) | null = null;
   const getService = async (): Promise<AliServiceLike> => {
     if (service) return service;
+    if ((process.env.ALI_MCP_PROXY ?? 'rest') === 'local') {
+      const app = await createApp({ logToStdout: false });
+      await app.start();
+      service = app.service;
+      closeBackend = () => app.close();
+      return service;
+    }
     const backend = await createBackend({ mode: 'auto' });
     service = backend.service;
     closeBackend = backend.close;

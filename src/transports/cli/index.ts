@@ -95,6 +95,71 @@ function printOp(opId: string, data: unknown, format: Format, meta: { cached?: b
     return;
   }
   const d = data as Record<string, unknown>;
+  if (format === 'plain') {
+    const tsv = (rows: string[][]): void => {
+      for (const row of rows) console.log(row.join('\t'));
+    };
+    switch (opId) {
+      case 'search.suppliers':
+      case 'suppliers.list': {
+        const list = (d.suppliers as Array<Record<string, unknown>>) ?? [];
+        tsv(
+          list.map((s) => {
+            const loc = (s.location ?? {}) as Record<string, unknown>;
+            const mem = (s.membership ?? {}) as Record<string, unknown>;
+            const idx = (s.supplierIndex ?? null) as { stars?: number | null } | null;
+            return [
+              String(s.companyId),
+              String(s.companyName),
+              String(loc.province ?? ''),
+              String(loc.city ?? ''),
+              String(s.joinedYears ?? ''),
+              String(idx?.stars ?? ''),
+              String(mem.plan ?? ''),
+            ];
+          }),
+        );
+        return;
+      }
+      case 'regions.list':
+      case 'regions.search': {
+        tsv(((d.items as Array<Record<string, unknown>>) ?? []).map((r) => [String(r.code), String(r.level), String(r.nameEn), String(r.nameZh)]));
+        return;
+      }
+      case 'factories.list': {
+        tsv(
+          ((d.items as Array<Record<string, unknown>>) ?? []).map((it) => [
+            String(it.companyId),
+            String(it.companyName),
+            String(it.province ?? ''),
+            String(it.goldSupplierYears ?? ''),
+          ]),
+        );
+        return;
+      }
+      case 'suppliers.detail': {
+        const loc = (d.location ?? {}) as Record<string, unknown>;
+        const mem = (d.membership ?? {}) as Record<string, unknown>;
+        const idx = (d.supplierIndex ?? {}) as Record<string, unknown>;
+        const rows: Array<[string, unknown]> = [
+          ['companyId', d.companyId],
+          ['companyName', d.companyName],
+          ['province', loc.province],
+          ['city', loc.city],
+          ['joinedYears', d.joinedYears],
+          ['supplierIndexStars', idx.stars],
+          ['membershipPlan', mem.plan],
+          ['mainProducts', d.mainProductsText],
+          ['storeUrl', d.storeUrl],
+        ];
+        tsv(rows.map(([k, v]) => [k, String(v ?? '')]));
+        return;
+      }
+      default:
+        printJson(data);
+        return;
+    }
+  }
   switch (opId) {
     case 'search.suppliers': {
       const loc = (d.location ?? {}) as Record<string, unknown>;
@@ -170,8 +235,12 @@ function exitCodeFor(code: string): number {
       return 2;
     case 'RATE_LIMITED':
     case 'CAPTCHA_REQUIRED':
+    case 'CAPTCHA_FAILED':
     case 'RISK_COOLDOWN':
     case 'UPSTREAM_TIMEOUT':
+    case 'UPSTREAM_BLOCKED':
+    case 'PAGE_NOT_AVAILABLE':
+    case 'BAD_STATE':
       return 3;
     case 'UNAUTHENTICATED':
     case 'LOGIN_REQUIRED':
@@ -407,9 +476,25 @@ program
   .option('--host <host>', '监听地址')
   .action(async (opts: { port?: string; host?: string }) => {
     const config = loadConfig();
+    const host = opts.host ?? config.host;
+    const port = opts.port ? Number(opts.port) : config.port;
+    // 已有 owner 在运行：不要抢 profile，直接提示
+    try {
+      const probe = await fetch(`http://${host}:${port}/v1/health`, { signal: AbortSignal.timeout(2000) });
+      if (probe.ok) {
+        const payload = (await probe.json()) as { data?: { service?: string } };
+        if (payload.data?.service === 'ali-client') {
+          console.log(`ali-client 已在运行：http://${host}:${port}`);
+          console.log('查看状态：ali status；重启：systemctl --user restart ali-client');
+          return;
+        }
+      }
+    } catch {
+      /* not running */
+    }
     const app = await createApp({ logToStdout: true });
-    if (opts.port) config.port = Number(opts.port);
-    if (opts.host) config.host = opts.host;
+    config.host = host;
+    config.port = port;
     await app.start();
     const server = createRestServer({ config, service: app.service, logger: app.logger });
     await new Promise<void>((resolve, reject) => {
