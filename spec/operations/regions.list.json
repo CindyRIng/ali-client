@@ -1,0 +1,212 @@
+{
+  "id": "regions.list",
+  "summary": "省/市字典",
+  "auth": "bearer",
+  "rest": {
+    "method": "GET",
+    "path": "/v1/regions",
+    "query": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "$ref": "#/$defs/RegionLevel"
+        },
+        "province": {
+          "description": "省份（中文/英文/拼音/代码）",
+          "type": "string"
+        }
+      },
+      "$defs": {
+        "RegionsQuery": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "$ref": "#/$defs/RegionLevel"
+            },
+            "province": {
+              "description": "省份（中文/英文/拼音/代码）",
+              "type": "string"
+            }
+          }
+        },
+        "RegionLevel": {
+          "type": "string",
+          "enum": [
+            "province",
+            "city"
+          ]
+        }
+      }
+    }
+  },
+  "cli": {
+    "command": "regions list",
+    "description": "省/市字典（31 省 + 地级市）",
+    "example": "ali regions list --level city --province Hebei"
+  },
+  "mcp": {
+    "name": "ali_regions",
+    "description": "省/市字典（中国内地 31 省 + 地级市）"
+  },
+  "input": {
+    "type": "object",
+    "properties": {
+      "level": {
+        "$ref": "#/$defs/RegionLevel"
+      },
+      "province": {
+        "description": "省份（中文/英文/拼音/代码）",
+        "type": "string"
+      }
+    },
+    "$defs": {
+      "RegionsQuery": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "$ref": "#/$defs/RegionLevel"
+          },
+          "province": {
+            "description": "省份（中文/英文/拼音/代码）",
+            "type": "string"
+          }
+        }
+      },
+      "RegionLevel": {
+        "type": "string",
+        "enum": [
+          "province",
+          "city"
+        ]
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "level": {
+        "$ref": "#/$defs/RegionLevel"
+      },
+      "province": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Region"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/Region"
+        }
+      },
+      "count": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+      }
+    },
+    "required": [
+      "items",
+      "count"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+      "RegionsResponse": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "$ref": "#/$defs/RegionLevel"
+          },
+          "province": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Region"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/Region"
+            }
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "items",
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "RegionLevel": {
+        "type": "string",
+        "enum": [
+          "province",
+          "city"
+        ]
+      },
+      "Region": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "GB 行政区划代码风格：CN-13 / CN-13-1311"
+          },
+          "level": {
+            "$ref": "#/$defs/RegionLevel"
+          },
+          "nameZh": {
+            "type": "string"
+          },
+          "nameEn": {
+            "type": "string",
+            "description": "英文展示名（阿里页面口径，如 Hebei / Hengshui）"
+          },
+          "pinyin": {
+            "type": "string"
+          },
+          "aliases": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aliSpellings": {
+            "default": [],
+            "description": "在阿里页面上出现过的拼写（含噪声拼写映射）",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "parentCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "level",
+          "nameZh",
+          "nameEn",
+          "pinyin",
+          "aliases",
+          "aliSpellings",
+          "parentCode"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+[Unit]
+Description=ali-client —— 阿里巴巴国际站 alibaba.com 本地只读客户端（CLI/REST/MCP）
+Documentation=https://github.com/CindyRIng/ali-client
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/songqian/ali-client
+Environment=HOME=/home/songqian
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/songqian/.Xauthority
+EnvironmentFile=-/home/songqian/ali-client/.env
+# 入口：在 ~/cloak-env 的 FHS + Chromium 环境中运行 dist/main.js
+ExecStart=/home/songqian/ali-client/bin/ali-run serve
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+KillMode=mixed
+
+[Install]
+WantedBy=default.target

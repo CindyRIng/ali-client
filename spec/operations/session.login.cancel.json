@@ -1,0 +1,95 @@
+{
+  "id": "session.login.cancel",
+  "summary": "取消登录流程",
+  "auth": "bearer",
+  "rest": {
+    "method": "DELETE",
+    "path": "/v1/session/login/{loginId}",
+    "pathParams": {
+      "type": "object",
+      "properties": {
+        "loginId": {
+          "$ref": "#/$defs/LoginId"
+        }
+      },
+      "required": [
+        "loginId"
+      ],
+      "$defs": {
+        "LoginId": {
+          "type": "string",
+          "pattern": "^login_[A-Za-z0-9_-]{8,64}$",
+          "description": "登录流程 ID"
+        }
+      }
+    }
+  },
+  "cli": {
+    "command": "login cancel",
+    "description": "取消登录流程",
+    "example": "ali login cancel login_xxx"
+  },
+  "mcp": {
+    "name": "ali_login_cancel",
+    "description": "取消登录流程"
+  },
+  "input": {
+    "type": "object",
+    "properties": {
+      "loginId": {
+        "$ref": "#/$defs/LoginId"
+      }
+    },
+    "required": [
+      "loginId"
+    ],
+    "$defs": {
+      "LoginId": {
+        "type": "string",
+        "pattern": "^login_[A-Za-z0-9_-]{8,64}$",
+        "description": "登录流程 ID"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "cancelled": {
+        "type": "boolean",
+        "const": true
+      },
+      "loginId": {
+        "$ref": "#/$defs/LoginId"
+      }
+    },
+    "required": [
+      "cancelled",
+      "loginId"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+      "LoginCancelResponse": {
+        "type": "object",
+        "properties": {
+          "cancelled": {
+            "type": "boolean",
+            "const": true
+          },
+          "loginId": {
+            "$ref": "#/$defs/LoginId"
+          }
+        },
+        "required": [
+          "cancelled",
+          "loginId"
+        ],
+        "additionalProperties": false
+      },
+      "LoginId": {
+        "type": "string",
+        "pattern": "^login_[A-Za-z0-9_-]{8,64}$",
+        "description": "登录流程 ID"
+      }
+    }
+  }
+}

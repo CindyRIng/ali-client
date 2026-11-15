@@ -1,0 +1,1382 @@
+{
+  "id": "suppliers.detail",
+  "summary": "供应商详情（年限/Supplier Index/主营产品/会员/省市）",
+  "auth": "bearer",
+  "rest": {
+    "method": "GET",
+    "path": "/v1/suppliers/{companyId}",
+    "pathParams": {
+      "type": "object",
+      "properties": {
+        "companyId": {
+          "$ref": "#/$defs/CompanyId"
+        }
+      },
+      "required": [
+        "companyId"
+      ],
+      "$defs": {
+        "CompanyId": {
+          "type": "string",
+          "pattern": "^\\d{4,20}$",
+          "description": "阿里巴巴供应商 companyId（数字字符串）"
+        }
+      }
+    },
+    "query": {
+      "type": "object",
+      "properties": {
+        "refresh": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          ]
+        }
+      },
+      "$defs": {
+        "CompanyDetailQuery": {
+          "type": "object",
+          "properties": {
+            "refresh": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "true",
+                    "false"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "command": "suppliers detail",
+    "description": "供应商详情（含上平台年限、Supplier Index 星级、主营产品、会员、省市、经营指标）",
+    "example": "ali suppliers detail --company-id 258180302"
+  },
+  "mcp": {
+    "name": "ali_supplier_detail",
+    "description": "供应商详情：上平台年限、Supplier Index 星级、主营产品、会员档位与证据、省市、基础经营指标"
+  },
+  "input": {
+    "type": "object",
+    "properties": {
+      "companyId": {
+        "$ref": "#/$defs/CompanyId"
+      },
+      "store": {
+        "$ref": "#/$defs/StoreSubdomain"
+      },
+      "refresh": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ]
+      }
+    },
+    "$defs": {
+      "SupplierDetailInput": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "$ref": "#/$defs/CompanyId"
+          },
+          "store": {
+            "$ref": "#/$defs/StoreSubdomain"
+          },
+          "refresh": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "true",
+                  "false"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "CompanyId": {
+        "type": "string",
+        "pattern": "^\\d{4,20}$",
+        "description": "阿里巴巴供应商 companyId（数字字符串）"
+      },
+      "StoreSubdomain": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{1,60}$",
+        "description": "供应商店铺子域（如 kangyuanxiangsu）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "companyId": {
+        "type": "string"
+      },
+      "companyName": {
+        "type": "string"
+      },
+      "storeUrl": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "storeSubdomain": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "logoUrl": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "country": {
+        "default": "CN",
+        "type": "string"
+      },
+      "location": {
+        "$ref": "#/$defs/Location"
+      },
+      "joinedYears": {
+        "default": null,
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "joinedYearsText": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "supplierIndex": {
+        "default": null,
+        "anyOf": [
+          {
+            "$ref": "#/$defs/SupplierIndex"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "membership": {
+        "$ref": "#/$defs/Membership"
+      },
+      "mainProducts": {
+        "default": [],
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "mainProductsText": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "rating": {
+        "$ref": "#/$defs/Rating"
+      },
+      "businessType": {
+        "$ref": "#/$defs/BusinessType"
+      },
+      "staffText": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "factoryAreaText": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "transactionsText": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "responseTime": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "capabilityTags": {
+        "default": [],
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "rank": {
+        "default": null,
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "isAd": {
+        "default": false,
+        "type": "boolean"
+      },
+      "adType": {
+        "default": null,
+        "anyOf": [
+          {
+            "type": "string",
+            "enum": [
+              "top_sponsor",
+              "p4p"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "position": {
+        "default": 0,
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+      },
+      "enriched": {
+        "default": false,
+        "type": "boolean"
+      },
+      "identity": {
+        "$ref": "#/$defs/SupplierIdentity"
+      },
+      "profile": {
+        "$ref": "#/$defs/SupplierProfile"
+      },
+      "performance": {
+        "$ref": "#/$defs/SupplierPerformance"
+      },
+      "capabilities": {
+        "$ref": "#/$defs/SupplierCapabilities"
+      },
+      "trust": {
+        "$ref": "#/$defs/SupplierTrust"
+      },
+      "fetchedAt": {
+        "$ref": "#/$defs/IsoDateTime"
+      },
+      "raw": {
+        "default": {},
+        "type": "object",
+        "propertyNames": {
+          "type": "string"
+        },
+        "additionalProperties": {}
+      }
+    },
+    "required": [
+      "companyId",
+      "companyName",
+      "storeUrl",
+      "storeSubdomain",
+      "logoUrl",
+      "country",
+      "location",
+      "joinedYears",
+      "joinedYearsText",
+      "supplierIndex",
+      "membership",
+      "mainProducts",
+      "mainProductsText",
+      "rating",
+      "businessType",
+      "staffText",
+      "factoryAreaText",
+      "transactionsText",
+      "responseTime",
+      "capabilityTags",
+      "rank",
+      "isAd",
+      "adType",
+      "position",
+      "enriched",
+      "identity",
+      "profile",
+      "performance",
+      "capabilities",
+      "trust",
+      "fetchedAt",
+      "raw"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+      "SupplierDetail": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "storeUrl": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "storeSubdomain": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "logoUrl": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "country": {
+            "default": "CN",
+            "type": "string"
+          },
+          "location": {
+            "$ref": "#/$defs/Location"
+          },
+          "joinedYears": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "joinedYearsText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supplierIndex": {
+            "default": null,
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SupplierIndex"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "membership": {
+            "$ref": "#/$defs/Membership"
+          },
+          "mainProducts": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mainProductsText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "$ref": "#/$defs/Rating"
+          },
+          "businessType": {
+            "$ref": "#/$defs/BusinessType"
+          },
+          "staffText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "factoryAreaText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "transactionsText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "responseTime": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "capabilityTags": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rank": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "isAd": {
+            "default": false,
+            "type": "boolean"
+          },
+          "adType": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "top_sponsor",
+                  "p4p"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "position": {
+            "default": 0,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "enriched": {
+            "default": false,
+            "type": "boolean"
+          },
+          "identity": {
+            "$ref": "#/$defs/SupplierIdentity"
+          },
+          "profile": {
+            "$ref": "#/$defs/SupplierProfile"
+          },
+          "performance": {
+            "$ref": "#/$defs/SupplierPerformance"
+          },
+          "capabilities": {
+            "$ref": "#/$defs/SupplierCapabilities"
+          },
+          "trust": {
+            "$ref": "#/$defs/SupplierTrust"
+          },
+          "fetchedAt": {
+            "$ref": "#/$defs/IsoDateTime"
+          },
+          "raw": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "companyId",
+          "companyName",
+          "storeUrl",
+          "storeSubdomain",
+          "logoUrl",
+          "country",
+          "location",
+          "joinedYears",
+          "joinedYearsText",
+          "supplierIndex",
+          "membership",
+          "mainProducts",
+          "mainProductsText",
+          "rating",
+          "businessType",
+          "staffText",
+          "factoryAreaText",
+          "transactionsText",
+          "responseTime",
+          "capabilityTags",
+          "rank",
+          "isAd",
+          "adType",
+          "position",
+          "enriched",
+          "identity",
+          "profile",
+          "performance",
+          "capabilities",
+          "trust",
+          "fetchedAt",
+          "raw"
+        ],
+        "additionalProperties": false
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "default": "CN",
+            "type": "string"
+          },
+          "countryName": {
+            "type": "string"
+          },
+          "province": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provinceCode": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "city": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "cityCode": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "address": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "display": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "default": "unknown",
+            "$ref": "#/$defs/LocationConfidence"
+          },
+          "source": {
+            "default": "none",
+            "type": "string",
+            "enum": [
+              "detail",
+              "list",
+              "keyword",
+              "none"
+            ]
+          }
+        },
+        "required": [
+          "country",
+          "province",
+          "provinceCode",
+          "city",
+          "cityCode",
+          "address",
+          "display",
+          "confidence",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "LocationConfidence": {
+        "type": "string",
+        "enum": [
+          "high",
+          "medium",
+          "low",
+          "unknown"
+        ]
+      },
+      "SupplierIndex": {
+        "type": "object",
+        "properties": {
+          "stars": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "maxStars": {
+            "default": 5,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "label": {
+            "default": "Supplier Index",
+            "type": "string"
+          },
+          "source": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "stars",
+          "maxStars",
+          "label",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "Membership": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "$ref": "#/$defs/MembershipPlan"
+          },
+          "label": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "verifiedSupplier": {
+            "default": false,
+            "type": "boolean"
+          },
+          "verifiedPro": {
+            "default": false,
+            "type": "boolean"
+          },
+          "paidMember": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "goldSupplier": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "onsiteAssessment": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "baseVerify": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "assessedBy": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "goldYears": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence": {
+            "$ref": "#/$defs/MembershipEvidence"
+          }
+        },
+        "required": [
+          "plan",
+          "label",
+          "rank",
+          "verifiedSupplier",
+          "verifiedPro",
+          "paidMember",
+          "goldSupplier",
+          "onsiteAssessment",
+          "baseVerify",
+          "assessedBy",
+          "goldYears",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "MembershipPlan": {
+        "type": "string",
+        "enum": [
+          "verified_pro",
+          "verified_supplier",
+          "gold_supplier",
+          "unknown"
+        ],
+        "description": "会员档位：verified_pro 领袖卖家 / verified_supplier 金品诚企 / gold_supplier 出口通 / unknown"
+      },
+      "MembershipEvidence": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "list",
+              "detail",
+              "merged"
+            ]
+          },
+          "fields": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "source",
+          "fields"
+        ],
+        "additionalProperties": false
+      },
+      "Rating": {
+        "type": "object",
+        "properties": {
+          "score": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 5
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "count": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "score",
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "BusinessType": {
+        "type": "object",
+        "properties": {
+          "raw": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "manufacturer": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "tradingCompany": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "raw",
+          "manufacturer",
+          "tradingCompany"
+        ],
+        "additionalProperties": false
+      },
+      "SupplierIdentity": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nameZh": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "verified": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "description": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "key",
+          "name",
+          "nameZh",
+          "verified",
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "SupplierProfile": {
+        "type": "object",
+        "properties": {
+          "establishedYear": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "annualRevenue": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "default": null,
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "kind": {
+                    "default": "unknown",
+                    "type": "string",
+                    "enum": [
+                      "number",
+                      "range",
+                      "unknown"
+                    ]
+                  }
+                },
+                "required": [
+                  "value",
+                  "kind"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "employees": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "mainMarkets": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "paymentMethods": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "deliveryTerms": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contractManufacturing": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "advantageDescription": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "capacityTags": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source": {
+            "default": "companyOverview",
+            "type": "string"
+          }
+        },
+        "required": [
+          "establishedYear",
+          "annualRevenue",
+          "employees",
+          "mainMarkets",
+          "paymentMethods",
+          "deliveryTerms",
+          "contractManufacturing",
+          "description",
+          "advantageDescription",
+          "capacityTags",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "SupplierPerformance": {
+        "type": "object",
+        "properties": {
+          "storeRating": {
+            "$ref": "#/$defs/Rating"
+          },
+          "onTimeDeliveryRate": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "responseTime": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "responseRate": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "totalExportRevenueUSD": {
+            "default": null,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "totalExportRevenueText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "floorSpaceM2": {
+            "default": null,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "floorSpaceText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "productionLines": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "factoryRank": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "default": null,
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "url": {
+                    "default": null,
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "text",
+                  "url"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "topMarkets": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "market": {
+                  "type": "string"
+                },
+                "percent": {
+                  "default": null,
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "products": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "market",
+                "percent",
+                "products"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "storeRating",
+          "onTimeDeliveryRate",
+          "responseTime",
+          "responseRate",
+          "totalExportRevenueUSD",
+          "totalExportRevenueText",
+          "floorSpaceM2",
+          "floorSpaceText",
+          "productionLines",
+          "factoryRank",
+          "topMarkets"
+        ],
+        "additionalProperties": false
+      },
+      "SupplierCapabilities": {
+        "type": "object",
+        "properties": {
+          "customization": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "qualityControl": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "assessmentTags": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "serviceTags": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "customization",
+          "qualityControl",
+          "assessmentTags",
+          "serviceTags"
+        ],
+        "additionalProperties": false
+      },
+      "SupplierTrust": {
+        "type": "object",
+        "properties": {
+          "tradeAssurance": {
+            "$ref": "#/$defs/TradeAssurance"
+          },
+          "baseVerify": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "onsiteAssessment": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "assessedBy": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "verifiedSupplier": {
+            "default": false,
+            "type": "boolean"
+          },
+          "verifiedPro": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "tradeAssurance",
+          "baseVerify",
+          "onsiteAssessment",
+          "assessedBy",
+          "verifiedSupplier",
+          "verifiedPro"
+        ],
+        "additionalProperties": false
+      },
+      "TradeAssurance": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "default": false,
+            "type": "boolean"
+          },
+          "amountText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "creditLevel": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "hasOrderYear": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "enabled",
+          "amountText",
+          "creditLevel",
+          "hasOrderYear"
+        ],
+        "additionalProperties": false
+      },
+      "IsoDateTime": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,9})?(?:Z|[+-]\\d{2}:\\d{2})$",
+        "description": "ISO-8601 日期时间（含时区）"
+      }
+    }
+  }
+}

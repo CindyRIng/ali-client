@@ -1,0 +1,217 @@
+{
+  "id": "cache.stats",
+  "summary": "缓存统计",
+  "auth": "bearer",
+  "rest": {
+    "method": "GET",
+    "path": "/v1/cache/stats"
+  },
+  "cli": {
+    "command": "cache stats",
+    "description": "缓存统计",
+    "example": "ali cache stats"
+  },
+  "mcp": {
+    "name": "ali_cache_stats",
+    "description": "缓存统计（queries/suppliers/details/factories）"
+  },
+  "input": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "driver": {
+        "type": "string",
+        "enum": [
+          "sqlite",
+          "memory"
+        ]
+      },
+      "queries": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "oldestAt": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "count",
+          "oldestAt"
+        ],
+        "additionalProperties": false
+      },
+      "suppliers": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "details": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "expired": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "count",
+          "expired"
+        ],
+        "additionalProperties": false
+      },
+      "factories": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "bytes": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+      }
+    },
+    "required": [
+      "driver",
+      "queries",
+      "suppliers",
+      "details",
+      "factories",
+      "bytes"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+      "CacheStats": {
+        "type": "object",
+        "properties": {
+          "driver": {
+            "type": "string",
+            "enum": [
+              "sqlite",
+              "memory"
+            ]
+          },
+          "queries": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "oldestAt": {
+                "default": null,
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "count",
+              "oldestAt"
+            ],
+            "additionalProperties": false
+          },
+          "suppliers": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "count"
+            ],
+            "additionalProperties": false
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "expired": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "count",
+              "expired"
+            ],
+            "additionalProperties": false
+          },
+          "factories": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "count"
+            ],
+            "additionalProperties": false
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "driver",
+          "queries",
+          "suppliers",
+          "details",
+          "factories",
+          "bytes"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

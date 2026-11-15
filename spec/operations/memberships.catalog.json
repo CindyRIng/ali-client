@@ -1,0 +1,238 @@
+{
+  "id": "memberships.catalog",
+  "summary": "会员枚举与识别规则",
+  "auth": "bearer",
+  "rest": {
+    "method": "GET",
+    "path": "/v1/meta/memberships"
+  },
+  "cli": {
+    "command": "memberships",
+    "description": "会员枚举与识别规则",
+    "example": "ali memberships"
+  },
+  "mcp": {
+    "name": "ali_membership_catalog",
+    "description": "会员档位枚举、识别规则、Supplier Index 与注意事项"
+  },
+  "input": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "plans": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/MembershipPlanInfo"
+        }
+      },
+      "rules": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/MembershipRule"
+        }
+      },
+      "supplierIndex": {
+        "$ref": "#/$defs/SupplierIndexInfo"
+      },
+      "storeRating": {
+        "$ref": "#/$defs/StoreRatingInfo"
+      },
+      "cautions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "plans",
+      "rules",
+      "supplierIndex",
+      "storeRating",
+      "cautions"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+      "MembershipCatalog": {
+        "type": "object",
+        "properties": {
+          "plans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/MembershipPlanInfo"
+            }
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/MembershipRule"
+            }
+          },
+          "supplierIndex": {
+            "$ref": "#/$defs/SupplierIndexInfo"
+          },
+          "storeRating": {
+            "$ref": "#/$defs/StoreRatingInfo"
+          },
+          "cautions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "plans",
+          "rules",
+          "supplierIndex",
+          "storeRating",
+          "cautions"
+        ],
+        "additionalProperties": false
+      },
+      "MembershipPlanInfo": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/$defs/MembershipPlan"
+          },
+          "labelEn": {
+            "type": "string"
+          },
+          "labelZh": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "labelEn",
+          "labelZh",
+          "rank",
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "MembershipPlan": {
+        "type": "string",
+        "enum": [
+          "verified_pro",
+          "verified_supplier",
+          "gold_supplier",
+          "unknown"
+        ],
+        "description": "会员档位：verified_pro 领袖卖家 / verified_supplier 金品诚企 / gold_supplier 出口通 / unknown"
+      },
+      "MembershipRule": {
+        "type": "object",
+        "properties": {
+          "if": {
+            "type": "string"
+          },
+          "then": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "list",
+              "detail"
+            ]
+          }
+        },
+        "required": [
+          "if",
+          "then",
+          "confidence",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "SupplierIndexInfo": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "range": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "label": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "field",
+          "range",
+          "label",
+          "note"
+        ],
+        "additionalProperties": false
+      },
+      "StoreRatingInfo": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "range": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "field",
+          "range",
+          "label"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

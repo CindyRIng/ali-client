@@ -1,0 +1,496 @@
+{
+  "id": "factories.list",
+  "summary": "认证工厂目录（按省浏览，仅省）",
+  "auth": "bearer",
+  "rest": {
+    "method": "GET",
+    "path": "/v1/factories",
+    "query": {
+      "type": "object",
+      "properties": {
+        "province": {
+          "type": "string"
+        },
+        "categoryId": {
+          "default": "0",
+          "type": "string"
+        },
+        "page": {
+          "default": 1,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "pageSize": {
+          "default": 100,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "refresh": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          ]
+        }
+      },
+      "$defs": {
+        "FactoriesQuery": {
+          "type": "object",
+          "properties": {
+            "province": {
+              "type": "string"
+            },
+            "categoryId": {
+              "default": "0",
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "pageSize": {
+              "default": 100,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "refresh": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "true",
+                    "false"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "command": "factories list",
+    "description": "认证工厂目录（按省/类目浏览）",
+    "example": "ali factories list --province Hebei --category 44"
+  },
+  "mcp": {
+    "name": "ali_factories_list",
+    "description": "认证工厂目录（按省/类目浏览；仅省，无城市）"
+  },
+  "input": {
+    "type": "object",
+    "properties": {
+      "province": {
+        "type": "string"
+      },
+      "categoryId": {
+        "default": "0",
+        "type": "string"
+      },
+      "page": {
+        "default": 1,
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 9007199254740991
+      },
+      "pageSize": {
+        "default": 100,
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100
+      },
+      "refresh": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ]
+      }
+    },
+    "$defs": {
+      "FactoriesQuery": {
+        "type": "object",
+        "properties": {
+          "province": {
+            "type": "string"
+          },
+          "categoryId": {
+            "default": "0",
+            "type": "string"
+          },
+          "page": {
+            "default": 1,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "pageSize": {
+            "default": 100,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "refresh": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "true",
+                  "false"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "province": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "provinceCode": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "categoryId": {
+        "default": "0",
+        "type": "string"
+      },
+      "page": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 9007199254740991
+      },
+      "pageSize": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 9007199254740991
+      },
+      "upstreamTotal": {
+        "default": null,
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "capped": {
+        "default": true,
+        "type": "boolean"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/FactoryItem"
+        }
+      },
+      "fetchedAt": {
+        "$ref": "#/$defs/IsoDateTime"
+      },
+      "note": {
+        "default": "Upstream caps at ~500 manufacturers; city is not available on this directory.",
+        "type": "string"
+      }
+    },
+    "required": [
+      "province",
+      "provinceCode",
+      "categoryId",
+      "page",
+      "pageSize",
+      "upstreamTotal",
+      "capped",
+      "items",
+      "fetchedAt",
+      "note"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+      "FactoriesResponse": {
+        "type": "object",
+        "properties": {
+          "province": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provinceCode": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "categoryId": {
+            "default": "0",
+            "type": "string"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "pageSize": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "upstreamTotal": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "capped": {
+            "default": true,
+            "type": "boolean"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/FactoryItem"
+            }
+          },
+          "fetchedAt": {
+            "$ref": "#/$defs/IsoDateTime"
+          },
+          "note": {
+            "default": "Upstream caps at ~500 manufacturers; city is not available on this directory.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "province",
+          "provinceCode",
+          "categoryId",
+          "page",
+          "pageSize",
+          "upstreamTotal",
+          "capped",
+          "items",
+          "fetchedAt",
+          "note"
+        ],
+        "additionalProperties": false
+      },
+      "FactoryItem": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "companyUrl": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "countryCode": {
+            "default": "CN",
+            "type": "string"
+          },
+          "province": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "goldSupplierYears": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "goldSupplierYearsText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "assessedSupplier": {
+            "default": false,
+            "type": "boolean"
+          },
+          "tradeAssurance": {
+            "default": false,
+            "type": "boolean"
+          },
+          "rate": {
+            "default": null,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "reviews": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "onTimeShipping": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "responseTime": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "employeesText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "factorySizeText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "products": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/FactoryProduct"
+            }
+          }
+        },
+        "required": [
+          "companyId",
+          "companyName",
+          "companyUrl",
+          "countryCode",
+          "province",
+          "goldSupplierYears",
+          "goldSupplierYearsText",
+          "assessedSupplier",
+          "tradeAssurance",
+          "rate",
+          "reviews",
+          "onTimeShipping",
+          "responseTime",
+          "employeesText",
+          "factorySizeText",
+          "products"
+        ],
+        "additionalProperties": false
+      },
+      "FactoryProduct": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "imageUrl": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "url": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "imageUrl",
+          "url"
+        ],
+        "additionalProperties": false
+      },
+      "IsoDateTime": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,9})?(?:Z|[+-]\\d{2}:\\d{2})$",
+        "description": "ISO-8601 日期时间（含时区）"
+      }
+    }
+  }
+}

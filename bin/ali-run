@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# 在共享 cloak 环境（FHS + Chromium）中运行 ali-client 命令
+# 用法: bin/ali-run <command> [args...]
+set -euo pipefail
+SELF="$(readlink -f "${BASH_SOURCE[0]}")"
+ROOT="$(cd "$(dirname "$SELF")/.." && pwd)"
+CLOAK_ENV="${CLOAK_ENV:-$HOME/cloak-env}"
+exec "$CLOAK_ENV/bin/cloak-run" node "$ROOT/dist/main.js" "$@"

@@ -1,0 +1,989 @@
+{
+  "id": "suppliers.list",
+  "summary": "按 queryId 翻页",
+  "auth": "bearer",
+  "rest": {
+    "method": "GET",
+    "path": "/v1/suppliers",
+    "query": {
+      "type": "object",
+      "properties": {
+        "queryId": {
+          "$ref": "#/$defs/QueryId"
+        },
+        "page": {
+          "default": 1,
+          "description": "页码，从 1 开始",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "refresh": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "queryId"
+      ],
+      "$defs": {
+        "SuppliersListQuery": {
+          "type": "object",
+          "properties": {
+            "queryId": {
+              "$ref": "#/$defs/QueryId"
+            },
+            "page": {
+              "default": 1,
+              "description": "页码，从 1 开始",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "refresh": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "true",
+                    "false"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "queryId"
+          ]
+        },
+        "QueryId": {
+          "type": "string",
+          "pattern": "^q_[0-9a-f]{16}$",
+          "description": "搜索查询 ID（q_ + sha256 前 16 位 hex）"
+        }
+      }
+    }
+  },
+  "cli": {
+    "command": "suppliers list",
+    "description": "按 queryId 翻页",
+    "example": "ali suppliers list --query-id q_xxx --page 2"
+  },
+  "mcp": {
+    "name": "ali_list_suppliers",
+    "description": "按 queryId 翻页（缓存优先）"
+  },
+  "input": {
+    "type": "object",
+    "properties": {
+      "queryId": {
+        "$ref": "#/$defs/QueryId"
+      },
+      "page": {
+        "default": 1,
+        "description": "页码，从 1 开始",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 9007199254740991
+      },
+      "refresh": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "queryId"
+    ],
+    "$defs": {
+      "SuppliersListQuery": {
+        "type": "object",
+        "properties": {
+          "queryId": {
+            "$ref": "#/$defs/QueryId"
+          },
+          "page": {
+            "default": 1,
+            "description": "页码，从 1 开始",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "refresh": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "true",
+                  "false"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "queryId"
+        ]
+      },
+      "QueryId": {
+        "type": "string",
+        "pattern": "^q_[0-9a-f]{16}$",
+        "description": "搜索查询 ID（q_ + sha256 前 16 位 hex）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "queryId": {
+        "$ref": "#/$defs/QueryId"
+      },
+      "page": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 9007199254740991
+      },
+      "pageSize": {
+        "type": "integer",
+        "exclusiveMinimum": 0,
+        "maximum": 9007199254740991
+      },
+      "totalCount": {
+        "default": null,
+        "anyOf": [
+          {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "suppliers": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/SupplierSummary"
+        }
+      },
+      "hasMore": {
+        "type": "boolean"
+      },
+      "fetchedPages": {
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      },
+      "location": {
+        "$ref": "#/$defs/LocationFilterResult"
+      }
+    },
+    "required": [
+      "queryId",
+      "page",
+      "pageSize",
+      "totalCount",
+      "suppliers",
+      "hasMore",
+      "fetchedPages",
+      "location"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+      "SuppliersListResponse": {
+        "type": "object",
+        "properties": {
+          "queryId": {
+            "$ref": "#/$defs/QueryId"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "pageSize": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "totalCount": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "suppliers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/SupplierSummary"
+            }
+          },
+          "hasMore": {
+            "type": "boolean"
+          },
+          "fetchedPages": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            }
+          },
+          "location": {
+            "$ref": "#/$defs/LocationFilterResult"
+          }
+        },
+        "required": [
+          "queryId",
+          "page",
+          "pageSize",
+          "totalCount",
+          "suppliers",
+          "hasMore",
+          "fetchedPages",
+          "location"
+        ],
+        "additionalProperties": false
+      },
+      "QueryId": {
+        "type": "string",
+        "pattern": "^q_[0-9a-f]{16}$",
+        "description": "搜索查询 ID（q_ + sha256 前 16 位 hex）"
+      },
+      "SupplierSummary": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "storeUrl": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "storeSubdomain": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "logoUrl": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "country": {
+            "default": "CN",
+            "type": "string"
+          },
+          "location": {
+            "$ref": "#/$defs/Location"
+          },
+          "joinedYears": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "joinedYearsText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supplierIndex": {
+            "default": null,
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SupplierIndex"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "membership": {
+            "$ref": "#/$defs/Membership"
+          },
+          "mainProducts": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mainProductsText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "$ref": "#/$defs/Rating"
+          },
+          "businessType": {
+            "$ref": "#/$defs/BusinessType"
+          },
+          "staffText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "factoryAreaText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "transactionsText": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "responseTime": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "capabilityTags": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rank": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "isAd": {
+            "default": false,
+            "type": "boolean"
+          },
+          "adType": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "top_sponsor",
+                  "p4p"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "position": {
+            "default": 0,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "enriched": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "companyId",
+          "companyName",
+          "storeUrl",
+          "storeSubdomain",
+          "logoUrl",
+          "country",
+          "location",
+          "joinedYears",
+          "joinedYearsText",
+          "supplierIndex",
+          "membership",
+          "mainProducts",
+          "mainProductsText",
+          "rating",
+          "businessType",
+          "staffText",
+          "factoryAreaText",
+          "transactionsText",
+          "responseTime",
+          "capabilityTags",
+          "rank",
+          "isAd",
+          "adType",
+          "position",
+          "enriched"
+        ],
+        "additionalProperties": false
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "default": "CN",
+            "type": "string"
+          },
+          "countryName": {
+            "type": "string"
+          },
+          "province": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "provinceCode": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "city": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "cityCode": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "address": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "display": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "default": "unknown",
+            "$ref": "#/$defs/LocationConfidence"
+          },
+          "source": {
+            "default": "none",
+            "type": "string",
+            "enum": [
+              "detail",
+              "list",
+              "keyword",
+              "none"
+            ]
+          }
+        },
+        "required": [
+          "country",
+          "province",
+          "provinceCode",
+          "city",
+          "cityCode",
+          "address",
+          "display",
+          "confidence",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "LocationConfidence": {
+        "type": "string",
+        "enum": [
+          "high",
+          "medium",
+          "low",
+          "unknown"
+        ]
+      },
+      "SupplierIndex": {
+        "type": "object",
+        "properties": {
+          "stars": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "maxStars": {
+            "default": 5,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "label": {
+            "default": "Supplier Index",
+            "type": "string"
+          },
+          "source": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "stars",
+          "maxStars",
+          "label",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "Membership": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "$ref": "#/$defs/MembershipPlan"
+          },
+          "label": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "verifiedSupplier": {
+            "default": false,
+            "type": "boolean"
+          },
+          "verifiedPro": {
+            "default": false,
+            "type": "boolean"
+          },
+          "paidMember": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "goldSupplier": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "onsiteAssessment": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "baseVerify": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "assessedBy": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "goldYears": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence": {
+            "$ref": "#/$defs/MembershipEvidence"
+          }
+        },
+        "required": [
+          "plan",
+          "label",
+          "rank",
+          "verifiedSupplier",
+          "verifiedPro",
+          "paidMember",
+          "goldSupplier",
+          "onsiteAssessment",
+          "baseVerify",
+          "assessedBy",
+          "goldYears",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "MembershipPlan": {
+        "type": "string",
+        "enum": [
+          "verified_pro",
+          "verified_supplier",
+          "gold_supplier",
+          "unknown"
+        ],
+        "description": "会员档位：verified_pro 领袖卖家 / verified_supplier 金品诚企 / gold_supplier 出口通 / unknown"
+      },
+      "MembershipEvidence": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string",
+            "enum": [
+              "list",
+              "detail",
+              "merged"
+            ]
+          },
+          "fields": {
+            "default": {},
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "required": [
+          "source",
+          "fields"
+        ],
+        "additionalProperties": false
+      },
+      "Rating": {
+        "type": "object",
+        "properties": {
+          "score": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 5
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "count": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "score",
+          "count"
+        ],
+        "additionalProperties": false
+      },
+      "BusinessType": {
+        "type": "object",
+        "properties": {
+          "raw": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "manufacturer": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "tradingCompany": {
+            "default": null,
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "raw",
+          "manufacturer",
+          "tradingCompany"
+        ],
+        "additionalProperties": false
+      },
+      "LocationFilterResult": {
+        "type": "object",
+        "properties": {
+          "requested": {
+            "type": "object",
+            "properties": {
+              "province": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "city": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "province",
+              "city"
+            ],
+            "additionalProperties": false
+          },
+          "normalized": {
+            "type": "object",
+            "properties": {
+              "province": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Region"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "city": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/Region"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "mode": {
+            "$ref": "#/$defs/LocationMode"
+          },
+          "includeUnknownCity": {
+            "default": true,
+            "type": "boolean"
+          },
+          "enrichedCompanies": {
+            "default": 0,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "matched": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "unknownLocation": {
+            "default": 0,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "limitReached": {
+            "default": false,
+            "type": "boolean"
+          },
+          "confidence": {
+            "default": "high",
+            "type": "string",
+            "enum": [
+              "high",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "requested",
+          "mode",
+          "includeUnknownCity",
+          "enrichedCompanies",
+          "matched",
+          "unknownLocation",
+          "limitReached",
+          "confidence"
+        ],
+        "additionalProperties": false
+      },
+      "Region": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "GB 行政区划代码风格：CN-13 / CN-13-1311"
+          },
+          "level": {
+            "$ref": "#/$defs/RegionLevel"
+          },
+          "nameZh": {
+            "type": "string"
+          },
+          "nameEn": {
+            "type": "string",
+            "description": "英文展示名（阿里页面口径，如 Hebei / Hengshui）"
+          },
+          "pinyin": {
+            "type": "string"
+          },
+          "aliases": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aliSpellings": {
+            "default": [],
+            "description": "在阿里页面上出现过的拼写（含噪声拼写映射）",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "parentCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "level",
+          "nameZh",
+          "nameEn",
+          "pinyin",
+          "aliases",
+          "aliSpellings",
+          "parentCode"
+        ],
+        "additionalProperties": false
+      },
+      "RegionLevel": {
+        "type": "string",
+        "enum": [
+          "province",
+          "city"
+        ]
+      },
+      "LocationMode": {
+        "default": "strict",
+        "description": "省市过滤模式：strict 详情回填精确过滤 / keyword 地点关键词模糊 / off 不过滤",
+        "type": "string",
+        "enum": [
+          "strict",
+          "keyword",
+          "off"
+        ]
+      }
+    }
+  }
+}

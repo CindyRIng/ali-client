@@ -9,6 +9,8 @@ coverage/
 .env.*
 !.env.example
 data/
+!data/
+!data/pca-code.json
 *.sqlite
 *.sqlite-*
 run/

@@ -1,0 +1,71 @@
+{
+  "name": "ali-client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "阿里巴巴国际站 alibaba.com 本地只读客户端：cloak 浏览器会话 + fetch-first 采集 + 供应商搜索/公司详情/会员识别 + CLI/REST/MCP/SKILL + SQLite 缓存",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "ali": "./dist/main.js"
+  },
+  "main": "./dist/main.js",
+  "exports": {
+    ".": "./dist/main.js"
+  },
+  "files": [
+    "dist",
+    "spec",
+    "skills"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "dev": "tsx src/main.ts",
+    "start": "node dist/main.js",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "gen": "tsx src/generators/generate.ts",
+    "gen:check": "tsx src/generators/generate.ts --check",
+    "gen:regions": "tsx scripts/gen-regions.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "cloakbrowser": "0.6.5",
+    "commander": "^15.1.0",
+    "playwright-core": "1.65.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "pinyin-pro": "^3.27.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  },
+  "license": "MIT",
+  "author": "CindyRIng",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CindyRIng/ali-client.git"
+  },
+  "homepage": "https://github.com/CindyRIng/ali-client",
+  "bugs": {
+    "url": "https://github.com/CindyRIng/ali-client/issues"
+  },
+  "keywords": [
+    "alibaba",
+    "alibaba.com",
+    "阿里国际站",
+    "supplier",
+    "factory",
+    "lead-generation",
+    "cloakbrowser",
+    "playwright",
+    "mcp",
+    "cli",
+    "rest"
+  ]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "command": "ali health",
+    "description": "健康检查",
+    "example": "ali health",
+    "operationId": "health.get"
+  },
+  {
+    "command": "ali status",
+    "description": "查看登录态、浏览器/worker、风控、缓存与限频",
+    "example": "ali status",
+    "operationId": "status.get"
+  },
+  {
+    "command": "ali login",
+    "description": "打开 owner 浏览器登录页（可选，人工登录一次）",
+    "example": "ali login",
+    "operationId": "session.login.start"
+  },
+  {
+    "command": "ali login status",
+    "description": "查询登录状态",
+    "example": "ali login status login_xxx",
+    "operationId": "session.login.status"
+  },
+  {
+    "command": "ali login cancel",
+    "description": "取消登录流程",
+    "example": "ali login cancel login_xxx",
+    "operationId": "session.login.cancel"
+  },
+  {
+    "command": "ali verify status",
+    "description": "查看当前滑块验证信息",
+    "example": "ali verify status",
+    "operationId": "verification.get"
+  },
+  {
+    "command": "ali verify solve",
+    "description": "自动过滑块（--mode auto）或坐标中继（--mode drag --from x,y --to x,y）",
+    "example": "ali verify solve --mode auto",
+    "operationId": "verification.solve"
+  },
+  {
+    "command": "ali regions list",
+    "description": "省/市字典（31 省 + 地级市）",
+    "example": "ali regions list --level city --province Hebei",
+    "operationId": "regions.list"
+  },
+  {
+    "command": "ali regions search",
+    "description": "按中文/英文/拼音搜索地区",
+    "example": "ali regions search 衡水",
+    "operationId": "regions.search"
+  },
+  {
+    "command": "ali search suppliers",
+    "description": "供应商搜索：关键词 + 省/市 + 筛选 + 多页",
+    "example": "ali search suppliers --keyword \"solid tire\" --province Hebei --city Hengshui --pages 2",
+    "operationId": "search.suppliers"
+  },
+  {
+    "command": "ali suppliers list",
+    "description": "按 queryId 翻页",
+    "example": "ali suppliers list --query-id q_xxx --page 2",
+    "operationId": "suppliers.list"
+  },
+  {
+    "command": "ali suppliers detail",
+    "description": "供应商详情（含上平台年限、Supplier Index 星级、主营产品、会员、省市、经营指标）",
+    "example": "ali suppliers detail --company-id 258180302",
+    "operationId": "suppliers.detail"
+  },
+  {
+    "command": "ali factories list",
+    "description": "认证工厂目录（按省/类目浏览）",
+    "example": "ali factories list --province Hebei --category 44",
+    "operationId": "factories.list"
+  },
+  {
+    "command": "ali memberships",
+    "description": "会员枚举与识别规则",
+    "example": "ali memberships",
+    "operationId": "memberships.catalog"
+  },
+  {
+    "command": "ali cache stats",
+    "description": "缓存统计",
+    "example": "ali cache stats",
+    "operationId": "cache.stats"
+  },
+  {
+    "command": "ali cache clear",
+    "description": "清缓存（--kind all|queries|suppliers|details|factories）",
+    "example": "ali cache clear --kind details",
+    "operationId": "cache.clear"
+  }
+]

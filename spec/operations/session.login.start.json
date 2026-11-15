@@ -1,0 +1,198 @@
+{
+  "id": "session.login.start",
+  "summary": "打开登录窗口（可选；anonymous-first）",
+  "auth": "bearer",
+  "rest": {
+    "method": "POST",
+    "path": "/v1/session/login",
+    "body": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "default": "manual",
+          "$ref": "#/$defs/LoginMode"
+        }
+      },
+      "$defs": {
+        "LoginStartRequest": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "default": "manual",
+              "$ref": "#/$defs/LoginMode"
+            }
+          }
+        },
+        "LoginMode": {
+          "type": "string",
+          "enum": [
+            "manual"
+          ],
+          "description": "v1 仅支持 manual（打开浏览器窗口人工登录一次）"
+        }
+      }
+    }
+  },
+  "cli": {
+    "command": "login",
+    "description": "打开 owner 浏览器登录页（可选，人工登录一次）",
+    "example": "ali login"
+  },
+  "mcp": {
+    "name": "ali_login",
+    "description": "打开登录窗口（可选）；anonymous-first 下 v1 无需登录"
+  },
+  "input": {
+    "type": "object",
+    "properties": {
+      "mode": {
+        "default": "manual",
+        "$ref": "#/$defs/LoginMode"
+      }
+    },
+    "$defs": {
+      "LoginStartRequest": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "default": "manual",
+            "$ref": "#/$defs/LoginMode"
+          }
+        }
+      },
+      "LoginMode": {
+        "type": "string",
+        "enum": [
+          "manual"
+        ],
+        "description": "v1 仅支持 manual（打开浏览器窗口人工登录一次）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "state": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "logged_in",
+          "timeout",
+          "failed",
+          "cancelled"
+        ]
+      },
+      "action": {
+        "default": "none",
+        "type": "string",
+        "enum": [
+          "enter_credentials",
+          "solve_captcha",
+          "none"
+        ]
+      },
+      "loginId": {
+        "$ref": "#/$defs/LoginId"
+      },
+      "loginUrl": {
+        "type": "string"
+      },
+      "screenshotPath": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "expiresAt": {
+        "$ref": "#/$defs/IsoDateTime"
+      },
+      "message": {
+        "default": null,
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "required": [
+      "state",
+      "action",
+      "loginId",
+      "loginUrl",
+      "screenshotPath",
+      "expiresAt",
+      "message"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+      "LoginStatus": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "logged_in",
+              "timeout",
+              "failed",
+              "cancelled"
+            ]
+          },
+          "action": {
+            "default": "none",
+            "type": "string",
+            "enum": [
+              "enter_credentials",
+              "solve_captcha",
+              "none"
+            ]
+          },
+          "loginId": {
+            "$ref": "#/$defs/LoginId"
+          },
+          "loginUrl": {
+            "type": "string"
+          },
+          "screenshotPath": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "expiresAt": {
+            "$ref": "#/$defs/IsoDateTime"
+          },
+          "message": {
+            "default": null,
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "state",
+          "action",
+          "loginId",
+          "loginUrl",
+          "screenshotPath",
+          "expiresAt",
+          "message"
+        ],
+        "additionalProperties": false
+      },
+      "LoginId": {
+        "type": "string",
+        "pattern": "^login_[A-Za-z0-9_-]{8,64}$",
+        "description": "登录流程 ID"
+      },
+      "IsoDateTime": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,9})?(?:Z|[+-]\\d{2}:\\d{2})$",
+        "description": "ISO-8601 日期时间（含时区）"
+      }
+    }
+  }
+}

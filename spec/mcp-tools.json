@@ -1,0 +1,851 @@
+[
+  {
+    "name": "ali_health",
+    "description": "健康检查（进程存活）",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_status",
+    "description": "运行状态：模式/浏览器/worker/风控(x5sec)/缓存/限频",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_login",
+    "description": "打开登录窗口（可选）；anonymous-first 下 v1 无需登录",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "default": "manual",
+          "$ref": "#/$defs/LoginMode"
+        }
+      },
+      "$defs": {
+        "LoginStartRequest": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "default": "manual",
+              "$ref": "#/$defs/LoginMode"
+            }
+          }
+        },
+        "LoginMode": {
+          "type": "string",
+          "enum": [
+            "manual"
+          ],
+          "description": "v1 仅支持 manual（打开浏览器窗口人工登录一次）"
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_login_status",
+    "description": "查询登录状态",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "loginId": {
+          "$ref": "#/$defs/LoginId"
+        }
+      },
+      "required": [
+        "loginId"
+      ],
+      "$defs": {
+        "LoginStatusQuery": {
+          "type": "object",
+          "properties": {
+            "loginId": {
+              "$ref": "#/$defs/LoginId"
+            }
+          },
+          "required": [
+            "loginId"
+          ]
+        },
+        "LoginId": {
+          "type": "string",
+          "pattern": "^login_[A-Za-z0-9_-]{8,64}$",
+          "description": "登录流程 ID"
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_login_cancel",
+    "description": "取消登录流程",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "loginId": {
+          "$ref": "#/$defs/LoginId"
+        }
+      },
+      "required": [
+        "loginId"
+      ],
+      "$defs": {
+        "LoginId": {
+          "type": "string",
+          "pattern": "^login_[A-Za-z0-9_-]{8,64}$",
+          "description": "登录流程 ID"
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_verification_get",
+    "description": "查看待处理滑块验证（截图路径/轨道/手柄坐标）",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_verification_solve",
+    "description": "自动/坐标中继过滑块验证",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "default": "auto",
+          "type": "string",
+          "enum": [
+            "auto",
+            "drag"
+          ]
+        },
+        "from": {
+          "description": "drag 模式起点 [x,y]",
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "to": {
+          "description": "drag 模式终点 [x,y]",
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "durationMs": {
+          "default": 900,
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 10000
+        }
+      },
+      "$defs": {
+        "VerificationSolveRequest": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "default": "auto",
+              "type": "string",
+              "enum": [
+                "auto",
+                "drag"
+              ]
+            },
+            "from": {
+              "description": "drag 模式起点 [x,y]",
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "to": {
+              "description": "drag 模式终点 [x,y]",
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "durationMs": {
+              "default": 900,
+              "type": "integer",
+              "minimum": 100,
+              "maximum": 10000
+            }
+          }
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_regions",
+    "description": "省/市字典（中国内地 31 省 + 地级市）",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "$ref": "#/$defs/RegionLevel"
+        },
+        "province": {
+          "description": "省份（中文/英文/拼音/代码）",
+          "type": "string"
+        }
+      },
+      "$defs": {
+        "RegionsQuery": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "$ref": "#/$defs/RegionLevel"
+            },
+            "province": {
+              "description": "省份（中文/英文/拼音/代码）",
+              "type": "string"
+            }
+          }
+        },
+        "RegionLevel": {
+          "type": "string",
+          "enum": [
+            "province",
+            "city"
+          ]
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_region_search",
+    "description": "按中文/英文/拼音搜索地区",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "q": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limit": {
+          "default": 20,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50
+        }
+      },
+      "required": [
+        "q"
+      ],
+      "$defs": {
+        "RegionSearchQuery": {
+          "type": "object",
+          "properties": {
+            "q": {
+              "type": "string",
+              "minLength": 1
+            },
+            "limit": {
+              "default": 20,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            }
+          },
+          "required": [
+            "q"
+          ]
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_search_suppliers",
+    "description": "搜索阿里国际站供应商：关键词 + 中国省/市（strict 精确回填过滤 / keyword 模糊）+ 筛选 + 多页；返回 queryId 与列表",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "keyword": {
+          "description": "关键词（产品词或地区词）；与 province/city 至少给一个",
+          "type": "string",
+          "maxLength": 200
+        },
+        "province": {
+          "description": "省份（中文/英文/拼音/代码）",
+          "type": "string",
+          "maxLength": 60
+        },
+        "city": {
+          "description": "城市（中文/英文/拼音/代码）",
+          "type": "string",
+          "maxLength": 60
+        },
+        "locationMode": {
+          "$ref": "#/$defs/LocationMode"
+        },
+        "includeUnknownCity": {
+          "default": true,
+          "description": "city 过滤时是否保留城市未知的供应商",
+          "type": "boolean"
+        },
+        "country": {
+          "default": "CN",
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "filters": {
+          "default": {
+            "verifiedSupplier": false,
+            "verifiedPro": false,
+            "tradeAssurance": false,
+            "companyAuthTags": [],
+            "productAuthTags": [],
+            "capabilities": []
+          },
+          "$ref": "#/$defs/SearchFilters"
+        },
+        "pages": {
+          "default": 5,
+          "description": "本次抓取页数，默认 5，硬上限 20",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "maxEnrich": {
+          "default": 60,
+          "description": "strict 模式详情回填上限（默认 60）",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300
+        },
+        "sort": {
+          "$ref": "#/$defs/SortType"
+        },
+        "refresh": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "$defs": {
+        "SearchSuppliersRequest": {
+          "type": "object",
+          "properties": {
+            "keyword": {
+              "description": "关键词（产品词或地区词）；与 province/city 至少给一个",
+              "type": "string",
+              "maxLength": 200
+            },
+            "province": {
+              "description": "省份（中文/英文/拼音/代码）",
+              "type": "string",
+              "maxLength": 60
+            },
+            "city": {
+              "description": "城市（中文/英文/拼音/代码）",
+              "type": "string",
+              "maxLength": 60
+            },
+            "locationMode": {
+              "$ref": "#/$defs/LocationMode"
+            },
+            "includeUnknownCity": {
+              "default": true,
+              "description": "city 过滤时是否保留城市未知的供应商",
+              "type": "boolean"
+            },
+            "country": {
+              "default": "CN",
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 2
+            },
+            "filters": {
+              "default": {
+                "verifiedSupplier": false,
+                "verifiedPro": false,
+                "tradeAssurance": false,
+                "companyAuthTags": [],
+                "productAuthTags": [],
+                "capabilities": []
+              },
+              "$ref": "#/$defs/SearchFilters"
+            },
+            "pages": {
+              "default": 5,
+              "description": "本次抓取页数，默认 5，硬上限 20",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "maxEnrich": {
+              "default": 60,
+              "description": "strict 模式详情回填上限（默认 60）",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 300
+            },
+            "sort": {
+              "$ref": "#/$defs/SortType"
+            },
+            "refresh": {
+              "default": false,
+              "type": "boolean"
+            }
+          }
+        },
+        "LocationMode": {
+          "default": "strict",
+          "description": "省市过滤模式：strict 详情回填精确过滤 / keyword 地点关键词模糊 / off 不过滤",
+          "type": "string",
+          "enum": [
+            "strict",
+            "keyword",
+            "off"
+          ]
+        },
+        "SearchFilters": {
+          "type": "object",
+          "properties": {
+            "verifiedSupplier": {
+              "default": false,
+              "description": "Verified Supplier / 金品诚企（assessmentCompany=true）",
+              "type": "boolean"
+            },
+            "verifiedPro": {
+              "default": false,
+              "description": "Verified Pro Supplier / 领袖卖家（verifiedPro=1）",
+              "type": "boolean"
+            },
+            "tradeAssurance": {
+              "default": false,
+              "description": "Trade Assurance（ta=y）",
+              "type": "boolean"
+            },
+            "minReviewScore": {
+              "description": "店铺评分下限",
+              "type": "string",
+              "enum": [
+                "4",
+                "5",
+                "4.5"
+              ]
+            },
+            "companyAuthTags": {
+              "default": [],
+              "description": "公司认证：ISO/BSCI/IATF 16949/SEDEX/HACCP/FSC",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "productAuthTags": {
+              "default": [],
+              "description": "产品认证：CE/ROHS/DOT/...",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "capabilities": {
+              "default": [],
+              "description": "能力标签：id 或英文名（Full customization 等）",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "SortType": {
+          "default": "default",
+          "description": "搜索排序：default 最佳匹配 / resrat 回复率",
+          "type": "string",
+          "enum": [
+            "default",
+            "resrat"
+          ]
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_list_suppliers",
+    "description": "按 queryId 翻页（缓存优先）",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "queryId": {
+          "$ref": "#/$defs/QueryId"
+        },
+        "page": {
+          "default": 1,
+          "description": "页码，从 1 开始",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "refresh": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "queryId"
+      ],
+      "$defs": {
+        "SuppliersListQuery": {
+          "type": "object",
+          "properties": {
+            "queryId": {
+              "$ref": "#/$defs/QueryId"
+            },
+            "page": {
+              "default": 1,
+              "description": "页码，从 1 开始",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "refresh": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "true",
+                    "false"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "queryId"
+          ]
+        },
+        "QueryId": {
+          "type": "string",
+          "pattern": "^q_[0-9a-f]{16}$",
+          "description": "搜索查询 ID（q_ + sha256 前 16 位 hex）"
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_supplier_detail",
+    "description": "供应商详情：上平台年限、Supplier Index 星级、主营产品、会员档位与证据、省市、基础经营指标",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "companyId": {
+          "$ref": "#/$defs/CompanyId"
+        },
+        "store": {
+          "$ref": "#/$defs/StoreSubdomain"
+        },
+        "refresh": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          ]
+        }
+      },
+      "$defs": {
+        "SupplierDetailInput": {
+          "type": "object",
+          "properties": {
+            "companyId": {
+              "$ref": "#/$defs/CompanyId"
+            },
+            "store": {
+              "$ref": "#/$defs/StoreSubdomain"
+            },
+            "refresh": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "true",
+                    "false"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "CompanyId": {
+          "type": "string",
+          "pattern": "^\\d{4,20}$",
+          "description": "阿里巴巴供应商 companyId（数字字符串）"
+        },
+        "StoreSubdomain": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{1,60}$",
+          "description": "供应商店铺子域（如 kangyuanxiangsu）"
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_factories_list",
+    "description": "认证工厂目录（按省/类目浏览；仅省，无城市）",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "province": {
+          "type": "string"
+        },
+        "categoryId": {
+          "default": "0",
+          "type": "string"
+        },
+        "page": {
+          "default": 1,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "pageSize": {
+          "default": 100,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "refresh": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          ]
+        }
+      },
+      "$defs": {
+        "FactoriesQuery": {
+          "type": "object",
+          "properties": {
+            "province": {
+              "type": "string"
+            },
+            "categoryId": {
+              "default": "0",
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "pageSize": {
+              "default": 100,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "refresh": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "true",
+                    "false"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_membership_catalog",
+    "description": "会员档位枚举、识别规则、Supplier Index 与注意事项",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_cache_stats",
+    "description": "缓存统计（queries/suppliers/details/factories）",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ali_cache_clear",
+    "description": "清缓存：kind=all|queries|suppliers|details|factories",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "default": "all",
+          "type": "string",
+          "enum": [
+            "all",
+            "queries",
+            "suppliers",
+            "details",
+            "factories"
+          ]
+        }
+      },
+      "$defs": {
+        "CacheClearQuery": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "default": "all",
+              "type": "string",
+              "enum": [
+                "all",
+                "queries",
+                "suppliers",
+                "details",
+                "factories"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "openWorldHint": true
+    }
+  }
+]
