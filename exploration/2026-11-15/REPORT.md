@@ -462,3 +462,49 @@ https://www.alibaba.com/trade/search
 ---
 
 *报告完。下一步：按评审意见定稿 [接口草案](../../docs/02-接口草案.md) → 复制 zhilian-client 骨架实现 → 实测联调。*
+
+---
+
+## 13. M4 联调结果（2026-11-15，实现 v0.1.0）
+
+> 实现：`src/`（TypeScript，约 6.4k 行）+ `spec/` 生成物 + `tests/`；本机 systemd 常驻 `ali-client.service`（REST 8792）。以下均为真实运行结果（匿名模式）。
+
+### 13.1 构建与测试
+
+| 项 | 结果 |
+|---|---|
+| `npm run build` | ✅（tsc strict） |
+| `npm test` | ✅ 31/31（解析器/地区/会员/缓存/envelope，不启浏览器） |
+| `npm run gen:check` | ✅ OpenAPI/MCP/CLI spec 与 `operations.ts` 同源 |
+| `systemctl --user status ali-client` | ✅ running（cloak FHS + headful Chromium 常驻） |
+| `GET /v1/health` | ✅ `{service:"ali-client",version:"0.1.0"}` |
+| `GET /docs`、`/openapi.json`、`/mcp-tools.json` | ✅ 自包含文档与机器契约 |
+
+### 13.2 真实上游联调
+
+| 场景 | 命令（CLI） | 结果 |
+|---|---|---|
+| 省 strict 过滤 | `search suppliers -k "solid tire" --province Hebei --pages 1 --max-enrich 20` | 21 卡去重 20 家 → 回填 20 → 命中 1（Xingtai, Hebei）；21.6s；`gold_supplier` |
+| 城市过滤（无关键词） | `search suppliers --province Hebei --city Hengshui --pages 1 --max-enrich 12` | 地点词=Hengshui → 回填 12 → 命中 10（全部 Hengshui）；18.7s |
+| 公司详情 | `suppliers detail --store kangyuanxiangsu` | `joinedYears=6`、`supplierIndex.stars=2`、主营产品、`Hebei/Hengshui`、`verified_supplier` + SGS + onsite、评分 4.6、年出口额 $2231223、厂房 5000m²、产线 10、成立 2018 |
+| 翻页缓存 | `suppliers list --query-id q_... --page 1` | `cached: true`，与 search 结果一致 |
+| 认证工厂目录 | `factories list --province Hebei --page-size 20` | ✅ 返回并过滤省份 |
+| 地区字典 | `regions list --level city --province Hebei` | ✅ 11 个地级市 |
+| MCP stdio | `node scripts/mcp-smoke.mjs` | ✅ 16 tools；regions/health/search/detail 全部成功 |
+| 风控 | 全流程 | 未触发滑块（fetch-first；页面导航仅初始化一次）；`status.risk.state=normal` |
+
+### 13.3 实现偏差与遗留
+
+- **companyId 详情需要先有一次 search 建立子域映射**（或用 `--store`）；已在错误信息中提示。
+- `totalCount` 仍不可靠（沿用实测结论），分页以「返回 0 条」终止。
+- 真实登录测试**未做**（anonymous-first 下 v1 全部能力不依赖登录；登录接口保留）。
+- 滑块自动过验证沿用探路实现（类人拖拽 + reload 重试 3 轮），联调中未触发，未做二次压测。
+- 工厂目录/详情 SSR 模块（supplierPerformance 等）仍只取结构化 API 部分，页面级指标为 v1.1 范围。
+
+### 13.4 交付物
+
+- 代码与生成物：`src/`、`spec/`、`tests/`、`scripts/`
+- 部署：`systemd/ali-client.service`（本机已安装并 enable）、`bin/ali-run`、`.env.example`
+- Agent 技能：`skills/ali/SKILL.md`
+- README（含 AI 图例 + 真实截图）：仓库根 `README.md`、`docs/assets/`
+- GitHub：<https://github.com/CindyRIng/ali-client>
