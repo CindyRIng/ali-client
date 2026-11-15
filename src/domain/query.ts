@@ -43,7 +43,7 @@ export const SearchSuppliersRequestSchema = z
     keyword: z.string().trim().max(200).optional().meta({ description: '关键词（产品词或地区词）；与 province/city 至少给一个' }),
     province: z.string().trim().max(60).optional().meta({ description: '省份（中文/英文/拼音/代码）' }),
     city: z.string().trim().max(60).optional().meta({ description: '城市（中文/英文/拼音/代码）' }),
-    locationMode: LocationModeSchema.optional(),
+    locationMode: z.enum(['strict', 'keyword', 'off']).optional().meta({ description: '缺省：有 province/city 时 strict，否则 off' }),
     includeUnknownCity: z.boolean().default(true).meta({ description: 'city 过滤时是否保留城市未知的供应商' }),
     country: z.string().trim().length(2).default('CN'),
     filters: SearchFiltersSchema.default(DEFAULT_SEARCH_FILTERS),

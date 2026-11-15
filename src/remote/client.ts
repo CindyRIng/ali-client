@@ -43,10 +43,18 @@ export class RemoteAliClient implements AliServiceLike {
           ...(body !== undefined ? { 'content-type': 'application/json' } : {}),
         },
         ...(body !== undefined ? { body: JSON.stringify(body) } : {}),
-        signal: AbortSignal.timeout(this.config.session.requestTimeoutMs),
+        signal: AbortSignal.timeout(this.config.session.clientTimeoutMs),
       });
     } catch (err) {
-      throw new AliError('SERVICE_UNAVAILABLE', `ali-client REST 服务不可达：${this.baseUrl}（先运行 ali serve）`, { cause: err });
+      const msg = err instanceof Error ? err.message : String(err);
+      if (/timeout|aborted|abort/i.test(msg)) {
+        throw new AliError(
+          'UPSTREAM_TIMEOUT',
+          `REST 请求超时（${Math.round(this.config.session.clientTimeoutMs / 1000)}s）：服务可能正在处理长查询（strict 回填较慢），可稍后重试或降低 pages/maxEnrich`,
+          { cause: err },
+        );
+      }
+      throw new AliError('SERVICE_UNAVAILABLE', `ali-client REST 服务不可达：${this.baseUrl}（检查 systemctl --user status ali-client）`, { cause: err });
     }
     let payload: Envelope<T>;
     try {

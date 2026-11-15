@@ -340,13 +340,13 @@ npm run gen          # 生成 spec/openapi.json 等
 npm run gen:check    # CI 校验生成物与实现同源（实现后启用）
 npm run gen:regions  # 重新生成 src/data/regions.ts（pca-code + pinyin-pro）
 node scripts/mcp-smoke.mjs   # MCP 冒烟（需常驻服务）
-npm run self-test            # 34 项端到端自测（需常驻服务）
+npm run self-test            # 35 项端到端自测（需常驻服务）
 ```
 
 自测实际输出（2026-11-16）：
 
 ```text
-=== 结果：34 passed, 0 warn, 0 failed（共 33）===
+=== 结果：35 passed, 0 warn, 0 failed（共 33）===
 ```
 
 **验收基线**：`npm run build && npm test` 全绿；`ali health/status` 正常；真实上游搜索/详情/工厂目录/地区字典可用；CLI/REST/MCP 同源。
@@ -368,6 +368,7 @@ npm run self-test            # 34 项端到端自测（需常驻服务）
 
 - **省市精确过滤依赖详情回填**：单查询最多 `maxEnrich`（默认 60）家，超出会 `enrichLimitReached`；结果可能少于该页原条数。
 - **`totalCount` 不可靠**：同一查询实测 712–784 波动，不要用于精确翻页；以「返回 0 条」终止。
+- **纯关键词搜索默认 `locationMode=off`**（不回填详情，速度快）；只有给出 `province`/`city` 才走 strict 回填。strict 回填 60 家约 60–90s，CLI→REST 超时默认 180s（`ALI_CLIENT_TIMEOUT_MS`）。
 - **公司详情按 companyId 查询需要先有一次 search 建立映射**（或用 `--store <subdomain>` 直达）。
 - `ali` 通过 `~/.local/bin/ali` 软链提供；移动仓库后需重建软链。
 - 常驻进程启动时加载 `dist/`；改代码后需 `npm run build && systemctl --user restart ali-client`。

@@ -97,6 +97,7 @@ export const ConfigSchema = z
       fetchBudgetPer10Min: z.number().int().positive(),
       workerRefreshEvery: z.number().int().positive(),
       loginTimeoutSec: z.number().int().positive(),
+      clientTimeoutMs: z.number().int().positive(),
     }),
     log: z.object({
       level: LogLevelSchema,
@@ -176,6 +177,7 @@ export function loadConfig(opts: LoadConfigOptions = {}): Config {
       fetchBudgetPer10Min: int(env, 'ALI_FETCH_BUDGET_PER_10MIN', 240, 10),
       workerRefreshEvery: int(env, 'ALI_WORKER_REFRESH_EVERY', 200, 10),
       loginTimeoutSec: int(env, 'ALI_LOGIN_TIMEOUT_SEC', 600, 60),
+      clientTimeoutMs: int(env, 'ALI_CLIENT_TIMEOUT_MS', 180000, 3000),
     },
     log: {
       level: str(env, 'ALI_LOG_LEVEL', 'info') as Config['log']['level'],

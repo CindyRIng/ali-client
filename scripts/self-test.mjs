@@ -177,7 +177,15 @@ async function main() {
   const detailId = cliJson(['suppliers', 'detail', '--company-id', '258180302', '-f', 'json']);
   record('CLI detail --company-id（档案映射）', detailId.status === 0 && detailId.json?.data?.companyId === '258180302', detailId.err?.slice(0, 80) ?? '', 'warn');
 
-  // 6. 关键字模式 / 城市模式
+  // 6. 纯关键词模式：默认 off（不做回填；此前 bug 会默认 strict 导致超时）
+  const kwOnly = cliJson(['search', 'suppliers', '-k', '河北', '--pages', '1', '-f', 'json'], { cwd: os.homedir() });
+  record(
+    '纯关键词搜索默认 off（无回填）',
+    kwOnly.status === 0 && kwOnly.json?.data?.location?.mode === 'off' && kwOnly.json?.data?.location?.enrichedCompanies === 0,
+    `mode=${kwOnly.json?.data?.location?.mode} enriched=${kwOnly.json?.data?.location?.enrichedCompanies}`,
+  );
+
+  // 7. 关键字模式 / 城市模式
   const citySearch2 = cliJson(['search', 'suppliers', '--province', 'Hebei', '--city', 'Hengshui', '--pages', '1', '--max-enrich', '5', '-f', 'json']);
   record(
     'CLI 城市搜索（无关键词）',

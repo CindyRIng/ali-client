@@ -24,7 +24,13 @@
           "maxLength": 60
         },
         "locationMode": {
-          "$ref": "#/$defs/LocationMode"
+          "description": "缺省：有 province/city 时 strict，否则 off",
+          "type": "string",
+          "enum": [
+            "strict",
+            "keyword",
+            "off"
+          ]
         },
         "includeUnknownCity": {
           "default": true,
@@ -90,7 +96,13 @@
               "maxLength": 60
             },
             "locationMode": {
-              "$ref": "#/$defs/LocationMode"
+              "description": "缺省：有 province/city 时 strict，否则 off",
+              "type": "string",
+              "enum": [
+                "strict",
+                "keyword",
+                "off"
+              ]
             },
             "includeUnknownCity": {
               "default": true,
@@ -136,16 +148,6 @@
               "type": "boolean"
             }
           }
-        },
-        "LocationMode": {
-          "default": "strict",
-          "description": "省市过滤模式：strict 详情回填精确过滤 / keyword 地点关键词模糊 / off 不过滤",
-          "type": "string",
-          "enum": [
-            "strict",
-            "keyword",
-            "off"
-          ]
         },
         "SearchFilters": {
           "type": "object",
@@ -240,7 +242,13 @@
         "maxLength": 60
       },
       "locationMode": {
-        "$ref": "#/$defs/LocationMode"
+        "description": "缺省：有 province/city 时 strict，否则 off",
+        "type": "string",
+        "enum": [
+          "strict",
+          "keyword",
+          "off"
+        ]
       },
       "includeUnknownCity": {
         "default": true,
@@ -306,7 +314,13 @@
             "maxLength": 60
           },
           "locationMode": {
-            "$ref": "#/$defs/LocationMode"
+            "description": "缺省：有 province/city 时 strict，否则 off",
+            "type": "string",
+            "enum": [
+              "strict",
+              "keyword",
+              "off"
+            ]
           },
           "includeUnknownCity": {
             "default": true,
@@ -352,16 +366,6 @@
             "type": "boolean"
           }
         }
-      },
-      "LocationMode": {
-        "default": "strict",
-        "description": "省市过滤模式：strict 详情回填精确过滤 / keyword 地点关键词模糊 / off 不过滤",
-        "type": "string",
-        "enum": [
-          "strict",
-          "keyword",
-          "off"
-        ]
       },
       "SearchFilters": {
         "type": "object",
