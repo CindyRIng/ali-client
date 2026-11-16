@@ -221,6 +221,25 @@ detail: true Hengshui Kangyuan Rubber And P years= 6 stars= 2 plan= verified_sup
 
 ![REST docs](docs/assets/rest-docs.png)
 
+## ⚡ 性能实测：获取「河北省企业」
+
+> 平台没有「按省列出全部企业」的接口；用 **14 个种子（Hebei/河北/河北省 + 11 城市）+ 名称启发式 + 详情回填** 采样。详见 [性能实测报告](exploration/2026-11-16-perf/REPORT.md)。
+
+| 指标 | cold（无缓存） | 说明 |
+|---|---|---|
+| 候选去重 | 1147 家 | 90 个搜索页 + 工厂目录 |
+| **河北企业** | **797 家** | 名称判定 613 + 详情确认 180 + 工厂 4；抽样准确率 59/60（98.3%） |
+| 耗时 | **约 9.2 分钟** | 搜索 168s + 详情 377s + 目录 7s |
+| 严格全量对比 | ≈39 分钟 | 每个候选都查详情（已用名称启发式省掉 83% 详情） |
+| 缓存热跑 | <1 分钟 | 搜索 2h / 详情 7d TTL |
+
+```bash
+# 需先调大批次额度（.env）：ALI_MAX_PAGES=20、ALI_FETCH_BUDGET_PER_10MIN=600
+npm run perf:hebei -- --deep --name-first --verify-sample 60
+```
+
+**结论**：串行详情 ≈0.53 家/s，调 `ALI_DETAIL_INTERVAL_MS=400` 可到 ≈0.74 家/s；**不要开详情并发**（实测会触发上游 18s 挂起/超时）；大批量务必分批 + 冷却 + 缓存。
+
 ## 🎖️ 数据与会员识别
 
 **公司详情核心字段**

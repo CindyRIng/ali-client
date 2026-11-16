@@ -96,6 +96,13 @@ export class CloakBrowserHost implements BrowserHost {
     return this.pageRef;
   }
 
+  async resetPage(): Promise<Page> {
+    if (!this.ctx) throw new AliError('BAD_STATE', '浏览器会话未启动');
+    const page = await this.ctx.newPage();
+    this.pageRef = page;
+    return page;
+  }
+
   info(): BrowserInfo {
     return {
       connected: this.isConnected(),

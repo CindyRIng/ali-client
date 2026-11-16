@@ -504,6 +504,32 @@ export class AlibabaSession {
     }
   }
 
+  /** 页面被浏览器回收/关闭时重建 worker 页（长时间空闲后常见） */
+  private async ensureWorkerPage(): Promise<void> {
+    const current = this.host.page();
+    if (current && !current.isClosed()) {
+      try {
+        await current.evaluate(() => 1);
+        return;
+      } catch {
+        /* fallthrough: recreate */
+      }
+    }
+    const page = await this.host.resetPage();
+    this.workerUrl = null;
+    await this.navigate(this.config.baseUrl, { reason: 'worker-recover', force: true });
+    await this.ensureEnglish();
+    await this.refreshCookies();
+    await this.detectLogin();
+    this.workerReady = true;
+    this.logger.warn('session.worker_recovered', { url: page.url() });
+  }
+
+  private isPageClosedError(err: unknown): boolean {
+    const msg = err instanceof Error ? err.message : String(err);
+    return /Target page, context or browser has been closed|Target closed|page has been closed|Session closed/i.test(msg);
+  }
+
   private async rawFetch(url: string, init: { method?: string; body?: string; headers?: Record<string, string> }, lane: 'search' | 'detail' | 'factory'): Promise<FetchResult> {
     const started = Date.now();
     const page = this.page();
@@ -539,6 +565,38 @@ export class AlibabaSession {
       );
     } catch (err) {
       if (err instanceof AliError) throw err;
+      if (this.isPageClosedError(err)) {
+        // worker 页被回收：重建后重试一次
+        await this.ensureWorkerPage();
+        fetched = await this.watchdog(
+          page.evaluate(
+            async (p) => {
+              const resp = await fetch(p.url, {
+                method: p.method,
+                body: p.body ?? undefined,
+                headers: p.headers,
+                credentials: 'include',
+              });
+              const text = await resp.text();
+              return {
+                status: resp.status,
+                text: text.slice(0, 6_000_000),
+                contentType: resp.headers.get('content-type') ?? '',
+                bytes: text.length,
+              };
+            },
+            payload,
+          ),
+          this.config.session.watchdogMs,
+          lane,
+        );
+        const latencyMsRetry = Date.now() - started;
+        this.lastFetchAt = Date.now();
+        if (lane === 'detail') this.lastDetailAt = this.lastFetchAt;
+        this.requestTimes.push(this.lastFetchAt);
+        this.fetchCount++;
+        return { ...fetched, latencyMs: latencyMsRetry };
+      }
       const msg = err instanceof Error ? err.message : String(err);
       throw new AliError(
         'UPSTREAM_ERROR',
@@ -550,26 +608,18 @@ export class AlibabaSession {
     }
     const latencyMs = Date.now() - started;
     this.lastFetchAt = Date.now();
-    if (lane === 'detail') this.lastDetailAt = this.lastFetchAt;
     this.requestTimes.push(this.lastFetchAt);
     this.fetchCount++;
     return { ...fetched, latencyMs };
   }
 
-  private async laneWait(lane: 'search' | 'detail' | 'factory'): Promise<void> {
-    if (lane === 'detail') {
-      while (this.detailInFlight >= this.config.session.detailConcurrency) await sleep(120);
-      const gap = this.lastDetailAt + this.config.session.detailIntervalMs - Date.now();
-      if (gap > 0) await sleep(gap + jitter(200));
-      this.detailInFlight++;
-      return;
-    }
-    const gap = this.lastFetchAt + this.config.session.fetchIntervalMs - Date.now();
-    if (gap > 0) await sleep(gap + jitter(this.config.session.fetchJitterMs));
-  }
-
-  private async laneRelease(lane: 'search' | 'detail' | 'factory'): Promise<void> {
-    if (lane === 'detail') this.detailInFlight = Math.max(0, this.detailInFlight - 1);
+  /**
+   * 按 lane 调度：全部串行（实测 detail 并发 >1 会触发上游长时间挂起/超时，
+   * 详见 docs/06；detailConcurrency 仅作为未来多页面方案的预留配置）。
+   */
+  private async withLane<T>(lane: 'search' | 'detail' | 'factory', fn: () => Promise<T>): Promise<T> {
+    void lane;
+    return this.enqueue(fn);
   }
 
   private enqueue<T>(fn: () => Promise<T>): Promise<T> {
@@ -588,10 +638,9 @@ export class AlibabaSession {
       });
     }
     const lane = opts.lane ?? 'search';
-    return this.enqueue(async () => {
+    return this.withLane(lane, async () => {
       await this.budgetGuard();
-      await this.laneWait(lane);
-      try {
+      {
         for (let attempt = 0; attempt < 2; attempt++) {
           let res: FetchResult;
           try {
@@ -630,8 +679,6 @@ export class AlibabaSession {
           return res;
         }
         throw new AliError('UPSTREAM_ERROR', 'fetch retry exhausted');
-      } finally {
-        await this.laneRelease(lane);
       }
     });
   }
@@ -640,12 +687,26 @@ export class AlibabaSession {
     return false;
   }
 
-  /** 从 worker 页跨子域 POST render.htm（CORS 允许） */
+  /** 从 worker 页跨子域 POST render.htm（CORS 允许；超时先回首页刷新风控再重试） */
   async fetchRender(subdomain: string, componentKeys = 'shopSign,companyCard,companyOverview'): Promise<{ json: unknown; latencyMs: number }> {
     this.assertReady();
     const url = buildRenderApiUrl(subdomain);
     const body = renderApiBody(subdomain, componentKeys);
-    const result = await this.fetchTextPost(url, body, { lane: 'detail' });
+    let result: FetchResult;
+    try {
+      result = await this.fetchTextPost(url, body, { lane: 'detail' });
+    } catch (err) {
+      if (err instanceof AliError && err.code === 'UPSTREAM_TIMEOUT') {
+        this.lastFetchHungAt = Date.now();
+        this.riskState = 'degraded';
+        this.record('detail_hung', subdomain);
+        const recovered = await this.recoverByNavigation(this.config.baseUrl);
+        if (!recovered) throw err;
+        result = await this.fetchTextPost(url, body, { lane: 'detail' });
+      } else {
+        throw err;
+      }
+    }
     let json: unknown;
     try {
       json = JSON.parse(result.text);
@@ -656,18 +717,13 @@ export class AlibabaSession {
   }
 
   private async fetchTextPost(url: string, body: string, opts: { lane: 'search' | 'detail' | 'factory' }): Promise<FetchResult> {
-    return this.enqueue(async () => {
+    return this.withLane(opts.lane, async () => {
       await this.budgetGuard();
-      await this.laneWait(opts.lane);
-      try {
-        const result = await this.rawFetch(url, { method: 'POST', body, headers: { 'content-type': 'application/x-www-form-urlencoded' } }, opts.lane);
-        if (result.status >= 400) {
-          throw new AliError('UPSTREAM_ERROR', `render upstream status ${result.status}`);
-        }
-        return result;
-      } finally {
-        await this.laneRelease(opts.lane);
+      const result = await this.rawFetch(url, { method: 'POST', body, headers: { 'content-type': 'application/x-www-form-urlencoded' } }, opts.lane);
+      if (result.status >= 400) {
+        throw new AliError('UPSTREAM_ERROR', `render upstream status ${result.status}`);
       }
+      return result;
     });
   }
 

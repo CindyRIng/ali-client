@@ -1,0 +1,1980 @@
+{
+  "generatedAt": "2026-11-16T01:07:39.361Z",
+  "options": {
+    "pages": 5,
+    "detailConcurrency": 4,
+    "nameFirst": true,
+    "refresh": false
+  },
+  "seeds": [
+    "Hebei",
+    "河北",
+    "河北省",
+    "Shijiazhuang",
+    "Tangshan",
+    "Qinhuangdao",
+    "Handan",
+    "Xingtai",
+    "Baoding",
+    "Zhangjiakou",
+    "Chengde",
+    "Cangzhou",
+    "Langfang",
+    "Hengshui"
+  ],
+  "candidates": 1147,
+  "hebei": 797,
+  "bySource": {
+    "factory": 4,
+    "detail": 180,
+    "name": 613
+  },
+  "byCity": {
+    "未知": 189,
+    "Cangzhou": 14,
+    "Xingtai": 134,
+    "Shijiazhuang": 94,
+    "Hengshui": 88,
+    "Baoding": 15,
+    "Qinhuangdao": 58,
+    "Langfang": 67,
+    "Tangshan": 48,
+    "Handan": 63,
+    "Zhangjiakou": 20,
+    "Chengde": 7
+  },
+  "other": {
+    "Guizhou": 2,
+    "Beijing": 11,
+    "Chongqing": 26,
+    "Shandong": 30,
+    "Guangxi": 4,
+    "Jiangsu": 116,
+    "Jiangxi": 13,
+    "Tianjin": 10,
+    "Shanghai": 10,
+    "Zhejiang": 30,
+    "Guangdong": 50,
+    "Shaanxi": 1,
+    "Henan": 13,
+    "Hubei": 4,
+    "Liaoning": 2,
+    "Yunnan": 1,
+    "Anhui": 8,
+    "Shanxi": 3,
+    "Sichuan": 2,
+    "Fujian": 7,
+    "Hunan": 3,
+    "Gansu": 1,
+    "Ningxia": 1,
+    "Heilongjiang": 1
+  },
+  "unknown": 1,
+  "timings": {
+    "factoryMs": 7305,
+    "searchMs": 168044,
+    "detailMs": 377261,
+    "totalMs": 553044
+  },
+  "detailCalls": 200,
+  "detailCached": 0,
+  "detailErrors": 0,
+  "perSeed": [
+    {
+      "seed": "Hebei",
+      "items": 97,
+      "pages": 6,
+      "ms": 12850,
+      "cached": false
+    },
+    {
+      "seed": "河北",
+      "items": 171,
+      "pages": 10,
+      "ms": 21296,
+      "cached": false
+    },
+    {
+      "seed": "河北省",
+      "items": 100,
+      "pages": 5,
+      "ms": 13920,
+      "cached": false
+    },
+    {
+      "seed": "Shijiazhuang",
+      "items": 85,
+      "pages": 5,
+      "ms": 12692,
+      "cached": false
+    },
+    {
+      "seed": "Tangshan",
+      "items": 60,
+      "pages": 4,
+      "ms": 10361,
+      "cached": false
+    },
+    {
+      "seed": "Qinhuangdao",
+      "items": 94,
+      "pages": 5,
+      "ms": 11556,
+      "cached": false
+    },
+    {
+      "seed": "Handan",
+      "items": 91,
+      "pages": 5,
+      "ms": 10593,
+      "cached": false
+    },
+    {
+      "seed": "Xingtai",
+      "items": 97,
+      "pages": 5,
+      "ms": 10714,
+      "cached": false
+    },
+    {
+      "seed": "Baoding",
+      "items": 80,
+      "pages": 5,
+      "ms": 10975,
+      "cached": false
+    },
+    {
+      "seed": "Zhangjiakou",
+      "items": 47,
+      "pages": 4,
+      "ms": 8961,
+      "cached": false
+    },
+    {
+      "seed": "Chengde",
+      "items": 20,
+      "pages": 2,
+      "ms": 3959,
+      "cached": false
+    },
+    {
+      "seed": "Cangzhou",
+      "items": 94,
+      "pages": 5,
+      "ms": 10982,
+      "cached": false
+    },
+    {
+      "seed": "Langfang",
+      "items": 96,
+      "pages": 5,
+      "ms": 10580,
+      "cached": false
+    },
+    {
+      "seed": "Hengshui",
+      "items": 96,
+      "pages": 5,
+      "ms": 18605,
+      "cached": false
+    }
+  ],
+  "sample": [
+    {
+      "companyId": "274661857",
+      "companyName": "Hebei Zhigu Automobile Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "factory",
+      "plan": "unknown"
+    },
+    {
+      "companyId": "259539254",
+      "companyName": "Hebei Haosi Furniture Sales Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "factory",
+      "plan": "unknown"
+    },
+    {
+      "companyId": "231069089",
+      "companyName": "Bazhou Yuantu Furniture Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "factory",
+      "plan": "unknown"
+    },
+    {
+      "companyId": "200120058",
+      "companyName": "Hebei Bailixin Home Textile Co., LTD.",
+      "province": "Hebei",
+      "city": null,
+      "source": "factory",
+      "plan": "unknown"
+    },
+    {
+      "companyId": "200338043",
+      "companyName": "Hebei Shengtian Pipe-Fitting Group Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "detail",
+      "joinedYears": 18,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "279917209",
+      "companyName": "Hebei Hengtai Pipeline Equipment Import and Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200522331",
+      "companyName": "Hebei Ndt Auto Parts Manufacture Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 13,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292357820",
+      "companyName": "Hebei Mohua New Materials Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "244158992",
+      "companyName": "Hebei Huanzhan Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "237662160",
+      "companyName": "Hebei Wolun International Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 11,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200392139",
+      "companyName": "Hebei Yong Yang Special Steel Group Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "detail",
+      "joinedYears": 18,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "248103720",
+      "companyName": "Hebei Longshi Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "240796169",
+      "companyName": "Hebei Tangman Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274596145",
+      "companyName": "Hebei Maisui Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "242174061",
+      "companyName": "Hebei Hengjing Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "241231680",
+      "companyName": "Hebei Tianmai Felt Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "264241670",
+      "companyName": "Hebei Lillard Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "243538173",
+      "companyName": "Hebei Pulu Metal Alloy Material Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292706627",
+      "companyName": "Hebei Ninecows Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200698850",
+      "companyName": "Hebei Tuohua Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 17,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200184363",
+      "companyName": "Hebei Qianye Metal Product Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 18,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "293883073",
+      "companyName": "Hebei Pinbiao Protective Engineering Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292663998",
+      "companyName": "Hebei Yuantuo International Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292284425",
+      "companyName": "Hebei Baotan New Material Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200179098",
+      "companyName": "Hebei Yusen Metal Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 19,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284435317",
+      "companyName": "Hebei Skyhall Global Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "250910206",
+      "companyName": "Hebei Yiqiang Felt Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "247697426",
+      "companyName": "Hebei Xingbei Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 7,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291519278",
+      "companyName": "Hebei Huachang Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "262605924",
+      "companyName": "Hebei Shiyu Pipe Industry Co., Ltd",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292348184",
+      "companyName": "Hebei Senhou Metal Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "249597050",
+      "companyName": "Hebei Zhaoxuan Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291182025",
+      "companyName": "Hebei Xinte Environmental Protection Equipment Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "282485965",
+      "companyName": "Hebei Boxing Wire Mesh Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "243571022",
+      "companyName": "Hebei Hanuo Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274691081",
+      "companyName": "Hebei Ruisen Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293211728",
+      "companyName": "Hebei Dingyi Automotive Components Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292917008",
+      "companyName": "Hebei Yeding Intelligent Technology Co., Ltd",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "259255016",
+      "companyName": "Hebei Yushiyou Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 6,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "251555914",
+      "companyName": "Hebei Boneng Automotive Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "275110885",
+      "companyName": "Hebei Aoyue Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 4,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "286690006",
+      "companyName": "Hebei Yucan Automotive Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "285299882",
+      "companyName": "Hebei Minghui Automotive Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284390591",
+      "companyName": "Hebei Yanchou Automotive Parts Co., Ltd",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "282019354",
+      "companyName": "Hebei Funeng Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 4,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292296927",
+      "companyName": "Hebei Cooper Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284701715",
+      "companyName": "Hebei Yajiachi Automotive Parts Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "detail",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "264524584",
+      "companyName": "Hebei Adaoer Auto Parts Co.,ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "243558716",
+      "companyName": "Hebei Saitiya Tadaing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291104179",
+      "companyName": "Hebei Chuanglai Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274742684",
+      "companyName": "Hebei Linkland Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200522323",
+      "companyName": "Anping County Jiawang Hardware Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "281764262",
+      "companyName": "Anping County Dengfeng Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "235346987",
+      "companyName": "Cangzhou Ruitai Petroleum Machinery Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "285420196",
+      "companyName": "Anping County Qunli Silk Screen Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293004922",
+      "companyName": "Anping Kunshang Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200479047",
+      "companyName": "Shijiazhuang Dingsheng Pipe Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 18,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "213878405",
+      "companyName": "Anping Hongyu Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 12,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "237184799",
+      "companyName": "Anping Dongfu Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 11,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "231502695",
+      "companyName": "Hebei Anping Yong Sheng Wire And Netting Making Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "214003028",
+      "companyName": "Hebei Runcheng Steel Pipe Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "detail",
+      "joinedYears": 15,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "275608045",
+      "companyName": "Xingtai Hongmao Auto Part Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292472938",
+      "companyName": "Hebei Guohui Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "236877807",
+      "companyName": "Shenzhou City Shengsen Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 11,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200267220",
+      "companyName": "Hebei Jinshi Industrial Metal Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 18,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239496492",
+      "companyName": "Qinghe Wanyao Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200715505",
+      "companyName": "Cangzhou Zhongshun Steel Pipe Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "detail",
+      "joinedYears": 17,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200274379",
+      "companyName": "Anping Chengxin Metal Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 18,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "244964563",
+      "companyName": "Hebei Samsung Metal Wire Mesh Manufacture Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239359071",
+      "companyName": "Hebei Xiongqian Wire Mesh Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "231415045",
+      "companyName": "hebei ruihao metal products co.,ltd",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "233261883",
+      "companyName": "Hebei Gabion Hardware And Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "283209958",
+      "companyName": "HEBEI TIANYUN WIRE MESH PRODUCTS CO., LTD.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "243260259",
+      "companyName": "Sunshine Hebei Eco-Technologies Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293165853",
+      "companyName": "Hebei KaihengWire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292727952",
+      "companyName": "Hebei Chuangmo Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "213634313",
+      "companyName": "Hebei Tengfei Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 16,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292025853",
+      "companyName": "Hebei Nanpeng Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200262031",
+      "companyName": "Hebei Dunqiang Hardware Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200761300",
+      "companyName": "Hebei Shuolong Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291815308",
+      "companyName": "Hebei Jialu Transportation Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "247001772",
+      "companyName": "Hebei Chaochuang Metal Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291048068",
+      "companyName": "Hebei SunGrand Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "213556300",
+      "companyName": "Hebei Feirui Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 16,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "265471494",
+      "companyName": "Hebei Aomian Import And Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "258422693",
+      "companyName": "Hebei Zhexin International Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "230932148",
+      "companyName": "Hebei Hengfeng Wire Mesh Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "244813415",
+      "companyName": "Hebei Ourui Textile Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "285489235",
+      "companyName": "Hebei Zhongsui Metal Products CO., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291405835",
+      "companyName": "Hebei Shuolan Industry Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291217050",
+      "companyName": "Hebei Hengyuan Pipeline Equipment Group Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "240666292",
+      "companyName": "Hebei Xingye Import And Export Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "258363627",
+      "companyName": "Hebei Changjin Textile Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239768153",
+      "companyName": "Hebei Province Gucheng County Qinghan Town Canvas Factory",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "241610676",
+      "companyName": "Hebei Victory Import And Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291150343",
+      "companyName": "Hebei Tongze New Material Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "231492037",
+      "companyName": "Hebei Hengshi Wire Mesh Product Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200703710",
+      "companyName": "Hebei Huaren Felt Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 15,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200912176",
+      "companyName": "Hebei Ocean Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "214161381",
+      "companyName": "Hebei Yuniu Fiberglass Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 15,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "240788529",
+      "companyName": "Hebei Weijia Metal Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200517445",
+      "companyName": "Hebei Maishi Wire Mesh Manufacture Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 18,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "230456699",
+      "companyName": "Hebei Qunkun Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200120098",
+      "companyName": "Hebei Yongwei Metal Produce Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 19,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "274949109",
+      "companyName": "Hebei Xiongan Hengyun Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292632780",
+      "companyName": "HEBEI XICHI METAL PRODUCTS CO., LTD.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "233093060",
+      "companyName": "Hebei Hengxing Wire Mesh Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "259569955",
+      "companyName": "Hebei KN Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "213690258",
+      "companyName": "Hebei Rongzitai Metal Wire Products Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 16,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "281016220",
+      "companyName": "Hebei Conquer Hardware Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "214920820",
+      "companyName": "Hebei Qunbang Chemical Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 14,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "239273259",
+      "companyName": "Hebei Wohua Textile Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "233133425",
+      "companyName": "Hebei Leiman Filter Material Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200708595",
+      "companyName": "Hebei Huasheng Felt Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291863262",
+      "companyName": "Hebei Tianrunxuan Rubber Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200486007",
+      "companyName": "Hebei Huahaiyuan Wire Mesh Project Co.,ltd",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 18,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "230456158",
+      "companyName": "Hebei Wanchi Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292393605",
+      "companyName": "Hebei Gaozhu Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "246899261",
+      "companyName": "Qinhuangdao Xinbang Decorative Material Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Qinhuangdao",
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292669455",
+      "companyName": "Anping Yuzhe Metal Mesh Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "235942804",
+      "companyName": "Nangong City Baiwangyou Felt CO.,LTD",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "213751250",
+      "companyName": "Qinghe County Tushun Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "detail",
+      "joinedYears": 15,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291350622",
+      "companyName": "Shijiazhuang Melchauto Machinery Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292896974",
+      "companyName": "Qinghe County Shuangtu Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284766431",
+      "companyName": "Xingtai Aike Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274666180",
+      "companyName": "Qinghe county Tangnarui Auto Parts Sales Department",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "242316112",
+      "companyName": "Xingtai Xingkong Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284385591",
+      "companyName": "Qinghe County Zi Mao Trade Co., Ltd",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "214575146",
+      "companyName": "Baoding Sanyuan Textile Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "name",
+      "joinedYears": 15,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239553383",
+      "companyName": "Shenzhou Andesen Wire Fencing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200716115",
+      "companyName": "Nangong City Dingfeng Felt Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 17,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291203274",
+      "companyName": "Gu'an loogtra Filtration EquipmentCo., Ltd.",
+      "province": "Hebei",
+      "city": "Langfang",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "251813847",
+      "companyName": "Qinghe County Yadun Automotive Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "50031655",
+      "companyName": "Shijiazhuang S D Company Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 21,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200752304",
+      "companyName": "Anping Guanda Hardware Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 15,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "247242130",
+      "companyName": "Hebei Heguo Textile Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "290881781",
+      "companyName": "Hebei Pofeng Textile Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "242954799",
+      "companyName": "Hebei Zunrui International Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "215039716",
+      "companyName": "Hebei Xusen Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 14,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "239416309",
+      "companyName": "Hebei Aoliande Chemical Equipment Co., Ltd",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "252131199",
+      "companyName": "HEBEI DUOBANG COMPOSITE MATERIAL CO., LTD",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "215288483",
+      "companyName": "HEBEI HTK TECHNOLOGY CO.,LTD",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 14,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "236946438",
+      "companyName": "Hebei Danruo Fur Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 11,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "274617428",
+      "companyName": "Xingtai Mingjiang Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292829895",
+      "companyName": "Qinghe County Jiaou Automotive Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291415774",
+      "companyName": "Anguo Hongtai Machinery Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200060022",
+      "companyName": "Qinghe County Wantong Control Cable&Rubber Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 7,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292124089",
+      "companyName": "Hengshui Jinjia Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291168643",
+      "companyName": "Supermacy Filtration Equipment (langfang) Co., Ltd.",
+      "province": "Hebei",
+      "city": "Langfang",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "248552043",
+      "companyName": "Tangshan Yuheng Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Tangshan",
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "286026070",
+      "companyName": "Xingtai Yuesheng Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274641281",
+      "companyName": "Qinghe County Handun Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292560989",
+      "companyName": "Qinghe County Luoche Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "259460942",
+      "companyName": "Langfang Minghuan International Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Langfang",
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "279791677",
+      "companyName": "Qinghe Lvkun Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293105103",
+      "companyName": "Qinghe Nopar Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292068451",
+      "companyName": "Qinghe County Jiakuo Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291921705",
+      "companyName": "Qinghe County Maole Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "242305527",
+      "companyName": "Gucheng Fenghui Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "236281068",
+      "companyName": "Qinghe County Annaite Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "275069841",
+      "companyName": "Xingtai Guangji Machinery Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "237902655",
+      "companyName": "Xingtai Xunchiyoute Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 11,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293495008",
+      "companyName": "Qinghe County Tongjia Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "249287988",
+      "companyName": "Nangong Tongda Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "detail",
+      "joinedYears": 7,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "280721264",
+      "companyName": "Xingtai Lester Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292318798",
+      "companyName": "Qinghe County Benuo Automotive Components Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "256058433",
+      "companyName": "Xingtai Jiuyou Auto Parts Information Service Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291365653",
+      "companyName": "Qinghe County Hongsheng Mold Factory (individual Business)",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "258591573",
+      "companyName": "Qinghe Yingjie Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293164301",
+      "companyName": "Qinghe County Baopu Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "240518675",
+      "companyName": "Qinghe County Yue Bao Filter Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291780221",
+      "companyName": "Qinghe Gintion Automobile Parts Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291545180",
+      "companyName": "Xingtai Youzhi Automotive Components Sales Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291715201",
+      "companyName": "Qinghe County boruima Automotive Components Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284914585",
+      "companyName": "Anping County Henghuan Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292077450",
+      "companyName": "Anping County Liancheng Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292963285",
+      "companyName": "Qinghe County Kunlin Trading Co., Ltd",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293001223",
+      "companyName": "Linxi County Hande Mechanical Parts Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293740386",
+      "companyName": "Gucheng County Hongsheng Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293383121",
+      "companyName": "Qinghe County Suge Auto Parts Co., Ltd",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "detail",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "264686555",
+      "companyName": "Xingtai Fulangmu Filter Manufacture Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "260672793",
+      "companyName": "Hebei Joinwin Architectural Design Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "244893501",
+      "companyName": "Hebei Wally Hardware Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274952979",
+      "companyName": "Hebei Province Pantao Machinery Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "251947454",
+      "companyName": "Hebei Sanjuyuan Steel Structure Engineering Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "290933263",
+      "companyName": "Hebei Aiduosen Import And Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "240019645",
+      "companyName": "Hebei Derek Chemical Limited",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292709144",
+      "companyName": "Hebei Qianyan Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292800671",
+      "companyName": "Hebei Jisu Kuaiche Catering Equipment Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "281718709",
+      "companyName": "Hebei Leshuai Cycle Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "285233772",
+      "companyName": "Hebei Hongshun Guangju Metal Structural Parts Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239235548",
+      "companyName": "Hebei Zhipao Amusement Equipment Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "248548840",
+      "companyName": "Hebei Senmao Medical Equipment Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292535852",
+      "companyName": "Hebei Pintuyou Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "283140531",
+      "companyName": "Hebei Laichuang Industrial Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "290988588",
+      "companyName": "Hebei Gangxia Metal Products Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291166752",
+      "companyName": "Hebei Hanying Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "259133606",
+      "companyName": "Hebei Guangsheng Technology Co.,Ltd",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292600385",
+      "companyName": "Hebei Bonuo Hongyi Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "280221344",
+      "companyName": "Hebei Feyt New Material Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    }
+  ]
+}

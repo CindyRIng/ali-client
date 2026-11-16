@@ -23,6 +23,8 @@ export interface BrowserHost {
   isConnected(): boolean;
   context(): import('playwright-core').BrowserContext;
   page(): import('playwright-core').Page;
+  /** worker 页被浏览器回收后重建 */
+  resetPage(): Promise<import('playwright-core').Page>;
   info(): BrowserInfo;
   close(): Promise<void>;
 }

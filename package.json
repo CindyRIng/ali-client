@@ -31,7 +31,8 @@
     "gen:check": "tsx src/generators/generate.ts --check",
     "gen:regions": "tsx scripts/gen-regions.ts",
     "self-test": "node scripts/self-test.mjs",
-    "e2e": "node scripts/e2e-matrix.mjs"
+    "e2e": "node scripts/e2e-matrix.mjs",
+    "perf:hebei": "node scripts/perf-hebei.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",

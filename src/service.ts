@@ -326,8 +326,16 @@ export class AliService {
     const now = Date.now();
     const existing = this.cache.getQuery(queryId);
     if (existing && !req.refresh && Date.parse(existing.expiresAt) > now) {
-      const pages = this.cache.getPages(queryId);
-      const allCached = Array.from({ length: pagesRequested }, (_, i) => i + 1).every((p) => pages.includes(p));
+      const pages = this.cache.getPages(queryId).sort((a, b) => a - b);
+      // 结果已抓完（最后一页不足 20 条）时，即使少于请求页数也可直接返回缓存
+      let exhausted = false;
+      if (pages.length > 0) {
+        const lastRec = this.cache.getPage(queryId, pages[pages.length - 1], 0);
+        const lastCount = lastRec?.value.items.length ?? 0;
+        exhausted = lastCount < 20;
+      }
+      const allCached =
+        Array.from({ length: pagesRequested }, (_, i) => i + 1).every((p) => pages.includes(p)) || exhausted;
       if (allCached) {
         const suppliers = this.cache.getSupplierItems(queryId);
         const pageInfos = pages
@@ -741,12 +749,14 @@ export class AliService {
   async factories(input: { province?: string; categoryId: string; page: number; pageSize: number; refresh: boolean }): Promise<{ data: z.infer<typeof FactoriesResponseSchema>; cached: boolean; mode: 'logged_in' | 'anonymous' | 'degraded' }> {
     const province = input.province ? resolveLocationQuery({ province: input.province }).province : null;
     if (input.province && !province) throw new AliError('INVALID_ARGUMENT', `unknown province: ${input.province}`);
-    let record = !input.refresh ? this.cache.getFactoryPage(input.categoryId, input.page, this.config.cache.factoryTtlSec) : null;
+    // 缓存键包含 pageSize：上游 pageSize 影响当前页内容
+    const cacheKey = `${input.categoryId}@${input.pageSize}`;
+    let record = !input.refresh ? this.cache.getFactoryPage(cacheKey, input.page, this.config.cache.factoryTtlSec) : null;
     if (!record || !record.fresh) {
       const json = await this.session.fetchFactoryJson(input.categoryId, input.page, input.pageSize);
       const parsed = parseFactoryPage(json);
       const rec = {
-        categoryId: input.categoryId,
+        categoryId: cacheKey,
         page: input.page,
         items: parsed.items,
         upstreamTotal: parsed.totalNum,
