@@ -114,6 +114,23 @@
 
 结论：现有「关键词枚举 + 名称启发式 + 详情核验」仍是唯一可行路线；要更多只能做「行业词 × 城市」矩阵并接受数小时到数天的详情核验成本，或使用外部数据源。
 
+## 4.6 Plan A 第一轮：行业 × 城市矩阵（通过 ali-client REST）
+
+按「行业词 × 城市」矩阵，用 client 的 strict 模式（`--province Hebei`，详情回填后精确过滤）跑第一轮：
+
+| 项 | 值 |
+|---|---|
+| 矩阵 | 6 个行业（wire mesh / auto parts / pipe fitting / hardware / glass / bicycle）× 11 个地级市 = **66 次查询** |
+| 每次查询 | `pages=1`（20 候选）、`maxEnrich=60`、strict 河北过滤 |
+| 返回/去重 | 641 条 / **564 家唯一** |
+| **新增河北企业** | **219 家**（均不在原 4362 家档案中，strict 过滤确认 province=Hebei） |
+| 总耗时 | **814s（13.6 分钟）**，平均 12.3s/查询，0 错误（中途触发本地 budget，自动等待重试） |
+| 行业贡献 | bicycle 60、pipe fitting 49、glass 40、wire mesh 38、hardware 32、auto parts 24 |
+| 城市贡献 | Shijiazhuang 56、Xingtai 47、Hengshui 31、Langfang 28、Tangshan 25、Handan 24、Baoding 14、Cangzhou 11、Qinhuangdao 4、Chengde 3、Zhangjiakou 0 |
+| 结果文件 | `matrix-round1.csv`（219 行，含公司名/市/会员/年限/星级/主营） |
+
+结论：**client 能力足以支撑矩阵采集**；第一轮增量明显（+219），但 66 次查询就触发了本地 fetch budget（600/10min），说明全矩阵需要分批 + 冷却。按此增量估算，20 行业 × 11 城市 × pages=2 可能新增 1000+，耗时 1–2 小时。
+
 ## 5. 无头模式（headless）
 
 - 已切到 `ALI_HEADLESS=true`：不再弹浏览器窗口；搜索/工厂/详情全部正常。

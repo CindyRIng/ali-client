@@ -1,0 +1,52 @@
+{
+  "industries": [
+    "wire mesh",
+    "auto parts",
+    "pipe fitting",
+    "hardware",
+    "glass",
+    "bicycle"
+  ],
+  "cities": [
+    "Shijiazhuang",
+    "Tangshan",
+    "Qinhuangdao",
+    "Handan",
+    "Xingtai",
+    "Baoding",
+    "Zhangjiakou",
+    "Chengde",
+    "Cangzhou",
+    "Langfang",
+    "Hengshui"
+  ],
+  "pages": 1,
+  "queries": 66,
+  "returnedTotal": 641,
+  "uniqueReturned": 564,
+  "newCompanies": 219,
+  "newHebei": 219,
+  "byIndustry": {
+    "wire mesh": 38,
+    "auto parts": 24,
+    "pipe fitting": 49,
+    "hardware": 32,
+    "glass": 40,
+    "bicycle": 60
+  },
+  "byCity": {
+    "Shijiazhuang": 56,
+    "Tangshan": 25,
+    "Qinhuangdao": 4,
+    "Handan": 24,
+    "Xingtai": 47,
+    "Langfang": 28,
+    "Hengshui": 31,
+    "Baoding": 14,
+    "Cangzhou": 11,
+    "Chengde": 3
+  },
+  "elapsedSec": 814.2,
+  "avgQuerySec": 12.3,
+  "errors": 0
+}
