@@ -127,7 +127,9 @@
 | 总耗时 | **814s（13.6 分钟）**，平均 12.3s/查询，0 错误（中途触发本地 budget，自动等待重试） |
 | 行业贡献 | bicycle 60、pipe fitting 49、glass 40、wire mesh 38、hardware 32、auto parts 24 |
 | 城市贡献 | Shijiazhuang 56、Xingtai 47、Hengshui 31、Langfang 28、Tangshan 25、Handan 24、Baoding 14、Cangzhou 11、Qinhuangdao 4、Chengde 3、Zhangjiakou 0 |
-| 结果文件 | `matrix-round1.csv`（219 行，含公司名/市/会员/年限/星级/主营） |
+| 结果文件 | `matrix-round1.csv`（219 行，含公司名/市/会员/年限/星级/主营）；金品子集 `matrix-round1-jinpin.csv`（59 行） |
+| 会员结构 | **金品诚企（verified_supplier）59 家**；出口通（gold_supplier）160 家；领袖卖家（verified_pro）0 家 |
+| 金品城市分布 | Shijiazhuang 17、Xingtai 14、Tangshan 8、Langfang 6、Hengshui 5、Cangzhou 4、Handan 2、Baoding 1、城市未知 2 |
 
 结论：**client 能力足以支撑矩阵采集**；第一轮增量明显（+219），但 66 次查询就触发了本地 fetch budget（600/10min），说明全矩阵需要分批 + 冷却。按此增量估算，20 行业 × 11 城市 × pages=2 可能新增 1000+，耗时 1–2 小时。
 
