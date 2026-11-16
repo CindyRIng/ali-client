@@ -102,6 +102,8 @@ export class AlibabaSession {
   private workerUrl: string | null = null;
   private currentLoginId: string | null = null;
   private loginStates = new Map<string, 'completed' | 'cancelled'>();
+  private detailFailures = 0;
+  private detailBlockedUntil = 0;
   private x5secExpiresAt = 0;
   private lastError: string | null = null;
   private opChain: Promise<unknown> = Promise.resolve();
@@ -683,6 +685,15 @@ export class AlibabaSession {
     });
   }
 
+  private onDetailFailure(): void {
+    this.detailFailures++;
+    if (this.detailFailures >= 2) {
+      this.detailBlockedUntil = Date.now() + 10 * 60 * 1000;
+      this.riskState = 'degraded';
+      this.logger.warn('detail.circuit_open', { failures: this.detailFailures, blockedUntil: iso(this.detailBlockedUntil) });
+    }
+  }
+
   private pageHasCaptchaSafe(): boolean {
     return false;
   }
@@ -690,6 +701,12 @@ export class AlibabaSession {
   /** 从 worker 页跨子域 POST render.htm（CORS 允许；超时先回首页刷新风控再重试） */
   async fetchRender(subdomain: string, componentKeys = 'shopSign,companyCard,companyOverview'): Promise<{ json: unknown; latencyMs: number }> {
     this.assertReady();
+    if (Date.now() < this.detailBlockedUntil) {
+      throw new AliError('RISK_COOLDOWN', 'detail upstream temporarily blocked（连续超时熔断）', {
+        retryAfterMs: this.detailBlockedUntil - Date.now(),
+        details: { detailBlockedUntil: iso(this.detailBlockedUntil) },
+      });
+    }
     const url = buildRenderApiUrl(subdomain);
     const body = renderApiBody(subdomain, componentKeys);
     let result: FetchResult;
@@ -701,12 +718,22 @@ export class AlibabaSession {
         this.riskState = 'degraded';
         this.record('detail_hung', subdomain);
         const recovered = await this.recoverByNavigation(this.config.baseUrl);
-        if (!recovered) throw err;
-        result = await this.fetchTextPost(url, body, { lane: 'detail' });
+        if (!recovered) {
+          this.onDetailFailure();
+          throw err;
+        }
+        try {
+          result = await this.fetchTextPost(url, body, { lane: 'detail' });
+        } catch (retryErr) {
+          this.onDetailFailure();
+          throw retryErr;
+        }
       } else {
         throw err;
       }
     }
+    this.detailFailures = 0;
+    this.detailBlockedUntil = 0;
     let json: unknown;
     try {
       json = JSON.parse(result.text);

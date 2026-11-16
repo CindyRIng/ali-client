@@ -1,0 +1,2903 @@
+{
+  "generatedAt": "2026-11-16T01:58:08.370Z",
+  "options": {
+    "pages": 5,
+    "detailConcurrency": 6,
+    "nameFirst": true,
+    "refresh": false
+  },
+  "seeds": [
+    "Hebei",
+    "河北",
+    "河北省",
+    "Shijiazhuang",
+    "Tangshan",
+    "Qinhuangdao",
+    "Handan",
+    "Xingtai",
+    "Baoding",
+    "Zhangjiakou",
+    "Chengde",
+    "Cangzhou",
+    "Langfang",
+    "Hengshui",
+    "Jingxing",
+    "Zhengding",
+    "Xingtang",
+    "Lingshou",
+    "Gaoyi",
+    "Shenze",
+    "Zanhuang",
+    "Wuji",
+    "Pingshan",
+    "Yuanshi",
+    "Zhao",
+    "Xinji",
+    "Jinzhou",
+    "Xinle",
+    "Luannan",
+    "Leting",
+    "Qianxi",
+    "Yutian",
+    "Zunhua",
+    "Qianan",
+    "Luanzhou",
+    "Qinglong",
+    "Changli",
+    "Lulong",
+    "Linzhang",
+    "Chengan",
+    "Daming",
+    "She",
+    "Ci",
+    "Qiu",
+    "Jize",
+    "Guangping",
+    "Guantao",
+    "Wei",
+    "Quzhou",
+    "Wuan",
+    "Lincheng",
+    "Neiqiu",
+    "Baixiang",
+    "Longyao",
+    "Ningjin",
+    "Julu",
+    "Xinhe",
+    "Guangzong",
+    "Pingxiang",
+    "Qinghe",
+    "Linxi",
+    "Nangong",
+    "Shahe",
+    "Laishui",
+    "Fuping",
+    "Dingxing",
+    "Tang",
+    "Gaoyang",
+    "Rongcheng",
+    "Laiyuan",
+    "Wangdou",
+    "Anxin",
+    "Yi",
+    "Quyang",
+    "Li",
+    "Shunping",
+    "Boye",
+    "Xiong",
+    "Zhuozhou",
+    "Dingzhou",
+    "Anguo",
+    "Gaobeidian",
+    "Zhangbei",
+    "Kangbao",
+    "Guyuan",
+    "Shangyi",
+    "Yangyuan",
+    "Huaian",
+    "Huailai",
+    "Zhuolu",
+    "Chicheng",
+    "Xinglong",
+    "Luanping",
+    "Longhua",
+    "Fengning",
+    "Kuancheng",
+    "Weichang",
+    "Pingquan",
+    "Cang",
+    "Qing",
+    "Dongguang",
+    "Haixing",
+    "Yanshan",
+    "Suning",
+    "Nanpi",
+    "Wuqiao",
+    "Xian",
+    "Mengcun",
+    "Botou",
+    "Renqiu",
+    "Huanghua",
+    "Hejian",
+    "Guan",
+    "Yongqing",
+    "Xianghe",
+    "Daicheng",
+    "Wenan",
+    "Dachang",
+    "Bazhou",
+    "Sanhe",
+    "Zaoqiang",
+    "Wuyi",
+    "Wuqiang",
+    "Raoyang",
+    "Anping",
+    "Gucheng",
+    "Jing",
+    "Fucheng",
+    "Shenzhou"
+  ],
+  "candidates": 3541,
+  "hebei": 1159,
+  "bySource": {
+    "factory": 4,
+    "name": 1155
+  },
+  "byCity": {
+    "未知": 457,
+    "Hengshui": 116,
+    "Shijiazhuang": 164,
+    "Xingtai": 79,
+    "Cangzhou": 26,
+    "Baoding": 33,
+    "Tangshan": 95,
+    "Langfang": 64,
+    "Handan": 65,
+    "Qinhuangdao": 32,
+    "Zhangjiakou": 12,
+    "Chengde": 16
+  },
+  "other": {
+    "Guizhou": 12,
+    "Beijing": 52,
+    "Zhejiang": 156,
+    "Guangdong": 559,
+    "Chongqing": 74,
+    "Hubei": 33,
+    "Shandong": 139,
+    "Guangxi": 11,
+    "Henan": 90,
+    "Jilin": 5,
+    "Tianjin": 41,
+    "Jiangxi": 137,
+    "Shaanxi": 27,
+    "Gansu": 5,
+    "Fujian": 67,
+    "Hunan": 19,
+    "Liaoning": 37,
+    "Jiangsu": 176,
+    "Shanghai": 46,
+    "Anhui": 34,
+    "Yunnan": 5,
+    "Heilongjiang": 2,
+    "Hainan": 8,
+    "Sichuan": 26,
+    "Shanxi": 9,
+    "Ningxia": 1,
+    "Inner Mongolia": 5
+  },
+  "unknown": 606,
+  "timings": {
+    "factoryMs": 20,
+    "searchMs": 343599,
+    "detailMs": 0,
+    "totalMs": 344423
+  },
+  "detailCalls": 0,
+  "detailCached": 0,
+  "detailErrors": 0,
+  "perSeed": [
+    {
+      "seed": "Hebei",
+      "items": 400,
+      "pages": 20,
+      "ms": 44,
+      "cached": true
+    },
+    {
+      "seed": "河北",
+      "items": 0,
+      "pages": 1,
+      "ms": 1045,
+      "cached": false
+    },
+    {
+      "seed": "河北省",
+      "items": 314,
+      "pages": 20,
+      "ms": 28113,
+      "cached": false
+    },
+    {
+      "seed": "Shijiazhuang",
+      "items": 136,
+      "pages": 9,
+      "ms": 79885,
+      "cached": false
+    },
+    {
+      "seed": "Tangshan",
+      "items": 166,
+      "pages": 10,
+      "ms": 19924,
+      "cached": false
+    },
+    {
+      "seed": "Qinhuangdao",
+      "items": 152,
+      "pages": 10,
+      "ms": 12293,
+      "cached": false
+    },
+    {
+      "seed": "Handan",
+      "items": 143,
+      "pages": 10,
+      "ms": 16057,
+      "cached": false
+    },
+    {
+      "seed": "Xingtai",
+      "items": 128,
+      "pages": 8,
+      "ms": 7510,
+      "cached": false
+    },
+    {
+      "seed": "Baoding",
+      "items": 172,
+      "pages": 10,
+      "ms": 10428,
+      "cached": false
+    },
+    {
+      "seed": "Zhangjiakou",
+      "items": 49,
+      "pages": 4,
+      "ms": 3191,
+      "cached": false
+    },
+    {
+      "seed": "Chengde",
+      "items": 40,
+      "pages": 3,
+      "ms": 2662,
+      "cached": false
+    },
+    {
+      "seed": "Cangzhou",
+      "items": 88,
+      "pages": 6,
+      "ms": 5669,
+      "cached": false
+    },
+    {
+      "seed": "Langfang",
+      "items": 161,
+      "pages": 10,
+      "ms": 10252,
+      "cached": false
+    },
+    {
+      "seed": "Hengshui",
+      "items": 156,
+      "pages": 10,
+      "ms": 9331,
+      "cached": false
+    },
+    {
+      "seed": "Jingxing",
+      "items": 20,
+      "pages": 1,
+      "ms": 805,
+      "cached": false
+    },
+    {
+      "seed": "Zhengding",
+      "items": 0,
+      "pages": 1,
+      "ms": 752,
+      "cached": false
+    },
+    {
+      "seed": "Xingtang",
+      "items": 7,
+      "pages": 1,
+      "ms": 773,
+      "cached": false
+    },
+    {
+      "seed": "Lingshou",
+      "items": 20,
+      "pages": 1,
+      "ms": 908,
+      "cached": false
+    },
+    {
+      "seed": "Gaoyi",
+      "items": 0,
+      "pages": 1,
+      "ms": 586,
+      "cached": false
+    },
+    {
+      "seed": "Shenze",
+      "items": 20,
+      "pages": 1,
+      "ms": 791,
+      "cached": false
+    },
+    {
+      "seed": "Zanhuang",
+      "items": 0,
+      "pages": 1,
+      "ms": 626,
+      "cached": false
+    },
+    {
+      "seed": "Wuji",
+      "items": 20,
+      "pages": 1,
+      "ms": 897,
+      "cached": false
+    },
+    {
+      "seed": "Pingshan",
+      "items": 20,
+      "pages": 1,
+      "ms": 956,
+      "cached": false
+    },
+    {
+      "seed": "Yuanshi",
+      "items": 19,
+      "pages": 1,
+      "ms": 774,
+      "cached": false
+    },
+    {
+      "seed": "Zhao",
+      "items": 20,
+      "pages": 1,
+      "ms": 847,
+      "cached": false
+    },
+    {
+      "seed": "Xinji",
+      "items": 20,
+      "pages": 1,
+      "ms": 1107,
+      "cached": false
+    },
+    {
+      "seed": "Jinzhou",
+      "items": 20,
+      "pages": 1,
+      "ms": 946,
+      "cached": false
+    },
+    {
+      "seed": "Xinle",
+      "items": 20,
+      "pages": 1,
+      "ms": 874,
+      "cached": false
+    },
+    {
+      "seed": "Luannan",
+      "items": 0,
+      "pages": 1,
+      "ms": 591,
+      "cached": false
+    },
+    {
+      "seed": "Leting",
+      "items": 20,
+      "pages": 1,
+      "ms": 935,
+      "cached": false
+    },
+    {
+      "seed": "Qianxi",
+      "items": 20,
+      "pages": 1,
+      "ms": 1012,
+      "cached": false
+    },
+    {
+      "seed": "Yutian",
+      "items": 20,
+      "pages": 1,
+      "ms": 914,
+      "cached": false
+    },
+    {
+      "seed": "Zunhua",
+      "items": 16,
+      "pages": 1,
+      "ms": 741,
+      "cached": false
+    },
+    {
+      "seed": "Qianan",
+      "items": 18,
+      "pages": 1,
+      "ms": 881,
+      "cached": false
+    },
+    {
+      "seed": "Luanzhou",
+      "items": 20,
+      "pages": 1,
+      "ms": 1749,
+      "cached": false
+    },
+    {
+      "seed": "Qinglong",
+      "items": 20,
+      "pages": 1,
+      "ms": 4146,
+      "cached": false
+    },
+    {
+      "seed": "Changli",
+      "items": 20,
+      "pages": 1,
+      "ms": 5784,
+      "cached": false
+    },
+    {
+      "seed": "Lulong",
+      "items": 5,
+      "pages": 1,
+      "ms": 2101,
+      "cached": false
+    },
+    {
+      "seed": "Linzhang",
+      "items": 0,
+      "pages": 1,
+      "ms": 4453,
+      "cached": false
+    },
+    {
+      "seed": "Chengan",
+      "items": 17,
+      "pages": 1,
+      "ms": 3275,
+      "cached": false
+    },
+    {
+      "seed": "Daming",
+      "items": 20,
+      "pages": 1,
+      "ms": 1848,
+      "cached": false
+    },
+    {
+      "seed": "She",
+      "items": 20,
+      "pages": 1,
+      "ms": 1521,
+      "cached": false
+    },
+    {
+      "seed": "Ci",
+      "items": 20,
+      "pages": 1,
+      "ms": 3009,
+      "cached": false
+    },
+    {
+      "seed": "Qiu",
+      "items": 20,
+      "pages": 1,
+      "ms": 4232,
+      "cached": false
+    },
+    {
+      "seed": "Jize",
+      "items": 0,
+      "pages": 1,
+      "ms": 1835,
+      "cached": false
+    },
+    {
+      "seed": "Guangping",
+      "items": 3,
+      "pages": 1,
+      "ms": 8648,
+      "cached": false
+    },
+    {
+      "seed": "Guantao",
+      "items": 5,
+      "pages": 1,
+      "ms": 1753,
+      "cached": false
+    },
+    {
+      "seed": "Wei",
+      "items": 21,
+      "pages": 1,
+      "ms": 1335,
+      "cached": false
+    },
+    {
+      "seed": "Quzhou",
+      "items": 20,
+      "pages": 1,
+      "ms": 1096,
+      "cached": false
+    },
+    {
+      "seed": "Wuan",
+      "items": 21,
+      "pages": 1,
+      "ms": 1300,
+      "cached": false
+    },
+    {
+      "seed": "Lincheng",
+      "items": 20,
+      "pages": 1,
+      "ms": 742,
+      "cached": false
+    },
+    {
+      "seed": "Neiqiu",
+      "items": 0,
+      "pages": 1,
+      "ms": 595,
+      "cached": false
+    },
+    {
+      "seed": "Baixiang",
+      "items": 20,
+      "pages": 1,
+      "ms": 868,
+      "cached": false
+    },
+    {
+      "seed": "Longyao",
+      "items": 20,
+      "pages": 1,
+      "ms": 850,
+      "cached": false
+    },
+    {
+      "seed": "Ningjin",
+      "items": 21,
+      "pages": 1,
+      "ms": 957,
+      "cached": false
+    },
+    {
+      "seed": "Julu",
+      "items": 20,
+      "pages": 1,
+      "ms": 862,
+      "cached": false
+    },
+    {
+      "seed": "Xinhe",
+      "items": 20,
+      "pages": 1,
+      "ms": 959,
+      "cached": false
+    },
+    {
+      "seed": "Guangzong",
+      "items": 20,
+      "pages": 1,
+      "ms": 1210,
+      "cached": false
+    },
+    {
+      "seed": "Pingxiang",
+      "items": 0,
+      "pages": 1,
+      "ms": 850,
+      "cached": false
+    },
+    {
+      "seed": "Qinghe",
+      "items": 20,
+      "pages": 1,
+      "ms": 948,
+      "cached": false
+    },
+    {
+      "seed": "Linxi",
+      "items": 20,
+      "pages": 1,
+      "ms": 724,
+      "cached": false
+    },
+    {
+      "seed": "Nangong",
+      "items": 20,
+      "pages": 1,
+      "ms": 942,
+      "cached": false
+    },
+    {
+      "seed": "Shahe",
+      "items": 20,
+      "pages": 1,
+      "ms": 798,
+      "cached": false
+    },
+    {
+      "seed": "Laishui",
+      "items": 3,
+      "pages": 1,
+      "ms": 632,
+      "cached": false
+    },
+    {
+      "seed": "Fuping",
+      "items": 16,
+      "pages": 1,
+      "ms": 771,
+      "cached": false
+    },
+    {
+      "seed": "Dingxing",
+      "items": 0,
+      "pages": 1,
+      "ms": 612,
+      "cached": false
+    },
+    {
+      "seed": "Tang",
+      "items": 20,
+      "pages": 1,
+      "ms": 1055,
+      "cached": false
+    },
+    {
+      "seed": "Gaoyang",
+      "items": 0,
+      "pages": 1,
+      "ms": 560,
+      "cached": false
+    },
+    {
+      "seed": "Rongcheng",
+      "items": 20,
+      "pages": 1,
+      "ms": 1057,
+      "cached": false
+    },
+    {
+      "seed": "Laiyuan",
+      "items": 20,
+      "pages": 1,
+      "ms": 758,
+      "cached": false
+    },
+    {
+      "seed": "Wangdou",
+      "items": 9,
+      "pages": 1,
+      "ms": 629,
+      "cached": false
+    },
+    {
+      "seed": "Anxin",
+      "items": 21,
+      "pages": 1,
+      "ms": 1122,
+      "cached": false
+    },
+    {
+      "seed": "Yi",
+      "items": 20,
+      "pages": 1,
+      "ms": 978,
+      "cached": false
+    },
+    {
+      "seed": "Quyang",
+      "items": 20,
+      "pages": 1,
+      "ms": 792,
+      "cached": false
+    },
+    {
+      "seed": "Li",
+      "items": 21,
+      "pages": 1,
+      "ms": 1082,
+      "cached": false
+    },
+    {
+      "seed": "Shunping",
+      "items": 20,
+      "pages": 1,
+      "ms": 1151,
+      "cached": false
+    },
+    {
+      "seed": "Boye",
+      "items": 21,
+      "pages": 1,
+      "ms": 1245,
+      "cached": false
+    },
+    {
+      "seed": "Xiong",
+      "items": 20,
+      "pages": 1,
+      "ms": 857,
+      "cached": false
+    },
+    {
+      "seed": "Zhuozhou",
+      "items": 20,
+      "pages": 1,
+      "ms": 866,
+      "cached": false
+    },
+    {
+      "seed": "Dingzhou",
+      "items": 20,
+      "pages": 1,
+      "ms": 985,
+      "cached": false
+    },
+    {
+      "seed": "Anguo",
+      "items": 0,
+      "pages": 1,
+      "ms": 678,
+      "cached": false
+    },
+    {
+      "seed": "Gaobeidian",
+      "items": 20,
+      "pages": 1,
+      "ms": 868,
+      "cached": false
+    },
+    {
+      "seed": "Zhangbei",
+      "items": 3,
+      "pages": 1,
+      "ms": 616,
+      "cached": false
+    },
+    {
+      "seed": "Kangbao",
+      "items": 21,
+      "pages": 1,
+      "ms": 1140,
+      "cached": false
+    },
+    {
+      "seed": "Guyuan",
+      "items": 20,
+      "pages": 1,
+      "ms": 783,
+      "cached": false
+    },
+    {
+      "seed": "Shangyi",
+      "items": 20,
+      "pages": 1,
+      "ms": 833,
+      "cached": false
+    },
+    {
+      "seed": "Yangyuan",
+      "items": 14,
+      "pages": 1,
+      "ms": 766,
+      "cached": false
+    },
+    {
+      "seed": "Huaian",
+      "items": 20,
+      "pages": 1,
+      "ms": 1057,
+      "cached": false
+    },
+    {
+      "seed": "Huailai",
+      "items": 10,
+      "pages": 1,
+      "ms": 767,
+      "cached": false
+    },
+    {
+      "seed": "Zhuolu",
+      "items": 5,
+      "pages": 1,
+      "ms": 645,
+      "cached": false
+    },
+    {
+      "seed": "Chicheng",
+      "items": 20,
+      "pages": 1,
+      "ms": 1325,
+      "cached": false
+    },
+    {
+      "seed": "Xinglong",
+      "items": 20,
+      "pages": 1,
+      "ms": 878,
+      "cached": false
+    },
+    {
+      "seed": "Luanping",
+      "items": 0,
+      "pages": 1,
+      "ms": 594,
+      "cached": false
+    },
+    {
+      "seed": "Longhua",
+      "items": 20,
+      "pages": 1,
+      "ms": 1021,
+      "cached": false
+    },
+    {
+      "seed": "Fengning",
+      "items": 3,
+      "pages": 1,
+      "ms": 590,
+      "cached": false
+    },
+    {
+      "seed": "Kuancheng",
+      "items": 4,
+      "pages": 1,
+      "ms": 614,
+      "cached": false
+    },
+    {
+      "seed": "Weichang",
+      "items": 20,
+      "pages": 1,
+      "ms": 1352,
+      "cached": false
+    },
+    {
+      "seed": "Pingquan",
+      "items": 1,
+      "pages": 1,
+      "ms": 562,
+      "cached": false
+    },
+    {
+      "seed": "Cang",
+      "items": 20,
+      "pages": 1,
+      "ms": 834,
+      "cached": false
+    },
+    {
+      "seed": "Qing",
+      "items": 20,
+      "pages": 1,
+      "ms": 1750,
+      "cached": false
+    },
+    {
+      "seed": "Dongguang",
+      "items": 20,
+      "pages": 1,
+      "ms": 2032,
+      "cached": false
+    },
+    {
+      "seed": "Haixing",
+      "items": 20,
+      "pages": 1,
+      "ms": 2557,
+      "cached": false
+    },
+    {
+      "seed": "Yanshan",
+      "items": 20,
+      "pages": 1,
+      "ms": 806,
+      "cached": false
+    },
+    {
+      "seed": "Suning",
+      "items": 20,
+      "pages": 1,
+      "ms": 910,
+      "cached": false
+    },
+    {
+      "seed": "Nanpi",
+      "items": 20,
+      "pages": 1,
+      "ms": 870,
+      "cached": false
+    },
+    {
+      "seed": "Wuqiao",
+      "items": 3,
+      "pages": 1,
+      "ms": 605,
+      "cached": false
+    },
+    {
+      "seed": "Xian",
+      "items": 20,
+      "pages": 1,
+      "ms": 1007,
+      "cached": false
+    },
+    {
+      "seed": "Mengcun",
+      "items": 0,
+      "pages": 1,
+      "ms": 650,
+      "cached": false
+    },
+    {
+      "seed": "Botou",
+      "items": 20,
+      "pages": 1,
+      "ms": 1112,
+      "cached": false
+    },
+    {
+      "seed": "Renqiu",
+      "items": 0,
+      "pages": 1,
+      "ms": 576,
+      "cached": false
+    },
+    {
+      "seed": "Huanghua",
+      "items": 20,
+      "pages": 1,
+      "ms": 864,
+      "cached": false
+    },
+    {
+      "seed": "Hejian",
+      "items": 20,
+      "pages": 1,
+      "ms": 1109,
+      "cached": false
+    },
+    {
+      "seed": "Guan",
+      "items": 20,
+      "pages": 1,
+      "ms": 1021,
+      "cached": false
+    },
+    {
+      "seed": "Yongqing",
+      "items": 0,
+      "pages": 1,
+      "ms": 567,
+      "cached": false
+    },
+    {
+      "seed": "Xianghe",
+      "items": 20,
+      "pages": 1,
+      "ms": 1209,
+      "cached": false
+    },
+    {
+      "seed": "Daicheng",
+      "items": 2,
+      "pages": 1,
+      "ms": 765,
+      "cached": false
+    },
+    {
+      "seed": "Wenan",
+      "items": 20,
+      "pages": 1,
+      "ms": 842,
+      "cached": false
+    },
+    {
+      "seed": "Dachang",
+      "items": 20,
+      "pages": 1,
+      "ms": 788,
+      "cached": false
+    },
+    {
+      "seed": "Bazhou",
+      "items": 20,
+      "pages": 1,
+      "ms": 979,
+      "cached": false
+    },
+    {
+      "seed": "Sanhe",
+      "items": 20,
+      "pages": 1,
+      "ms": 946,
+      "cached": false
+    },
+    {
+      "seed": "Zaoqiang",
+      "items": 20,
+      "pages": 1,
+      "ms": 832,
+      "cached": false
+    },
+    {
+      "seed": "Wuyi",
+      "items": 20,
+      "pages": 1,
+      "ms": 1043,
+      "cached": false
+    },
+    {
+      "seed": "Wuqiang",
+      "items": 0,
+      "pages": 1,
+      "ms": 580,
+      "cached": false
+    },
+    {
+      "seed": "Raoyang",
+      "items": 0,
+      "pages": 1,
+      "ms": 577,
+      "cached": false
+    },
+    {
+      "seed": "Anping",
+      "items": 20,
+      "pages": 1,
+      "ms": 1008,
+      "cached": false
+    },
+    {
+      "seed": "Gucheng",
+      "items": 20,
+      "pages": 1,
+      "ms": 823,
+      "cached": false
+    },
+    {
+      "seed": "Jing",
+      "items": 21,
+      "pages": 1,
+      "ms": 1126,
+      "cached": false
+    },
+    {
+      "seed": "Fucheng",
+      "items": 20,
+      "pages": 1,
+      "ms": 872,
+      "cached": false
+    },
+    {
+      "seed": "Shenzhou",
+      "items": 20,
+      "pages": 1,
+      "ms": 1180,
+      "cached": false
+    }
+  ],
+  "sample": [
+    {
+      "companyId": "274661857",
+      "companyName": "Hebei Zhigu Automobile Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "factory",
+      "plan": "unknown"
+    },
+    {
+      "companyId": "259539254",
+      "companyName": "Hebei Haosi Furniture Sales Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "factory",
+      "plan": "unknown"
+    },
+    {
+      "companyId": "231069089",
+      "companyName": "Bazhou Yuantu Furniture Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "factory",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200120058",
+      "companyName": "Hebei Bailixin Home Textile Co., LTD.",
+      "province": "Hebei",
+      "city": null,
+      "source": "factory",
+      "plan": "unknown"
+    },
+    {
+      "companyId": "200338043",
+      "companyName": "Hebei Shengtian Pipe-Fitting Group Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 18,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "279917209",
+      "companyName": "Hebei Hengtai Pipeline Equipment Import and Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200522331",
+      "companyName": "Hebei Ndt Auto Parts Manufacture Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292357820",
+      "companyName": "Hebei Mohua New Materials Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "244158992",
+      "companyName": "Hebei Huanzhan Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "237662160",
+      "companyName": "Hebei Wolun International Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 11,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200392139",
+      "companyName": "Hebei Yong Yang Special Steel Group Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 18,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "248103720",
+      "companyName": "Hebei Longshi Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "240796169",
+      "companyName": "Hebei Tangman Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274596145",
+      "companyName": "Hebei Maisui Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "242174061",
+      "companyName": "Hebei Hengjing Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "264241670",
+      "companyName": "Hebei Lillard Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "243538173",
+      "companyName": "Hebei Pulu Metal Alloy Material Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292706627",
+      "companyName": "Hebei Ninecows Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200698850",
+      "companyName": "Hebei Tuohua Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200184363",
+      "companyName": "Hebei Qianye Metal Product Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 18,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "293883073",
+      "companyName": "Hebei Pinbiao Protective Engineering Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292078200",
+      "companyName": "Hebei Wirsing Import And Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292128448",
+      "companyName": "Hebei Song Pc Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293105133",
+      "companyName": "Hebei Shuopan Electric Power Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292564156",
+      "companyName": "Hebei Gogol Bearing Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "275869692",
+      "companyName": "Hengshui Youfeng Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Hengshui",
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292022758",
+      "companyName": "Hebei Ju Liu New Material Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "257992346",
+      "companyName": "Hebei Qianze Plastic Industry Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "265516251",
+      "companyName": "Hebei Saisheng New Material Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "231840682",
+      "companyName": "Hebei Plentirain Irrigation Equipment Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "290933263",
+      "companyName": "Hebei Aiduosen Import And Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "255852266",
+      "companyName": "Hebei Runze Electric Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239867785",
+      "companyName": "Shijiazhuang Xiongbang Biological Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "275608045",
+      "companyName": "Xingtai Hongmao Auto Part Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292472938",
+      "companyName": "Hebei Guohui Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "235346987",
+      "companyName": "Cangzhou Ruitai Petroleum Machinery Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200267220",
+      "companyName": "Hebei Jinshi Industrial Metal Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 18,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200715505",
+      "companyName": "Cangzhou Zhongshun Steel Pipe Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "244964563",
+      "companyName": "Hebei Samsung Metal Wire Mesh Manufacture Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239359071",
+      "companyName": "Hebei Xiongqian Wire Mesh Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "231415045",
+      "companyName": "hebei ruihao metal products co.,ltd",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200120098",
+      "companyName": "Hebei Yongwei Metal Produce Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 19,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200912176",
+      "companyName": "Hebei Ocean Wire Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "231502695",
+      "companyName": "Hebei Anping Yong Sheng Wire And Netting Making Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "214003028",
+      "companyName": "Hebei Runcheng Steel Pipe Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 15,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "285278098",
+      "companyName": "Hebei Hotspur Seal Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291174395",
+      "companyName": "Shijiazhuang Yandong Mineral Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "265797909",
+      "companyName": "Baoding Texiang Conveying Machinery Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "281797132",
+      "companyName": "Xingtai Haoyi Import And Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "265658875",
+      "companyName": "Shijiazhuang Bairuisite Cellulose Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "265463475",
+      "companyName": "Baoding New Shine Import And Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "240926565",
+      "companyName": "Hebei Baorui Rubber Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292868244",
+      "companyName": "Hebei Xilei Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "279025703",
+      "companyName": "Hebei Ju'an Machinery Technology Co., Ltd",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "232153333",
+      "companyName": "Hebei Soome Packaging Machinery Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "247485234",
+      "companyName": "Hebei Zanglang Metal Tool Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "234119041",
+      "companyName": "Hebei Yan Xing Chemical Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200887160",
+      "companyName": "Hebei Baofeng Steel Structure Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "230804615",
+      "companyName": "Hebei Zhongbang Biotechnology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "231972631",
+      "companyName": "Hebei Juming Import & Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "247315599",
+      "companyName": "Hebei Biwei Import&export Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291217050",
+      "companyName": "Hebei Hengyuan Pipeline Equipment Group Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "280124182",
+      "companyName": "Hebei Pulongte Rubber And Plastic Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "233794809",
+      "companyName": "Hebei Shangshai Wire Mesh Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "260672793",
+      "companyName": "Hebei Joinwin Architectural Design Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "247752839",
+      "companyName": "Shijiazhuang Gangquan Import & Export Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "242316112",
+      "companyName": "Xingtai Xingkong Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291863262",
+      "companyName": "Hebei Tianrunxuan Rubber Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "284766431",
+      "companyName": "Xingtai Aike Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "231378652",
+      "companyName": "Tangshan Baijia Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Tangshan",
+      "source": "name",
+      "joinedYears": 13,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "242294413",
+      "companyName": "Tangshan Zhengcheng Electric Co., Ltd.",
+      "province": "Hebei",
+      "city": "Tangshan",
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "213758516",
+      "companyName": "Xingtai Lanying Bicycle Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 15,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "243986132",
+      "companyName": "Baoding Zhiwei Electric Power Technology Co., Limited",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284468597",
+      "companyName": "Baoding Hongyang Fountain Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "240846016",
+      "companyName": "Hebei Hanming Hoisting Machinery Manufacture Co.,Ltd",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "252316561",
+      "companyName": "Hebei Jiali Rigging Manufacturing Co., Ltd",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291508827",
+      "companyName": "Yida Hehao (Hebei) Chemical Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200016374",
+      "companyName": "Hebei Liming Stamping Form Machine Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 19,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "238948225",
+      "companyName": "Hebei Hongou Auto Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 11,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "241269966",
+      "companyName": "Hebei Hongwei Tongtai Import And Export Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291133258",
+      "companyName": "Hebei Helin Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292528508",
+      "companyName": "Baoding Shouxing Health Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "264704792",
+      "companyName": "Hebei Fanbang Mechanical Equipment Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292192715",
+      "companyName": "Cangzhou Spark  Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "243942072",
+      "companyName": "Langfang Jinpan Insulation Materials Co., Ltd.",
+      "province": "Hebei",
+      "city": "Langfang",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292719903",
+      "companyName": "Hebei Solreign Machinery Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "286598728",
+      "companyName": "Xingtai Jinhu Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "281931955",
+      "companyName": "Xingtai Beiqiang Machinery Manufacturing Factory",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "259060918",
+      "companyName": "Hebei Zhipo Import And Export Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "251947454",
+      "companyName": "Hebei Sanjuyuan Steel Structure Engineering Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291702326",
+      "companyName": "Hebei Jurui Rubber & Plastic Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293026659",
+      "companyName": "Hebei Yiyu Instrument Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291431905",
+      "companyName": "Shijiazhuang Yishu Intelligence Tech Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292335999",
+      "companyName": "Cangzhou Ruijin Electric Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "233383905",
+      "companyName": "Tangshan Junnan Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Tangshan",
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "235193941",
+      "companyName": "Xingtai  Zeno  Import & Export Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200700230",
+      "companyName": "Shijiazhuang Taihong Clothing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "234513821",
+      "companyName": "Langfang Fangdun Fireproof Sealing Material Co., Ltd.",
+      "province": "Hebei",
+      "city": "Langfang",
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "50021560",
+      "companyName": "Xingtai Okai Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 22,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "240032461",
+      "companyName": "Hebei Qianqiao Commercial Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "237861583",
+      "companyName": "Hebei Giocoso Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "279687702",
+      "companyName": "Hebei Saxu Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "50012570",
+      "companyName": "Shijiazhuang Sanxing Feather Processing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 23,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "240897376",
+      "companyName": "Hebei Giant Metal Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "233093060",
+      "companyName": "Hebei Hengxing Wire Mesh Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "238704938",
+      "companyName": "Tangshan Honest International Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Tangshan",
+      "source": "name",
+      "joinedYears": 11,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239773898",
+      "companyName": "Hebei Rongyuan Plastic Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "236960174",
+      "companyName": "Tangshan Zhengyuan Pipeline Industry Co., Ltd.",
+      "province": "Hebei",
+      "city": "Tangshan",
+      "source": "name",
+      "joinedYears": 11,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "246901718",
+      "companyName": "Tangshan Zhenxiang International Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Tangshan",
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "262056740",
+      "companyName": "Hebei Yaokuan Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274626672",
+      "companyName": "Shijiazhuang Fuqiang Building Materials Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "265222257",
+      "companyName": "Hebei Zhouge Plastic Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "282168967",
+      "companyName": "Xingtai Hang Forklift Truck Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "246638313",
+      "companyName": "Hebei Ruipin Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "239848437",
+      "companyName": "Shijiazhuang Nanque Chemical Product Sales Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291312536",
+      "companyName": "Hebei Huichuang Refractory Materials Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "293070586",
+      "companyName": "Hebei Ruitu Bicycle Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "255785226",
+      "companyName": "Hebei Houde Hanfang Medical Devices Group Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "284580853",
+      "companyName": "Hebei Yinuan Biotechnology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "239832240",
+      "companyName": "Hebei Kangshuo Wire Mesh Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "214910101",
+      "companyName": "HEBEI YESON METAL TECHNOLOGY CO., LTD.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 14,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "259675468",
+      "companyName": "Hebei Yongwei Metal Produce Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "250981524",
+      "companyName": "Hebei Vinstar Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292523363",
+      "companyName": "HeBei KongYi Metal Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "247001772",
+      "companyName": "Hebei Chaochuang Metal Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "246763748",
+      "companyName": "Hebei Xiucheng Home Textile Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "251259150",
+      "companyName": "Hebei Kuangze Import&export Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "239416309",
+      "companyName": "Hebei Aoliande Chemical Equipment Co., Ltd",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "242223165",
+      "companyName": "Hebei Splendid Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "246872027",
+      "companyName": "Hebei Yezhen Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "215039716",
+      "companyName": "Hebei Xusen Metal Wire Mesh Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 14,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "285329918",
+      "companyName": "Hebei Bangjun Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "240788529",
+      "companyName": "Hebei Weijia Metal Mesh Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291815308",
+      "companyName": "Hebei Jialu Transportation Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200136021",
+      "companyName": "Hebei Jinsidun(jsd) Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 19,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "258478470",
+      "companyName": "Shijiazhuang Jishentongchuang Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "259924112",
+      "companyName": "Hebei Runhuabang New Material Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "290957566",
+      "companyName": "Hebei Youchuang Crafts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "283035336",
+      "companyName": "Shijiazhuang Shencheng Commerce Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "290973635",
+      "companyName": "Hebei Qinglong Rubber Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292507801",
+      "companyName": "Cangzhou Zhaoxing Precision Electronics Co., Ltd.",
+      "province": "Hebei",
+      "city": "Cangzhou",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "281788186",
+      "companyName": "Hebei Taichuang Chemical Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "252430194",
+      "companyName": "Hebei Tambo Machinery Equipment Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "281941128",
+      "companyName": "Hebei Junni Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292181160",
+      "companyName": "Shijiazhuang Dirbaby Group Co.Ltd",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291345114",
+      "companyName": "Hebei Weiwei Rubber And Plastic Seal Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "290963773",
+      "companyName": "Xingtai Haorun Machinery Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "248205460",
+      "companyName": "Hebei Top Imp& Exp Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "250859843",
+      "companyName": "Hebei Shaodi Chemical Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284534831",
+      "companyName": "Hebei Yifeng Automobile Industry Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "290970035",
+      "companyName": "Hebei Huansu Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "258749520",
+      "companyName": "Hebei Nuonuo Hoisting Equipment Manufacturing Co.,Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 6,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274656995",
+      "companyName": "Shijiazhuang Yaguan New Materials Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "274574598",
+      "companyName": "Xingtai Longcheng Sealing Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200021151",
+      "companyName": "Shijiazhuang Billion Industrial Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 19,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "265117424",
+      "companyName": "Hebei Ruihongsheng Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "240360826",
+      "companyName": "Shijiazhuang Meienbang Import & Export Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 10,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "247315054",
+      "companyName": "Hebei Bangxi Rubber And Plastic Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292048943",
+      "companyName": "Hebei Qianye Yuntu Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292199191",
+      "companyName": "Hebei Yuchen Supply Chain Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "234245320",
+      "companyName": "Xingtai Fenggong Autoparts Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "290895312",
+      "companyName": "Hebei Xingqi Plastic Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "244471128",
+      "companyName": "Hebei Gebang International Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "213642059",
+      "companyName": "Hebei Xulong Hydraumatic Sealing Element Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 14,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "233148570",
+      "companyName": "Hebei Othello Sealing Material Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "240752129",
+      "companyName": "Hebei Wanheng Felt Industry Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 9,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "244900866",
+      "companyName": "Hebei shuotai sealing co., ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "233241550",
+      "companyName": "Hebei Runnong Water-Saving Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "274697076",
+      "companyName": "Hebei Hongji Shunda Steel Structure Engineering Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "291562191",
+      "companyName": "Hebei Ermai Medical Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "267200126",
+      "companyName": "Hebei Sanyong New Material Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 5,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "292509493",
+      "companyName": "Hebei Jinwo Rubber and Plastic Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "281965358",
+      "companyName": "Hebei Botou Safety Tools Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292964925",
+      "companyName": "Hebei Bingyao Machinery Equipment Manufacturing Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "214116262",
+      "companyName": "Hebei Jintian Plastic New Material Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291453853",
+      "companyName": "Xingtai Landi Rubber Products Co., Ltd.",
+      "province": "Hebei",
+      "city": "Xingtai",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "274846440",
+      "companyName": "Hebei Kuizhen Vehicle Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "249479005",
+      "companyName": "Hebei Muen Vehicle Parts Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292109191",
+      "companyName": "Hebei Zhuoling Sports Goods Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "278769741",
+      "companyName": "Hebei Pufeite Intelligent Equipment Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292725573",
+      "companyName": "Shijiazhuang Dimension Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "279185488",
+      "companyName": "Hebei Qianda Rubber Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 4,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291258413",
+      "companyName": "Hebei Century Enteng Intelligent Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "244725421",
+      "companyName": "Hebei Ruiheng Rubber And Plastic Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 7,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291184743",
+      "companyName": "Langfang Yuelai Sealing Materials Co., Ltd.",
+      "province": "Hebei",
+      "city": "Langfang",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "293799980",
+      "companyName": "Hebei Ruituo Haike Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "292354388",
+      "companyName": "Hebei Shuheng Import and Export Trading Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "293672971",
+      "companyName": "Hebei Zhongce Chemical Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "291085071",
+      "companyName": "Hebei Better Metal Products Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "293083957",
+      "companyName": "Hebei Xuekang Gelatin Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "293186816",
+      "companyName": "Hebei Anhan International Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 1,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "284927932",
+      "companyName": "Hebei Qiaolan Environmental Protection Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 3,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "235392429",
+      "companyName": "Shijiazhuang Weisai Import & Export Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 2,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200465024",
+      "companyName": "Shijiazhuang Longshow Home Textiles Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 15,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "50016894",
+      "companyName": "Baodingshi Tianma Interlining Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "name",
+      "joinedYears": 22,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "247242130",
+      "companyName": "Hebei Heguo Textile Technology Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "200844163",
+      "companyName": "Shijiazhuang Sunshine Imp. & Exp. Trade Co., Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 17,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "244466670",
+      "companyName": "Baoding Wuge Woolen Products Sales Co., Ltd.",
+      "province": "Hebei",
+      "city": "Baoding",
+      "source": "name",
+      "joinedYears": 8,
+      "plan": "gold_supplier"
+    },
+    {
+      "companyId": "200120016",
+      "companyName": "Shijiazhuang Puhuasheng Company Ltd.",
+      "province": "Hebei",
+      "city": "Shijiazhuang",
+      "source": "name",
+      "joinedYears": 19,
+      "plan": "verified_supplier"
+    },
+    {
+      "companyId": "235020142",
+      "companyName": "Hebei Haolu Auto Parts Co., Ltd.",
+      "province": "Hebei",
+      "city": null,
+      "source": "name",
+      "joinedYears": 12,
+      "plan": "gold_supplier"
+    }
+  ]
+}

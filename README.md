@@ -111,7 +111,7 @@ sed -i "s/^ALI_API_TOKEN=.*/ALI_API_TOKEN=$(node -e "console.log(require('crypto
 npm run build
 npm test          # 31 个单测，不启浏览器
 
-# 3) 启动常驻 owner（会打开 cloak 浏览器；首次约 10–20s）
+# 3) 启动常驻 owner（默认 headless 无窗口；如需人工过滑块可临时 ALI_HEADLESS=false）
 bin/ali-run serve
 # → ali-client REST listening on http://127.0.0.1:8792
 # → docs: http://127.0.0.1:8792/docs
@@ -225,20 +225,23 @@ detail: true Hengshui Kangyuan Rubber And P years= 6 stars= 2 plan= verified_sup
 
 > 平台没有「按省列出全部企业」的接口；用 **14 个种子（Hebei/河北/河北省 + 11 城市）+ 名称启发式 + 详情回填** 采样。详见 [性能实测报告](exploration/2026-11-16-perf/REPORT.md)。
 
-| 指标 | cold（无缓存） | 说明 |
+| 指标 | 扩展种子（129 个） | 说明 |
 |---|---|---|
-| 候选去重 | 1147 家 | 90 个搜索页 + 工厂目录 |
-| **河北企业** | **797 家** | 名称判定 613 + 详情确认 180 + 工厂 4；抽样准确率 59/60（98.3%） |
-| 耗时 | **约 9.2 分钟** | 搜索 168s + 详情 377s + 目录 7s |
-| 严格全量对比 | ≈39 分钟 | 每个候选都查详情（已用名称启发式省掉 83% 详情） |
+| 种子 | 11 地级市 + 118 县级行政区（+ 省级词） | 第一版只有 11 个地级市 → 结果偏少 |
+| 候选去重 | 3541 家 | 搜索 5.7 分钟 |
+| **河北企业** | **1559 家** | 名称 1095 + 详情确认 460 + 工厂 4；抽样准确率 60/60 |
+| 冷启动耗时 | **约 15.6 分钟** | 搜索 344s + 未知详情核验 592s |
+| 详情吞吐（headless，串行 700ms） | **1.09–1.12 家/s**，字段完整率 100% | p95 1.5s；缓存命中 482 家/s |
 | 缓存热跑 | <1 分钟 | 搜索 2h / 详情 7d TTL |
 
 ```bash
 # 需先调大批次额度（.env）：ALI_MAX_PAGES=20、ALI_FETCH_BUDGET_PER_10MIN=600
-npm run perf:hebei -- --deep --name-first --verify-sample 60
+npm run perf:hebei -- --extended --name-first --verify-sample 60
+npm run perf:detail -- --n 40 --seed Hengshui --pages 5           # 强制回源
+npm run perf:detail -- --n 40 --seed Hengshui --pages 5 --warm    # 缓存
 ```
 
-**结论**：串行详情 ≈0.53 家/s，调 `ALI_DETAIL_INTERVAL_MS=400` 可到 ≈0.74 家/s；**不要开详情并发**（实测会触发上游 18s 挂起/超时）；大批量务必分批 + 冷却 + 缓存。
+**结论**：headless 串行详情 1.09–1.12 家/s、字段完整率 100%；**不要开详情并发**（会触发上游 18s 挂起/熔断）；间隔 700ms 比 400ms 更稳（400ms 遇上上游长尾反而更慢）；大批量务必分批 + 冷却 + 缓存。
 
 ## 🎖️ 数据与会员识别
 

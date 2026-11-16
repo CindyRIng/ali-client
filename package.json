@@ -32,7 +32,8 @@
     "gen:regions": "tsx scripts/gen-regions.ts",
     "self-test": "node scripts/self-test.mjs",
     "e2e": "node scripts/e2e-matrix.mjs",
-    "perf:hebei": "node scripts/perf-hebei.mjs"
+    "perf:hebei": "node scripts/perf-hebei.mjs",
+    "perf:detail": "node scripts/detail-bench.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",

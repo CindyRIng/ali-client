@@ -48,6 +48,7 @@ const NO_DETAIL = argv.includes('--no-detail');
 const DETAIL_SAMPLE = Number(opt('detail-sample', 0));
 const VERIFY_SAMPLE = Number(opt('verify-sample', 0));
 const DEEP = argv.includes('--deep');
+const EXTENDED = argv.includes('--extended');
 
 async function api(method, pathname, body, retries = 6) {
   try {
@@ -56,6 +57,11 @@ async function api(method, pathname, body, retries = 6) {
     if ((err.code === 'RATE_LIMITED' || err.httpStatus === 429) && retries > 0) {
       console.log(`  ! local fetch budget 用尽，等待 20s 后重试（剩余 ${retries}）`);
       await new Promise((r) => setTimeout(r, 20000));
+      return api(method, pathname, body, retries - 1);
+    }
+    if (err.code === 'RISK_COOLDOWN' && retries > 0) {
+      console.log(`  ! detail 熔断/风控冷却，等待 60s 后重试（剩余 ${retries}）`);
+      await new Promise((r) => setTimeout(r, 60000));
       return api(method, pathname, body, retries - 1);
     }
     throw err;
@@ -89,12 +95,37 @@ const fmt = (ms) => `${(ms / 1000).toFixed(1)}s`;
 /** 公司名 → 省/市（名称启发式；用于减少详情请求，最终以详情为准） */
 let PROVINCES = [];
 let CITIES = [];
+let COUNTY_HINTS = []; // { zh, en, cityEn }
 try {
   const { REGION_SEED } = await import(path.join(ROOT, 'dist/data/regions.js'));
   PROVINCES = REGION_SEED.filter((r) => r.level === 'province');
   CITIES = REGION_SEED.filter((r) => r.level === 'city');
 } catch {
   /* no dist */
+}
+
+// 河北县级行政区（县/县级市，排除区）：来自 data/pca-code.json + pinyin-pro
+let HEBEI_COUNTIES = []; // { zh, en, cityZh, cityEn }
+try {
+  const pca = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/pca-code.json'), 'utf8'));
+  const { pinyin: toPinyin } = await import('pinyin-pro');
+  const hb = pca.find((p) => String(p.name).startsWith('河北'));
+  const cityEnByZh = new Map(CITIES.map((c) => [c.nameZh, c.nameEn]));
+  const strip = (name) =>
+    String(name)
+      .replace(/(满族|回族|蒙古族|朝鲜族|自治)+/g, '')
+      .replace(/(县|市|区)$/g, '');
+  for (const city of hb?.children ?? []) {
+    const cityEn = cityEnByZh.get(city.name) ?? null;
+    for (const g of city.children ?? []) {
+      if (String(g.name).endsWith('区')) continue;
+      if (!/(县|市)$/.test(String(g.name))) continue;
+      const en = toPinyin(strip(g.name), { toneType: 'none', type: 'array' }).join('');
+      HEBEI_COUNTIES.push({ zh: g.name, en: en.charAt(0).toUpperCase() + en.slice(1), cityZh: city.name, cityEn });
+    }
+  }
+} catch {
+  /* 无 pca 数据时仅用省市 */
 }
 const norm = (s) => String(s ?? '').toLowerCase().replace(/[\s_'’.·-]/g, '');
 const aliasHit = (key, aliases) =>
@@ -111,6 +142,11 @@ function nameHint(companyName) {
   if (!key) return { province: null, city: null };
   let province = null;
   let city = null;
+  for (const c of COUNTY_HINTS) {
+    if (aliasHit(key, [c.zh, c.en])) {
+      return { province: 'Hebei', city: c.cityEn ?? null };
+    }
+  }
   for (const c of CITIES) {
     if (aliasHit(key, [c.nameEn, c.nameZh, ...(c.aliases ?? [])])) {
       city = c.nameEn;
@@ -148,8 +184,23 @@ async function main() {
   const t0 = now();
   const reg = await api('GET', '/v1/regions?level=city&province=Hebei');
   const cityEn = reg.data.items.map((x) => x.nameEn);
-  const seeds = ['Hebei', '河北', '河北省', ...cityEn];
-  console.log(`种子 ${seeds.length} 个：${seeds.join(', ')}`);
+  let seeds;
+  const seedPages = new Map();
+  if (EXTENDED) {
+    for (const s of ['Hebei', '河北', '河北省']) seedPages.set(s, 20);
+    for (const c of cityEn) seedPages.set(c, 10);
+    const countySeeds = HEBEI_COUNTIES.map((c) => c.en).filter((en) => !seedPages.has(en));
+    for (const c of HEBEI_COUNTIES) {
+      if (seedPages.has(c.en)) continue;
+      seedPages.set(c.en, 1);
+      void countySeeds;
+    }
+    seeds = [...seedPages.keys()];
+    console.log(`扩展种子：省市 ${3 + cityEn.length} + 县级 ${seeds.length - 3 - cityEn.length}（county 列表 ${HEBEI_COUNTIES.length}）`);
+  } else {
+    seeds = ['Hebei', '河北', '河北省', ...cityEn];
+    console.log(`种子 ${seeds.length} 个：${seeds.join(', ')}`);
+  }
 
   const candidates = new Map(); // companyId -> { summary, seeds:Set, source }
   const add = (s, seed, source) => {
@@ -186,10 +237,14 @@ async function main() {
   const perSeed = [];
   for (const seed of seeds) {
     const started = now();
-    const seedPages = DEEP ? (seed === 'Hebei' ? 20 : seed === '河北' ? 10 : PAGES) : PAGES;
+    const pagesForSeed = EXTENDED
+      ? (seedPages.get(seed) ?? PAGES)
+      : DEEP
+        ? (seed === 'Hebei' ? 20 : seed === '河北' ? 10 : PAGES)
+        : PAGES;
     const r = await api('POST', '/v1/search/suppliers', {
       keyword: seed,
-      pages: seedPages,
+      pages: pagesForSeed,
       locationMode: 'off',
       ...(REFRESH ? { refresh: true } : {}),
     });

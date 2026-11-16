@@ -141,7 +141,7 @@ export function loadConfig(opts: LoadConfigOptions = {}): Config {
     viewportWidth: int(env, 'ALI_VIEWPORT_WIDTH', 1920, 320, 4096),
     viewportHeight: int(env, 'ALI_VIEWPORT_HEIGHT', 1080, 240, 2160),
     profileDir: expandHome(str(env, 'ALI_PROFILE_DIR', path.join(dataDir, 'profile'))),
-    headless: bool(env, 'ALI_HEADLESS', false),
+    headless: bool(env, 'ALI_HEADLESS', true),
     humanize: bool(env, 'ALI_HUMANIZE', true),
     apiToken: str(env, 'ALI_API_TOKEN', 'change-me'),
     host: str(env, 'ALI_HOST', '127.0.0.1'),
